@@ -2,4 +2,167 @@ ticker,nome,empresa_original,pais,setor
 AAPL34,APPLE DRN,Apple Inc.,USA,Tecnologia
 MSFT34,MICROSOFT DRN,Microsoft Corp.,USA,Tecnologia
 GOGL34,ALPHABET DRN,Alphabet Inc.,USA,Tecnologia
+GOGL35,ALPHABET C DRN,Alphabet Inc. Class C,USA,Tecnologia
 TSLA34,TESLA DRN,Tesla Inc.,USA,Automotivo
+AMZO34,AMAZON DRN,Amazon.com Inc.,USA,Varejo Online
+META34,META DRN,Meta Platforms Inc.,USA,Tecnologia
+NFLX34,NETFLIX DRN,Netflix Inc.,USA,Entretenimento
+NVDC34,NVIDIA DRN,NVIDIA Corp.,USA,Tecnologia
+DISB34,DISNEY DRN,Walt Disney Co.,USA,Entretenimento
+COCA34,COCA-COLA DRN,Coca-Cola Co.,USA,Bebidas
+PEPB34,PEPSICO DRN,PepsiCo Inc.,USA,Bebidas
+P1MO34,PHILIP MORRIS DRN,Philip Morris Int.,USA,Tabaco
+ITLC34,INTEL DRN,Intel Corp.,USA,Tecnologia
+CSCO34,CISCO DRN,Cisco Systems Inc.,USA,Tecnologia
+ORCL34,ORACLE DRN,Oracle Corp.,USA,Tecnologia
+ADBE34,ADOBE DRN,Adobe Inc.,USA,Tecnologia
+AVGO34,BROADCOM DRN,Broadcom Inc.,USA,Tecnologia
+ASML34,ASML DRN,ASML Holding NV,Holanda,Tecnologia
+QCOM34,QUALCOMM DRN,Qualcomm Inc.,USA,Tecnologia
+CMCS34,COMCAST DRN,Comcast Corp.,USA,Telecomunicações
+PFIZ34,PFIZER DRN,Pfizer Inc.,USA,Farmacêutica
+JHSN34,JOHNSON & JOHNSON DRN,Johnson & Johnson,USA,Farmacêutica
+ABBV34,ABBVIE DRN,AbbVie Inc.,USA,Farmacêutica
+MRCK34,MERCK DRN,Merck & Co.,USA,Farmacêutica
+BMYB34,BRISTOL-MYERS DRN,Bristol-Myers Squibb,USA,Farmacêutica
+GILT34,GILEAD DRN,Gilead Sciences Inc.,USA,Biotecnologia
+AMGN34,AMGEN DRN,Amgen Inc.,USA,Biotecnologia
+BION34,BIOGEN DRN,Biogen Inc.,USA,Biotecnologia
+MDLZ34,MONDELEZ DRN,Mondelez International,USA,Alimentos
+KO34,KRAFT HEINZ DRN,Kraft Heinz Co.,USA,Alimentos
+STBK34,STARBUCKS DRN,Starbucks Corp.,USA,Restaurantes
+MCDC34,MCDONALDS DRN,McDonald's Corp.,USA,Restaurantes
+WALM34,WALMART DRN,Walmart Inc.,USA,Varejo
+COST34,COSTCO DRN,Costco Wholesale,USA,Varejo
+TGTB34,TARGET DRN,Target Corp.,USA,Varejo
+HOME34,HOME DEPOT DRN,Home Depot Inc.,USA,Varejo
+LOWC34,LOWE'S DRN,Lowe's Companies,USA,Varejo
+NIKE34,NIKE DRN,Nike Inc.,USA,Vestuário
+BOAC34,BOEING DRN,Boeing Co.,USA,Aeronáutica
+BARC34,BARRICK GOLD DRN,Barrick Gold Corp.,Canadá,Mineração
+NEWM34,NEWMONT DRN,Newmont Corp.,USA,Mineração
+RIVE34,RIO TINTO DRN,Rio Tinto PLC,Reino Unido,Mineração
+BHPB34,BHP DRN,BHP Group Ltd.,Austrália,Mineração
+S1HL34,SOUTHERN COPPER DRN,Southern Copper Corp.,Peru,Mineração
+FBOK34,FREEPORT DRN,Freeport-McMoRan Inc.,USA,Mineração
+BVMF34,B2W DIGITAL DRN,B2W Digital,Brasil,Varejo Online
+EBAY34,EBAY DRN,eBay Inc.,USA,Varejo Online
+ETSY34,ETSY DRN,Etsy Inc.,USA,Varejo Online
+SHOP34,SHOPIFY DRN,Shopify Inc.,Canadá,Tecnologia
+PYPL34,PAYPAL DRN,PayPal Holdings Inc.,USA,Fintech
+S1QU34,SQUARE DRN,Block Inc. (Square),USA,Fintech
+VISA34,VISA DRN,Visa Inc.,USA,Serviços Financeiros
+MAST34,MASTERCARD DRN,Mastercard Inc.,USA,Serviços Financeiros
+AMEX34,AMERICAN EXPRESS DRN,American Express Co.,USA,Serviços Financeiros
+JPMC34,JP MORGAN DRN,JPMorgan Chase & Co.,USA,Bancos
+BOFA34,BANK OF AMERICA DRN,Bank of America Corp.,USA,Bancos
+C1IT34,CITIGROUP DRN,Citigroup Inc.,USA,Bancos
+GSGI34,GOLDMAN SACHS DRN,Goldman Sachs Group,USA,Bancos
+MSCD34,MORGAN STANLEY DRN,Morgan Stanley,USA,Bancos
+WFCO34,WELLS FARGO DRN,Wells Fargo & Co.,USA,Bancos
+HSBC34,HSBC DRN,HSBC Holdings PLC,Reino Unido,Bancos
+S1AN34,SANTANDER DRN,Banco Santander SA,Espanha,Bancos
+BBAS34,BBVA DRN,Banco Bilbao Vizcaya,Espanha,Bancos
+I1NG34,ING DRN,ING Groep NV,Holanda,Bancos
+UBSG34,UBS DRN,UBS Group AG,Suíça,Bancos
+D1BS34,DEUTSCHE BANK DRN,Deutsche Bank AG,Alemanha,Bancos
+B1CS34,CREDIT SUISSE DRN,Credit Suisse Group,Suíça,Bancos
+EXXO34,EXXON MOBIL DRN,Exxon Mobil Corp.,USA,Petróleo e Gás
+CVXC34,CHEVRON DRN,Chevron Corp.,USA,Petróleo e Gás
+TOTB34,TOTALENERGIES DRN,TotalEnergies SE,França,Petróleo e Gás
+B1PB34,BP DRN,BP PLC,Reino Unido,Petróleo e Gás
+RDSB34,SHELL DRN,Shell PLC,Reino Unido,Petróleo e Gás
+COPP34,CONOCOPHILLIPS DRN,ConocoPhillips,USA,Petróleo e Gás
+SCHLUMBERGER,SCHLUMBERGER DRN,Schlumberger NV,USA,Serviços Petrolíferos
+HALI34,HALLIBURTON DRN,Halliburton Co.,USA,Serviços Petrolíferos
+CATA34,CATERPILLAR DRN,Caterpillar Inc.,USA,Máquinas
+DEER34,DEERE DRN,Deere & Co.,USA,Máquinas
+U1NI34,UNILEVER DRN,Unilever PLC,Reino Unido,Consumo
+PGCO34,PROCTER & GAMBLE DRN,Procter & Gamble Co.,USA,Consumo
+K1IM34,KIMBERLY-CLARK DRN,Kimberly-Clark Corp.,USA,Consumo
+COLG34,COLGATE DRN,Colgate-Palmolive Co.,USA,Consumo
+CLOS34,CLOROX DRN,Clorox Co.,USA,Consumo
+NESY34,NESTLE DRN,Nestlé SA,Suíça,Alimentos
+DANONE34,DANONE DRN,Danone SA,França,Alimentos
+UNIP34,UNIPEC DRN,Sinopec (China Petroleum),China,Petróleo e Gás
+PETR34,PETROCHINA DRN,PetroChina Co. Ltd.,China,Petróleo e Gás
+A1LI34,ALIBABA DRN,Alibaba Group,China,Varejo Online
+BABA34,ALIBABA DRN,Alibaba Group Holding,China,Varejo Online
+BIDU34,BAIDU DRN,Baidu Inc.,China,Tecnologia
+J1DC34,JD.COM DRN,JD.com Inc.,China,Varejo Online
+TENC34,TENCENT DRN,Tencent Holdings Ltd.,China,Tecnologia
+N1ET34,NETEASE DRN,NetEase Inc.,China,Tecnologia
+PINC34,PINDUODUO DRN,Pinduoduo Inc.,China,Varejo Online
+B1YD34,BYD DRN,BYD Co. Ltd.,China,Automotivo
+X1IA34,NIO DRN,NIO Inc.,China,Automotivo
+XPEV34,XPENG DRN,XPeng Inc.,China,Automotivo
+L1AU34,LI AUTO DRN,Li Auto Inc.,China,Automotivo
+S1AM34,SAMSUNG DRN,Samsung Electronics,Coreia do Sul,Tecnologia
+HYUN34,HYUNDAI DRN,Hyundai Motor Co.,Coreia do Sul,Automotivo
+K1IA34,KIA DRN,Kia Corp.,Coreia do Sul,Automotivo
+SKCP34,SK HYNIX DRN,SK Hynix Inc.,Coreia do Sul,Tecnologia
+SONY34,SONY DRN,Sony Group Corp.,Japão,Tecnologia
+T1OY34,TOYOTA DRN,Toyota Motor Corp.,Japão,Automotivo
+H1ON34,HONDA DRN,Honda Motor Co.,Japão,Automotivo
+N1IS34,NISSAN DRN,Nissan Motor Co.,Japão,Automotivo
+S1OF34,SOFTBANK DRN,SoftBank Group Corp.,Japão,Tecnologia
+TAKEDA34,TAKEDA DRN,Takeda Pharmaceutical,Japão,Farmacêutica
+A1IS34,ASTELLAS DRN,Astellas Pharma Inc.,Japão,Farmacêutica
+D1AI34,DAIICHI DRN,Daiichi Sankyo Co.,Japão,Farmacêutica
+SHIO34,SHIONOGI DRN,Shionogi & Co.,Japão,Farmacêutica
+FANYU34,FANUC DRN,Fanuc Corp.,Japão,Robótica
+KEYO34,KEYENCE DRN,Keyence Corp.,Japão,Automação
+S1AE34,SAP DRN,SAP SE,Alemanha,Software
+SIEM34,SIEMENS DRN,Siemens AG,Alemanha,Industrial
+BASF34,BASF DRN,BASF SE,Alemanha,Química
+BAYN34,BAYER DRN,Bayer AG,Alemanha,Farmacêutica
+A1DI34,ADIDAS DRN,Adidas AG,Alemanha,Vestuário
+P1UM34,PUMA DRN,Puma SE,Alemanha,Vestuário
+M1ER34,MERCEDES DRN,Mercedes-Benz Group,Alemanha,Automotivo
+V1OW34,VOLKSWAGEN DRN,Volkswagen AG,Alemanha,Automotivo
+B1MW34,BMW DRN,Bayerische Motoren Werke,Alemanha,Automotivo
+P1OR34,PORSCHE DRN,Porsche AG,Alemanha,Automotivo
+A1IR34,AIRBUS DRN,Airbus SE,França,Aeronáutica
+LVMH34,LVMH DRN,LVMH Moët Hennessy,França,Luxo
+HERMES34,HERMÈS DRN,Hermès International,França,Luxo
+KERIG34,KERING DRN,Kering SA,França,Luxo
+L1OR34,L'ORÉAL DRN,L'Oréal SA,França,Cosméticos
+SANO34,SANOFI DRN,Sanofi SA,França,Farmacêutica
+S1CH34,SCHNEIDER DRN,Schneider Electric,França,Industrial
+NOVO34,NOVO NORDISK DRN,Novo Nordisk A/S,Dinamarca,Farmacêutica
+MAERSK34,MAERSK DRN,A.P. Møller-Mærsk,Dinamarca,Transporte
+LEGO34,LEGO DRN,LEGO Group,Dinamarca,Brinquedos
+V1ES34,VESTAS DRN,Vestas Wind Systems,Dinamarca,Energia Renovável
+ERICSN34,ERICSSON DRN,Telefonaktiebolaget,Suécia,Telecomunicações
+ASTRA34,ASTRAZENECA DRN,AstraZeneca PLC,Reino Unido,Farmacêutica
+GLAXO34,GLAXOSMITHKLINE DRN,GSK PLC,Reino Unido,Farmacêutica
+DIAG34,DIAGEO DRN,Diageo PLC,Reino Unido,Bebidas
+R1OL34,ROLLS-ROYCE DRN,Rolls-Royce Holdings,Reino Unido,Aeronáutica
+A1RM34,ARM DRN,Arm Holdings PLC,Reino Unido,Tecnologia
+V1OD34,VODAFONE DRN,Vodafone Group PLC,Reino Unido,Telecomunicações
+B1T34,BT GROUP DRN,BT Group PLC,Reino Unido,Telecomunicações
+TEVA34,TEVA DRN,Teva Pharmaceutical,Israel,Farmacêutica
+CHKP34,CHECK POINT DRN,Check Point Software,Israel,Tecnologia
+N1CE34,NICE DRN,NICE Ltd.,Israel,Software
+W1IX34,WIX DRN,Wix.com Ltd.,Israel,Tecnologia
+MONDAY34,MONDAY.COM DRN,Monday.com Ltd.,Israel,Software
+SPOT34,SPOTIFY DRN,Spotify Technology,Suécia,Entretenimento
+UBER34,UBER DRN,Uber Technologies,USA,Transporte
+L1YF34,LYFT DRN,Lyft Inc.,USA,Transporte
+AIRB34,AIRBNB DRN,Airbnb Inc.,USA,Hotelaria
+B1OK34,BOOKING DRN,Booking Holdings Inc.,USA,Turismo
+EXPE34,EXPEDIA DRN,Expedia Group Inc.,USA,Turismo
+TRPA34,TRIPADVISOR DRN,Tripadvisor Inc.,USA,Turismo
+TWTR34,TWITTER DRN,Twitter Inc.,USA,Tecnologia
+SNAP34,SNAP DRN,Snap Inc.,USA,Tecnologia
+P1IN34,PINTEREST DRN,Pinterest Inc.,USA,Tecnologia
+ZOOM34,ZOOM DRN,Zoom Video Comm.,USA,Tecnologia
+D1OC34,DOCUSIGN DRN,DocuSign Inc.,USA,Software
+CRWD34,CROWDSTRIKE DRN,CrowdStrike Holdings,USA,Cibersegurança
+PANW34,PALO ALTO DRN,Palo Alto Networks,USA,Cibersegurança
+OKTA34,OKTA DRN,Okta Inc.,USA,Software
+SNOW34,SNOWFLAKE DRN,Snowflake Inc.,USA,Software
+D1BT34,DATABRICKS DRN,Databricks Inc.,USA,Software
+PLTR34,PALANTIR DRN,Palantir Technologies,USA,Software
+U1NI34,UNITY DRN,Unity Software Inc.,USA,Software
+RBLX34,ROBLOX DRN,Roblox Corp.,USA,Entretenimento
