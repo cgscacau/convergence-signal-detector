@@ -1,5 +1,235 @@
 ticker,nome,tipo,segmento
-HGLG11,CSHG LOGÍSTICA,Logística,Galpões
-KNRI11,KINEA RENDA,Híbrido,Multiestratégia
+HGLG11,CSHG LOGÍSTICA,Tijolo,Logística
+KNRI11,KINEA RENDA,Híbrido,Renda Urbana
 MXRF11,MAXI RENDA,Tijolo,Lajes Corporativas
 VISC11,VINCI SHOPPING,Tijolo,Shopping Centers
+XPML11,XP MALLS,Tijolo,Shopping Centers
+BTLG11,BTG LOGÍSTICA,Tijolo,Logística
+KNCR11,KINEA CRED,Papel,CRIs
+KNIP11,KINEA ÍNDICES,Híbrido,Renda Urbana
+HGRU11,CSHG REAL ESTATE,Híbrido,Renda Urbana
+BCFF11,BTG CRÉDITO,Papel,CRIs
+PVBI11,VBI PRIME,Tijolo,Lajes Corporativas
+XPLG11,XP LOG,Tijolo,Logística
+RZTR11,RIZA TERRAX,Híbrido,Desenvolvimento
+RECT11,RECEBÍVEIS IMOB,Papel,CRIs
+KFOF11,KINEA FOF,FOF,Fundo de Fundos
+IRDM11,IRIDIUM RECEB,Papel,CRIs
+HGRE11,CSHG RECEBÍVEIS,Papel,CRIs
+KNSC11,KINEA SECURITIES,Papel,CRIs
+VGIR11,VALORA RE III,Tijolo,Lajes Corporativas
+BRCO11,BRESCO LOGÍSTICA,Tijolo,Logística
+JSRE11,JS REAL ESTATE,Tijolo,Lajes Corporativas
+RBVA11,RIO BRAVO RENDA,Híbrido,Renda Urbana
+TRXF11,TRX REAL ESTATE,Tijolo,Lajes Corporativas
+CVBI11,VBI CRI,Papel,CRIs
+VILG11,VINCI LOG,Tijolo,Logística
+VCJR11,VIC LOGÍSTICA,Tijolo,Logística
+TGAR11,TG ATIVO REAL,Tijolo,Lajes Corporativas
+XPCI11,XP CRÉDITO,Papel,CRIs
+BRCR11,BC FUND,Papel,CRIs
+RBRR11,RBR RENDIMENTO,Híbrido,Renda Urbana
+ALZR11,ALIANZA TRUST,Tijolo,Lajes Corporativas
+MCHY11,MUBADALA CSHG HY,Papel,CRIs High Yield
+HGBS11,CSHG BRASIL SHOP,Tijolo,Shopping Centers
+RBRY11,RBR ALPHA,Híbrido,Multiestratégia
+MALL11,MALLS BRASIL,Tijolo,Shopping Centers
+GGRC11,GGR COVEPI,Tijolo,Lajes Corporativas
+TORD11,TORRE NORTE,Tijolo,Lajes Corporativas
+HGPO11,CSHG PRIME OFF,Tijoblolo,Lajes Corporativas
+VRTA11,VECTIS RENDA,Tijolo,Lajes Corporativas
+TEPP11,TELLUS PROPERTIES,Tijolo,Lajes Corporativas
+RBRP11,RBR PROPERTIES,Tijolo,Lajes Corporativas
+BLMG11,BLUEMACAW LOG,Tijolo,Logística
+PATL11,PÁTRIA LOG,Tijolo,Logística
+BBPO11,BB PROGRESSIVO II,Papel,CRIs
+BBFI11B,BB RENDA CORP,Tijolo,Lajes Corporativas
+VINO11,VINCI OFFICES,Tijolo,Lajes Corporativas
+BARI11,BARIGUI REND,Tijolo,Lajes Corporativas
+IRDM11,IRIDIUM RECEB,Papel,CRIs
+CPTS11,CAPITÂNIA SEC,Papel,CRIs
+DEVA11,DEVANT RECEB,Papel,CRIs
+GTWR11,GUARDIAN TOWER,Tijolo,Lajes Corporativas
+RBRD11,RBR DIVIDEND,Híbrido,Dividendos
+HSML11,HSI MALLS,Tijolo,Shopping Centers
+SARE11,SÃO CARLOS,Tijolo,Lajes Corporativas
+XPPR11,XP PROPERTIES,Híbrido,Renda Urbana
+NEWL11,NOVO HORIZONTE,Tijolo,Logística
+VTLT11,VOTORANTIM LOG,Tijolo,Logística
+BTRA11,BTG TIJUCA,Tijolo,Lajes Corporativas
+OUJP11,OURINVEST JPP,Tijolo,Lajes Corporativas
+PORD11,PORTO REAL,Tijolo,Logística
+CARE11,CAIXA RENDA,Híbrido,Renda Urbana
+JPPA11,JPPA RENDA,Tijolo,Lajes Corporativas
+CBOP11,CB OFFICE PROPERTIES,Tijolo,Lajes Corporativas
+LVBI11,VBI LOGÍSTICA,Tijolo,Logística
+RZAK11,RIZA AKIN,Tijolo,Lajes Corporativas
+FEXC11,FATOR VERITÀ,Papel,CRIs
+BBRC11,BB RENDA CORP II,Tijolo,Lajes Corporativas
+FIGS11,GENERAL SHOPPING,Tijolo,Shopping Centers
+BBVJ11,BB VOTORANTIM,Tijolo,Lajes Corporativas
+RURA11,VELT RURA,Agro,Terras Agrícolas
+EURO11,EUROPAR,Tijolo,Shoppings
+FIIB11,INDUSTRIAL BR,Tijolo,Galpões Industriais
+RBRF11,RBR CRÉDITO,Papel,CRIs
+BCRI11,BTG CRI,Papel,CRIs
+NSLU11,NAVI LOG UNIT,Tijolo,Logística
+OUFF11,OURINVEST FUNDO,Híbrido,Renda Urbana
+HCTR11,HECTARE CE,Agro,Terras Agrícolas
+GALG11,GUARDIAN LOGÍSTICA,Tijolo,Logística
+VGIP11,VALORA HEDGE,Papel,CRIs
+BTCR11,BTG CRÉDITO PREM,Papel,CRIs Premium
+GAME11,GENERAL AMÉRICA,Tijolo,Shopping Centers
+OULG11,OURINVEST LOG,Tijolo,Logística
+CXRI11,CAIXA RI,Papel,CRIs
+RBVO11,RBR VALUE,Híbrido,Renda Urbana
+SNCI11,SUNO CONSEIL,Papel,CRIs
+BNFS11,BANCO SAFRA,Papel,CRIs
+CPTI11,CAPITÂNIA REC II,Papel,CRIs
+ABCP11,GRAND PLAZA,Tijolo,Shopping Centers
+AFHI11,AF INVEST CRED,Papel,CRIs High Yield
+BBIM11,BB RENDA IMOB,Híbrido,Renda Urbana
+SPXS11,SPX SANTANDER,Tijolo,Shopping Centers
+MFII11,MAUA CAPITAL,Híbrido,Renda Urbana
+FCFL11,FII CAIXA,Papel,CRIs
+MAXR11,MAX RETAIL,Tijolo,Varejo
+RBED11,RBR EDUCA,Tijolo,Educacional
+TSNC11,TESOURO SANTANDER,Papel,Títulos Públicos
+RECR11,REC RENDA,Papel,CRIs
+HGJH11,CSHG JHSF,Tijolo,Lajes Corporativas
+XPIN11,XP INFRA,Híbrido,Infraestrutura
+BTCI11,BTG CRI INFRA,Papel,CRIs Infraestrutura
+RBGS11,RBR LOG STRAT,Tijolo,Logística
+PVBI11,VBI PRIME PROPERTIES,Tijolo,Lajes Corporativas
+VIUR11,VINCI URB,Tijolo,Lajes Corporativas
+MCCI11,MAUA CAPITAL CRI,Papel,CRIs
+VIFI11,VINCI INST,Tijolo,Institucional
+KNHY11,KINEA HCRÉDITO,Papel,CRIs High Yield
+PRSV11,PÁTRIA RENDA,Tijolo,Lajes Corporativas
+HABT11,HABITASEC,Papel,CRIs
+JSAF11,JSA FAMILIAR,Tijolo,Residencial
+RNGO11,RIO NEGRO,Tijolo,Agronegócio
+BTWR11,BTG OFFICE,Tijolo,Lajes Corporativas
+VSLH11,VERSALHES,Tijolo,Lajes Corporativas
+RSPD11,RSPE IPCA,Papel,Títulos Públicos
+XTED11,XP TERRAS,Agro,Terras Agrícolas
+CYCR11,CY CAPITAL RECEB,Papel,CRIs
+RBHG11,RBR HIGH GRADE,Papel,CRIs
+KISU11,KILIMA SUNO,Papel,CRIs
+PQDP11,PARQUE DOM PEDRO,Tijolo,Shopping Centers
+ARCT11,ARCTIC,Tijolo,Lajes Corporativas
+RBRL11,RBR LOG,Tijolo,Logística
+EVBI11,EVOLUTIONIT BR,Tijolo,Data Center
+VERE11,VEREDAS RECEB,Papel,CRIs
+KNCV11,KINEA VENTURES,Desenvolvimento,Empreendimentos
+CACR11,CAIXA ACREFI,Papel,CRIs
+SPTW11,SP DOWNTOWN,Tijolo,Lajes Corporativas
+PLCR11,PLURAL RECEB,Papel,CRIs
+HGCR11,CSHG CRÉDITO,Papel,CRIs
+NEWU11,NOVO HORIZONTE,Tijolo,Logística
+FAED11,FATOR EDUCACIONAL,Tijolo,Educacional
+VGRI11,VALORA RE I,Tijolo,Lajes Corporativas
+RCRB11,REC RENDA CRÉDITO,Papel,CRIs
+NCRA11,NCH RECEB AGRO,Agro,CRAs
+MGFF11,MOGNO,Tijolo,Residencial
+VLOL11,VÁLORA LOGÍSTICA,Tijolo,Logística
+XPHT11,XP HOTEIS,Tijolo,Hotelaria
+BCIA11,BANCO PINE CRI,Papel,CRIs
+CVBI11,VBI CRI,Papel,CRIs
+HGFF11,CSHG FUNDO FOF,FOF,Fundo de Fundos
+FOFT11,FATOR FOF TORRE,FOF,Fundo de Fundos
+SAAG11,SANTANDER AGRO,Agro,CRAs
+HTMX11,HOTEL MAXINVEST,Tijolo,Hotelaria
+RBFF11,RBR FOF,FOF,Fundo de Fundos
+VCRI11,VINCI CRI,Papel,CRIs
+CBSC11,CB SECURITIES,Papel,CRIs
+DRIT11,DIRECT CRI,Papel,CRIs
+HGIC11,CSHG INFRA CRED,Papel,CRIs Infraestrutura
+VISC11,VINCI SHOPPING,Tijolo,Shopping Centers
+HGFF11,CSHG FOF,FOF,Fundo de Fundos
+ALZR11,ALIANZA TRUST,Tijolo,Lajes Corporativas
+VGHF11,VALORA HEDGE II,Papel,CRIs
+RBVA11,RIO BRAVO RENDA,Híbrido,Renda Urbana
+TRXL11,TRX LOGÍSTICA,Tijolo,Logística
+PORD11,PORTO REAL,Tijolo,Logística
+SNFF11,SUNO FOF,FOF,Fundo de Fundos
+LFTT11,LIFE TORRE,Tijolo,Lajes Corporativas
+AFOF11,AF INVEST FOF,FOF,Fundo de Fundos
+VGIP11,VALORA HEDGE I,Papel,CRIs
+KFOF11,KINEA FOF,FOF,Fundo de Fundos
+BTSG11,BTS GÁS,Papel,Debêntures
+KNRE11,KINEA REIT,Híbrido,Renda Urbana
+SDIL11,SDI LOG,Tijolo,Logística
+VCRA11,VINCI CRA,Agro,CRAs
+HSAF11,HSI ATIVOS FIN,Papel,CRIs
+XPID11,XP INDUSTRIAL,Tijolo,Industrial
+FVPQ11,FATOR VERITÀ II,Papel,CRIs
+APTO11,APARTAMENTO,Tijolo,Residencial
+GSFI11,GUARDIAN SEMI,Papel,CRIs
+GARE11,GUARDIAN RENDA,Tijolo,Lajes Corporativas
+DRIT11,DIRECT CRI,Papel,CRIs
+RBRL11,RBR LOGÍSTICA,Tijolo,Logística
+RBED11,RBR EDUCACIONAL,Tijolo,Educacional
+SADI11,SANTANDER DI,Papel,Títulos Públicos
+GGRC11,GGR COVEPI,Tijolo,Lajes Corporativas
+HFOF11,HEDGE TOP FOF,FOF,Fundo de Fundos
+BCRI11,BTG PACTUAL CRI,Papel,CRIs
+VIUR11,VINCI URBANO,Tijolo,Lajes Corporativas
+XPGA11,XP GAIA,Desenvolvimento,Residencial
+HCRI11,HECTARE CRÉDITO,Agro,CRAs
+FIIP11B,INDUSTRIAL BR II,Tijolo,Galpões Industriais
+RCRB11,REC CRÉDITO BR,Papel,CRIs
+RZTR11,RIZA TERRAX,Desenvolvimento,Terras e Desenvol
+AGCX11,AG CRÉDITO,Papel,CRIs
+BPFF11,BTG PACTUAL FOF,FOF,Fundo de Fundos
+VILG11,VINCI LOGÍSTICA,Tijolo,Logística
+HGIC11,CSHG INFRA,Papel,CRIs Infraestrutura
+BBVJ11,BB VOTORANTIM JP,Tijolo,Lajes Corporativas
+GCFF11,GC FUNDO FOF,FOF,Fundo de Fundos
+URPR11,URCA PRIME RENDA,Tijolo,Lajes Corporativas
+PVBI11,VBI PRIME OFFICE,Tijolo,Lajes Corporativas
+THRA11,THERA CORP,Tijolo,Lajes Corporativas
+VOTS11,VOTORANTIM SEC,Papel,CRIs
+REIT11,HEDGE REAL ESTATE,Híbrido,Renda Urbana
+VGIR11,VALORA RE III,Tijolo,Lajes Corporativas
+CXCE11,CAIXA CEDAE,Papel,Debêntures
+BROF11,BRAZILIAN OFFICE,Tijolo,Lajes Corporativas
+GCRI11,GC CRÉDITO,Papel,CRIs
+EDGA11,EDGARD GUINLE,Tijolo,Residencial
+RBDS11,RBR DESENV,Desenvolvimento,Empreendimentos
+PVBI11,VBI PRIME,Tijolo,Lajes Corporativas
+NSLU11,NAVI LOGÍSTICA,Tijolo,Logística
+BCFF11,BTG CRÉDITO FII,Papel,CRIs
+CVBI11,VBI CRÉDITO,Papel,CRIs
+KFOF11,KINEA FUNDO FOF,FOF,Fundo de Fundos
+BBFI11B,BB RENDA CORP I,Tijolo,Lajes Corporativas
+XPML11,XP MALLS FUNDO,Tijolo,Shopping Centers
+HGLG11,CSHG LOGÍSTICA,Tijolo,Logística
+KNRI11,KINEA RENDA IMOB,Híbrido,Renda Urbana
+MXRF11,MAXI RENDA FII,Tijolo,Lajes Corporativas
+VISC11,VINCI SHOPPING C,Tijolo,Shopping Centers
+BTLG11,BTG PACTUAL LOG,Tijolo,Logística
+KNCR11,KINEA CRÉDITIMOB,Papel,CRIs
+KNIP11,KINEA ÍNDICES P,Híbrido,Renda Urbana
+HGRU11,CSHG REAL URBANO,Híbrido,Renda Urbana
+PVBI11,VBI PRIME PROP,Tijolo,Lajes Corporativas
+XPLG11,XP LOGÍSTICA,Tijolo,Logística
+RZTR11,RIZA TERRAX,Desenvolvimento,Terras
+RECT11,RECEBÍVEIS IMOB,Papel,CRIs
+IRDM11,IRIDIUM RECEB,Papel,CRIs
+HGRE11,CSHG RECEBÍVEIS,Papel,CRIs
+KNSC11,KINEA SECURITIES,Papel,CRIs
+VGIR11,VALORA REAL III,Tijolo,Lajes Corporativas
+BRCO11,BRESCO LOG,Tijolo,Logística
+JSRE11,JS REAL ESTATE,Tijolo,Lajes Corporativas
+TRXF11,TRX REAL ESTATE,Tijolo,Lajes Corporativas
+CVBI11,VBI CRI FII,Papel,CRIs
+VILG11,VINCI LOGÍSTICA,Tijolo,Logística
+VCJR11,VIC LOGÍSTICA,Tijolo,Logística
+TGAR11,TG ATIVO REAL,Tijolo,Lajes Corporativas
+XPCI11,XP CRÉDITO IMOB,Papel,CRIs
+BRCR11,BC FUND CRI,Papel,CRIs
+RBRR11,RBR RENDIMENTO,Híbrido,Renda Urbana
+ALZR11,ALIANZA TRUST,Tijolo,Lajes Corporativas
+MCHY11,MUBADALA HY,Papel,CRIs High Yield
+HGBS11,CSHG BRASIL SHOP,Tijolo,Shopping Centers
