@@ -19,6 +19,7 @@ from data.market_data import MarketDataLoader
 from indicators.cacas_channel import CacasChannel
 from signals.convergence import ConvergenceDetector
 from signals.risk_manager import RiskManager
+from ui.charts import CacasChannelChart
 
 # Configuração da página
 st.set_page_config(
@@ -183,6 +184,7 @@ elif analyze_button:
     indicator = CacasChannel(upper=upper, under=under, ema=ema)
     detector = ConvergenceDetector()
     risk_mgr = RiskManager(atr_multiplier=atr_mult)
+    chart_maker = CacasChannelChart()
     
     results = {}
     failed = []
@@ -242,11 +244,20 @@ elif analyze_button:
         conv_results = detector.scan_multiple_assets(results)
         conv_results = detector.sort_by_priority(conv_results)
         
-        # Tabela
+        # Tabela COMPLETA com TODOS os dados
         st.dataframe(
-            conv_results[['ticker', 'status', 'descricao']],
+            conv_results,
             use_container_width=True,
-            hide_index=True
+            hide_index=True,
+            column_config={
+                "ticker": st.column_config.TextColumn("Ticker", width="small"),
+                "status": st.column_config.TextColumn("Status", width="medium"),
+                "descricao": st.column_config.TextColumn("Descrição", width="large"),
+                "semanal": st.column_config.NumberColumn("Semanal", format="%d"),
+                "diario": st.column_config.NumberColumn("Diário", format="%d"),
+                "convergente": st.column_config.CheckboxColumn("Convergente"),
+                "tipo": st.column_config.TextColumn("Tipo", width="small")
+            }
         )
         
         # Stats
@@ -263,7 +274,7 @@ elif analyze_button:
         cols[2].metric("🟡 Aguardando", len(waiting))
         cols[3].metric("📊 Total", len(conv_results))
         
-        # Detalhes
+        # Detalhes COM GRÁFICOS
         if len(buys) > 0:
             st.markdown("---")
             st.subheader("🟢 SINAIS DE COMPRA")
@@ -271,28 +282,97 @@ elif analyze_button:
             for _, row in buys.iterrows():
                 ticker = row['ticker']
                 
-                with st.expander(f"📈 {ticker} - {row['status']}"):
+                with st.expander(f"📈 {ticker} - {row['status']}", expanded=True):
                     st.write(f"**{row['descricao']}**")
                     
                     daily_df = results[ticker]['daily']
+                    weekly_df = results[ticker]['weekly']
                     latest = daily_df.iloc[-1]
                     
-                    col1, col2 = st.columns(2)
+                    # CALCULAR STOP E ALVO
+                    plan = risk_mgr.generate_trade_plan(
+                        daily_df,
+                        entry_type='long',
+                        target_multiplier=target_mult
+                    )
+                    
+                    # MÉTRICAS
+                    col1, col2, col3, col4 = st.columns(4)
                     
                     with col1:
-                        st.metric("Preço", f"R$ {latest['Close']:.2f}")
-                        st.metric("Sinal Diário", "Alta ✅" if latest['sinal'] == 1 else "Baixa")
+                        st.metric("Preço Atual", f"R$ {latest['Close']:.2f}")
                     
                     with col2:
-                        plan = risk_mgr.generate_trade_plan(
-                            daily_df,
-                            entry_type='long',
-                            target_multiplier=target_mult
-                        )
-                        
                         if plan:
-                            st.metric("Stop", f"R$ {plan['stop_loss']['price']:.2f}")
-                            st.metric("Alvo", f"R$ {plan['target']['price']:.2f}")
+                            st.metric("Stop Loss", f"R$ {plan['stop_loss']['price']:.2f}",
+                                    delta=f"-{plan['stop_loss']['risk_percent']:.1f}%")
+                    
+                    with col3:
+                        if plan:
+                            st.metric("Alvo", f"R$ {plan['target']['price']:.2f}",
+                                    delta=f"+{plan['target']['gain_percent']:.1f}%")
+                    
+                    with col4:
+                        if plan:
+                            st.metric("R/R Ratio", f"{plan['risk_reward']:.2f}x")
+                    
+                    st.markdown("---")
+                    
+                    # GRÁFICOS LADO A LADO (DIÁRIO + SEMANAL)
+                    st.subheader("📊 Gráficos Multi-Timeframe")
+                    
+                    col_daily, col_weekly = st.columns(2)
+                    
+                    with col_daily:
+                        # Gráfico DIÁRIO com STOP e ALVO
+                        fig_daily = chart_maker.create_single_chart(
+                            daily_df,
+                            title=f"{ticker} - DIÁRIO",
+                            show_stop=True if plan else False,
+                            stop_price=plan['stop_loss']['price'] if plan else None,
+                            show_target=True if plan else False,
+                            target_price=plan['target']['price'] if plan else None,
+                            height=600
+                        )
+                        st.plotly_chart(fig_daily, use_container_width=True)
+                    
+                    with col_weekly:
+                        # Gráfico SEMANAL (sem stop/alvo)
+                        fig_weekly = chart_maker.create_single_chart(
+                            weekly_df,
+                            title=f"{ticker} - SEMANAL",
+                            height=600
+                        )
+                        st.plotly_chart(fig_weekly, use_container_width=True)
+                    
+                    # TABELA DE DADOS RECENTES
+                    st.markdown("---")
+                    st.subheader("📋 Dados Recentes (Diário)")
+                    
+                    # Últimas 10 barras do diário
+                    recent_data = daily_df[[
+                        'Close', 'linha_superior', 'linha_inferior', 
+                        'linha_media', 'linha_ema', 'sinal'
+                    ]].tail(10).copy()
+                    
+                    recent_data['sinal_texto'] = recent_data['sinal'].map({
+                        1: '🟢 COMPRA',
+                        -1: '🔴 VENDA',
+                        0: '⚪ NEUTRO'
+                    })
+                    
+                    st.dataframe(
+                        recent_data.round(2),
+                        use_container_width=True,
+                        column_config={
+                            "Close": "Preço",
+                            "linha_superior": "L. Superior",
+                            "linha_inferior": "L. Inferior",
+                            "linha_media": "L. Branca",
+                            "linha_ema": "L. Laranja",
+                            "sinal_texto": "Sinal"
+                        }
+                    )
         
         # Download
         st.markdown("---")
