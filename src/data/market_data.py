@@ -46,13 +46,12 @@ class MarketDataLoader:
             # Formata ticker para B3
             ticker_yf = _self.format_ticker_b3(ticker)
             
-            # Download
+            # Download (removido show_errors que não existe)
             data = yf.download(
                 ticker_yf,
                 period=period,
                 interval=interval,
-                progress=False,
-                show_errors=False
+                progress=False
             )
             
             if data.empty:
@@ -62,23 +61,31 @@ class MarketDataLoader:
             if isinstance(data.columns, pd.MultiIndex):
                 data.columns = data.columns.droplevel(1)
             
-            # Renomeia colunas para inglês padrão
-            data = data.rename(columns={
+            # Garante nomes de colunas em inglês
+            column_mapping = {
                 'Open': 'Open',
                 'High': 'High',
                 'Low': 'Low',
                 'Close': 'Close',
                 'Volume': 'Volume',
                 'Adj Close': 'Adj Close'
-            })
+            }
+            
+            # Renomeia apenas colunas que existem
+            existing_cols = {k: v for k, v in column_mapping.items() if k in data.columns}
+            if existing_cols:
+                data = data.rename(columns=existing_cols)
             
             # Remove linhas com NaN
             data = data.dropna()
             
+            if data.empty:
+                return None
+            
             return data
             
         except Exception as e:
-            st.warning(f"⚠️ Erro ao baixar {ticker}: {str(e)}")
+            # Silencioso - não mostra warning aqui, será tratado no app
             return None
     
     def download_multiple(self, tickers, period='1y', interval='1d', show_progress=True):
