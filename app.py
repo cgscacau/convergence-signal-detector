@@ -190,6 +190,7 @@ elif analyze_button:
     
     # Dicionário para armazenar resultados
     results = {}
+    failed_tickers = []
     total = len(selected_tickers)
     
     for i, ticker in enumerate(selected_tickers):
@@ -197,32 +198,49 @@ elif analyze_button:
         progress_bar.progress(progress)
         status_text.text(f"Analisando {ticker} ({i+1}/{total})...")
         
-        # Download dados
-        daily_data = market_loader.get_daily_data(ticker, period=period)
-        weekly_data = market_loader.get_weekly_data(ticker, period=period)
-        
-        if daily_data is not None and weekly_data is not None:
-            # Calcula indicador
-            daily_with_indicator = indicator.calculate_full(daily_data)
-            weekly_with_indicator = indicator.calculate_full(weekly_data)
+        try:
+            # Download dados
+            daily_data = market_loader.get_daily_data(ticker, period=period)
+            weekly_data = market_loader.get_weekly_data(ticker, period=period)
             
-            # Detecta cruzamentos
-            daily_with_indicator = indicator.detect_crossover(daily_with_indicator)
-            weekly_with_indicator = indicator.detect_crossover(weekly_with_indicator)
-            
-            # Armazena
-            results[ticker] = {
-                'daily': daily_with_indicator,
-                'weekly': weekly_with_indicator
-            }
+            if daily_data is not None and weekly_data is not None:
+                # Calcula indicador
+                daily_with_indicator = indicator.calculate_full(daily_data)
+                weekly_with_indicator = indicator.calculate_full(weekly_data)
+                
+                # Detecta cruzamentos
+                daily_with_indicator = indicator.detect_crossover(daily_with_indicator)
+                weekly_with_indicator = indicator.detect_crossover(weekly_with_indicator)
+                
+                # Armazena
+                results[ticker] = {
+                    'daily': daily_with_indicator,
+                    'weekly': weekly_with_indicator
+                }
+            else:
+                failed_tickers.append(ticker)
+        except Exception as e:
+            failed_tickers.append(ticker)
     
     progress_bar.empty()
     status_text.empty()
     
+    # Mostra alertas se houver falhas
+    if failed_tickers:
+        with st.expander(f"⚠️ {len(failed_tickers)} ativos falharam", expanded=False):
+            st.warning(f"Não foi possível baixar dados para: {', '.join(failed_tickers)}")
+            st.info("💡 Possíveis causas: ticker inválido, ativo sem histórico, ou problema no Yahoo Finance")
+    
     if not results:
-        st.error("❌ Nenhum dado foi baixado com sucesso. Tente novamente ou selecione outros ativos.")
+        st.error("❌ Nenhum dado foi baixado com sucesso. Tente:")
+        st.markdown("""
+        - Verificar se os tickers estão corretos
+        - Escolher outro período de análise
+        - Selecionar outros ativos
+        - Tentar novamente em alguns minutos
+        """)
     else:
-        st.success(f"✅ Análise concluída! {len(results)} ativos processados.")
+        st.success(f"✅ Análise concluída! {len(results)}/{total} ativos processados.")
         
         # ========== ANÁLISE DE CONVERGÊNCIAS ==========
         st.markdown("---")
