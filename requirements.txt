@@ -18,3 +18,4 @@ streamlit-aggrid>=0.3.4
 
 # Utils
 requests>=2.31.0
+yfinance==0.2.38
