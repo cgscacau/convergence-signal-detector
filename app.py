@@ -28,7 +28,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# CSS customizado
+# CSS
 st.markdown("""
 <style>
     .main-header {
@@ -38,12 +38,6 @@ st.markdown("""
         color: #FF4B4B;
         margin-bottom: 2rem;
     }
-    .success-box {
-        padding: 1rem;
-        background-color: #1e4d2b;
-        border-radius: 0.5rem;
-        border-left: 4px solid #2ecc71;
-    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -52,7 +46,7 @@ st.markdown('<h1 class="main-header">🎯 CACAS CHANNEL SCANNER</h1>', unsafe_al
 st.markdown("**Scanner de convergências multi-timeframe para o mercado brasileiro**")
 st.markdown("---")
 
-# Inicializa classes
+# Inicializa
 @st.cache_resource
 def init_loaders():
     return B3AssetLoader(), MarketDataLoader()
@@ -63,47 +57,61 @@ asset_loader, market_loader = init_loaders()
 with st.sidebar:
     st.header("⚙️ CONFIGURAÇÕES")
     
-    # Seleção de Ativos
+    # Ativos
     st.subheader("📊 ATIVOS")
+    
+    # Seleção de categorias
     selected_categories = st.multiselect(
-        "Selecione as categorias:",
+        "Categorias:",
         options=['Ação', 'FII', 'ETF', 'BDR'],
         default=['Ação'],
-        help="Escolha os tipos de ativos para análise"
+        help="Selecione os tipos de ativos"
     )
     
-    # Mostra contagem
     if selected_categories:
         assets_df = asset_loader.filter_by_category(selected_categories)
-        st.info(f"📈 {len(assets_df)} ativos disponíveis")
         
-        # Seleção de ativos específicos
-        with st.expander("🔍 Selecionar ativos específicos"):
-            search_query = st.text_input("🔎 Buscar:", placeholder="Ex: PETR, Petrobras")
+        # MODO DE SELEÇÃO
+        selection_mode = st.radio(
+            "Modo de seleção:",
+            options=["Selecionar Todos", "Escolher Específicos"],
+            index=1,
+            help="Escolha como selecionar os ativos"
+        )
+        
+        if selection_mode == "Selecionar Todos":
+            # TODOS OS ATIVOS DA CATEGORIA
+            selected_tickers = assets_df['ticker'].tolist()
+            st.success(f"✅ **{len(selected_tickers)} ativos selecionados**")
             
-            if search_query:
-                filtered = asset_loader.search_assets(search_query, selected_categories)
-                if not filtered.empty:
-                    st.success(f"✅ {len(filtered)} encontrado(s)")
-                    selected_tickers = st.multiselect(
-                        "Escolha os ativos:",
-                        options=filtered['ticker'].tolist(),
-                        default=filtered['ticker'].tolist()[:5]
-                    )
+            # Mostra amostra
+            with st.expander("📋 Ver lista completa"):
+                st.write(assets_df[['ticker', 'nome']])
+        
+        else:
+            # SELEÇÃO ESPECÍFICA
+            with st.expander("🔍 Buscar e selecionar"):
+                search = st.text_input("Buscar:", placeholder="Ex: PETR, Vale")
+                
+                if search:
+                    filtered = asset_loader.search_assets(search, selected_categories)
+                    if not filtered.empty:
+                        st.success(f"✅ {len(filtered)} encontrados")
+                        display_df = filtered
+                    else:
+                        st.warning("Nada encontrado")
+                        display_df = assets_df.head(20)
                 else:
-                    st.warning("Nenhum ativo encontrado")
-                    selected_tickers = []
-            else:
-                # Lista padrão - top ativos
-                default_list = assets_df['ticker'].tolist()[:10]
+                    display_df = assets_df.head(20)
+                
                 selected_tickers = st.multiselect(
-                    "Ativos selecionados:",
+                    "Ativos:",
                     options=assets_df['ticker'].tolist(),
-                    default=default_list,
-                    help="Máximo recomendado: 20 ativos"
+                    default=display_df['ticker'].tolist()[:10],
+                    help="Selecione os ativos desejados"
                 )
     else:
-        st.warning("⚠️ Selecione pelo menos uma categoria")
+        st.warning("⚠️ Selecione uma categoria")
         selected_tickers = []
     
     st.markdown("---")
@@ -119,7 +127,7 @@ with st.sidebar:
         '10 anos': '10y'
     }
     period_label = st.selectbox(
-        "Selecione o período:",
+        "Período:",
         options=list(period_options.keys()),
         index=1
     )
@@ -127,270 +135,200 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # Parâmetros do Indicador
+    # Indicador
     st.subheader("⚙️ INDICADOR")
-    with st.expander("Ajustar parâmetros", expanded=False):
-        upper = st.number_input("Linha Superior (Upper):", min_value=5, max_value=100, value=20)
-        under = st.number_input("Linha Inferior (Under):", min_value=5, max_value=100, value=30)
-        ema = st.number_input("EMA:", min_value=3, max_value=50, value=9)
+    with st.expander("Parâmetros", expanded=False):
+        upper = st.number_input("Upper:", 5, 100, 20)
+        under = st.number_input("Under:", 5, 100, 30)
+        ema = st.number_input("EMA:", 3, 50, 9)
     
     st.markdown("---")
     
-    # Gestão de Risco
-    st.subheader("🎯 GESTÃO DE RISCO")
-    atr_mult = st.slider("Stop Loss (ATR × ?):", min_value=1.0, max_value=3.0, value=1.5, step=0.5)
-    target_mult = st.selectbox("Alvo (× Risco):", options=[1.5, 2.0, 2.5, 3.0], index=1)
+    # Risco
+    st.subheader("🎯 RISCO")
+    atr_mult = st.slider("Stop (ATR×):", 1.0, 3.0, 1.5, 0.5)
+    target_mult = st.selectbox("Alvo (×Risco):", [1.5, 2.0, 2.5, 3.0], index=1)
     
     st.markdown("---")
     
-    # Botão de análise
+    # Botão
     analyze_button = st.button("🚀 ANALISAR", type="primary", use_container_width=True)
 
-# ========== ÁREA PRINCIPAL ==========
+# ========== MAIN ==========
 
 if not selected_tickers:
-    st.info("👈 **Comece selecionando ativos na barra lateral**")
+    st.info("👈 **Selecione ativos na barra lateral**")
     
-    # Estatísticas
-    st.subheader("📊 Ativos Disponíveis no Sistema")
+    # Stats
+    st.subheader("📊 Ativos Disponíveis")
     counts = asset_loader.count_assets()
     
-    col1, col2, col3, col4, col5 = st.columns(5)
-    col1.metric("📈 Ações", counts['Ação'])
-    col2.metric("🏢 FIIs", counts['FII'])
-    col3.metric("📊 ETFs", counts['ETF'])
-    col4.metric("🌎 BDRs", counts['BDR'])
-    col5.metric("📦 Total", counts['Total'])
-    
-    st.markdown("---")
-    
-    # Instruções
-    st.subheader("📖 Como Usar")
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        **1️⃣ Configuração**
-        - Selecione categorias de ativos
-        - Escolha ativos específicos (até 20)
-        - Defina o período de análise
-        
-        **2️⃣ Parâmetros (Opcional)**
-        - Ajuste indicador Cacas Channel
-        - Configure stop loss e alvo
-        """)
-    
-    with col2:
-        st.markdown("""
-        **3️⃣ Análise**
-        - Clique em 🚀 ANALISAR
-        - Aguarde processamento
-        - Visualize resultados
-        
-        **4️⃣ Resultados**
-        - Veja convergências
-        - Analise planos de trade
-        - Exporte para CSV
-        """)
+    cols = st.columns(5)
+    cols[0].metric("📈 Ações", counts['Ação'])
+    cols[1].metric("🏢 FIIs", counts['FII'])
+    cols[2].metric("📊 ETFs", counts['ETF'])
+    cols[3].metric("🌎 BDRs", counts['BDR'])
+    cols[4].metric("📦 Total", counts['Total'])
 
 elif analyze_button:
     # ========== PROCESSAMENTO ==========
     
-    st.subheader("🔄 Processando Análise...")
+    st.subheader(f"🔄 Analisando {len(selected_tickers)} ativos...")
     
-    # Info inicial
-    st.info(f"📊 Analisando {len(selected_tickers)} ativos no período de {period_label}")
-    
-    # Barra de progresso
+    # Progress
     progress_bar = st.progress(0)
     status_text = st.empty()
     
-    # Inicializa
+    # Inicia
     indicator = CacasChannel(upper=upper, under=under, ema=ema)
     detector = ConvergenceDetector()
     risk_mgr = RiskManager(atr_multiplier=atr_mult)
     
     results = {}
-    failed_tickers = []
+    failed = []
+    
     total = len(selected_tickers)
     
     for i, ticker in enumerate(selected_tickers):
         progress = (i + 1) / total
         progress_bar.progress(progress)
-        status_text.text(f"📊 Processando: {ticker} ({i+1}/{total})")
+        status_text.text(f"📊 {ticker} ({i+1}/{total})")
         
         try:
             # Download
-            daily_data = market_loader.get_daily_data(ticker, period=period)
-            weekly_data = market_loader.get_weekly_data(ticker, period=period)
+            daily = market_loader.get_daily_data(ticker, period)
+            weekly = market_loader.get_weekly_data(ticker, period)
             
             # Valida
-            if (market_loader.validate_dataframe(daily_data) and 
-                market_loader.validate_dataframe(weekly_data)):
+            if (market_loader.validate_dataframe(daily) and 
+                market_loader.validate_dataframe(weekly)):
                 
-                # Calcula indicador
-                daily_with_indicator = indicator.calculate_full(daily_data)
-                weekly_with_indicator = indicator.calculate_full(weekly_data)
+                # Calcula
+                daily_ind = indicator.calculate_full(daily)
+                weekly_ind = indicator.calculate_full(weekly)
                 
-                # Detecta cruzamentos
-                daily_with_indicator = indicator.detect_crossover(daily_with_indicator)
-                weekly_with_indicator = indicator.detect_crossover(weekly_with_indicator)
+                # Cruza
+                daily_ind = indicator.detect_crossover(daily_ind)
+                weekly_ind = indicator.detect_crossover(weekly_ind)
                 
                 results[ticker] = {
-                    'daily': daily_with_indicator,
-                    'weekly': weekly_with_indicator
+                    'daily': daily_ind,
+                    'weekly': weekly_ind
                 }
             else:
-                failed_tickers.append(ticker)
-                
-        except Exception as e:
-            failed_tickers.append(ticker)
+                failed.append(ticker)
+        except:
+            failed.append(ticker)
     
     progress_bar.empty()
     status_text.empty()
     
-    # Resultado do processamento
-    success_count = len(results)
-    fail_count = len(failed_tickers)
+    # Resultado
+    success = len(results)
+    fail = len(failed)
     
-    if success_count > 0:
-        st.success(f"✅ **Sucesso!** {success_count}/{total} ativos processados")
+    if success > 0:
+        st.success(f"✅ **{success}/{total} ativos processados com sucesso!**")
         
-        if fail_count > 0:
-            with st.expander(f"⚠️ {fail_count} ativos sem dados disponíveis"):
-                st.warning(f"**Ativos que falharam:** {', '.join(failed_tickers)}")
-                st.info("""
-                **💡 Possíveis causas:**
-                - Ticker inválido ou incorreto
-                - Ativo sem histórico no período selecionado
-                - FII muito novo (< 6 meses)
-                - Problemas temporários no Yahoo Finance
-                
-                **✅ Solução:**
-                - Verifique se o ticker está correto
-                - Tente outro período (ex: 6 meses)
-                - Remova esses ativos da seleção
-                """)
+        if fail > 0:
+            with st.expander(f"⚠️ {fail} ativos sem dados"):
+                st.warning(", ".join(failed))
         
         # ========== ANÁLISE ==========
         st.markdown("---")
-        st.subheader("📊 RESULTADOS DA ANÁLISE")
+        st.subheader("📊 RESULTADOS")
         
-        # Escaneia
-        convergence_results = detector.scan_multiple_assets(results)
-        convergence_results = detector.sort_by_priority(convergence_results)
+        # Convergências
+        conv_results = detector.scan_multiple_assets(results)
+        conv_results = detector.sort_by_priority(conv_results)
         
-        # Tabela principal
+        # Tabela
         st.dataframe(
-            convergence_results[['ticker', 'status', 'descricao']],
+            conv_results[['ticker', 'status', 'descricao']],
             use_container_width=True,
-            hide_index=True,
-            column_config={
-                "ticker": st.column_config.TextColumn("Ativo", width="small"),
-                "status": st.column_config.TextColumn("Status", width="medium"),
-                "descricao": st.column_config.TextColumn("Descrição", width="large")
-            }
+            hide_index=True
         )
         
-        # ========== ESTATÍSTICAS ==========
+        # Stats
         st.markdown("---")
-        st.subheader("📈 Resumo dos Sinais")
+        st.subheader("📈 Resumo")
         
-        buy_signals = detector.get_buy_signals(convergence_results)
-        sell_signals = detector.get_sell_signals(convergence_results)
-        waiting = detector.get_waiting_signals(convergence_results)
+        buys = detector.get_buy_signals(conv_results)
+        sells = detector.get_sell_signals(conv_results)
+        waiting = detector.get_waiting_signals(conv_results)
         
-        col1, col2, col3, col4 = st.columns(4)
-        col1.metric("🟢 Sinais de Compra", len(buy_signals))
-        col2.metric("🔴 Sinais de Venda", len(sell_signals))
-        col3.metric("🟡 Em Aguardo", len(waiting))
-        col4.metric("📊 Total Analisado", len(convergence_results))
+        cols = st.columns(4)
+        cols[0].metric("🟢 Compra", len(buys))
+        cols[1].metric("🔴 Venda", len(sells))
+        cols[2].metric("🟡 Aguardando", len(waiting))
+        cols[3].metric("📊 Total", len(conv_results))
         
-        # ========== DETALHES ==========
-        if len(buy_signals) > 0:
+        # Detalhes
+        if len(buys) > 0:
             st.markdown("---")
-            st.subheader("🟢 OPORTUNIDADES DE COMPRA")
+            st.subheader("🟢 SINAIS DE COMPRA")
             
-            for idx, row in buy_signals.iterrows():
+            for _, row in buys.iterrows():
                 ticker = row['ticker']
                 
-                with st.expander(f"📈 **{ticker}** - {row['status']}", expanded=False):
-                    st.markdown(f"**{row['descricao']}**")
+                with st.expander(f"📈 {ticker} - {row['status']}"):
+                    st.write(f"**{row['descricao']}**")
                     
-                    col1, col2 = st.columns([1, 1])
+                    daily_df = results[ticker]['daily']
+                    latest = daily_df.iloc[-1]
+                    
+                    col1, col2 = st.columns(2)
                     
                     with col1:
-                        st.markdown("#### 📊 Análise Técnica")
-                        daily_df = results[ticker]['daily']
-                        latest = daily_df.iloc[-1]
-                        
-                        st.metric("Preço Atual", f"R$ {latest['Close']:.2f}")
-                        st.metric("Sinal Diário", "Alta ✅" if latest['sinal'] == 1 else "Baixa ⏳")
-                        
+                        st.metric("Preço", f"R$ {latest['Close']:.2f}")
+                        st.metric("Sinal Diário", "Alta ✅" if latest['sinal'] == 1 else "Baixa")
+                    
                     with col2:
-                        st.markdown("#### 🎯 Plano de Trade")
-                        trade_plan = risk_mgr.generate_trade_plan(
+                        plan = risk_mgr.generate_trade_plan(
                             daily_df,
                             entry_type='long',
                             target_multiplier=target_mult
                         )
                         
-                        if trade_plan:
-                            st.metric("Stop Loss", f"R$ {trade_plan['stop_loss']['price']:.2f}")
-                            st.metric("Alvo", f"R$ {trade_plan['target']['price']:.2f}")
-                            st.metric("Risco/Retorno", f"1:{target_mult}")
+                        if plan:
+                            st.metric("Stop", f"R$ {plan['stop_loss']['price']:.2f}")
+                            st.metric("Alvo", f"R$ {plan['target']['price']:.2f}")
         
-        # ========== DOWNLOAD ==========
+        # Download
         st.markdown("---")
-        st.subheader("💾 Exportar Resultados")
+        st.subheader("💾 Exportar")
         
-        csv = convergence_results.to_csv(index=False).encode('utf-8')
+        csv = conv_results.to_csv(index=False).encode('utf-8')
         st.download_button(
-            label="📥 Baixar Análise Completa (CSV)",
-            data=csv,
-            file_name=f"cacas_scanner_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv",
-            mime="text/csv",
+            "📥 Baixar CSV",
+            csv,
+            f"cacas_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv",
+            "text/csv",
             use_container_width=True
         )
     
     else:
-        st.error("❌ **Nenhum ativo foi processado com sucesso**")
+        st.error(f"❌ Nenhum ativo processado ({fail}/{total} falharam)")
         
         st.markdown("""
         ### 🔧 Soluções:
-        
-        1. **Verifique os tickers**
-           - Certifique-se que os códigos estão corretos
-           - Exemplo correto: PETR4, VALE3, ITUB4
-        
-        2. **Tente outro período**
-           - Alguns ativos não têm histórico longo
-           - Experimente: 6 meses ou 1 ano
-        
-        3. **Selecione outros ativos**
-           - Ativos líquidos funcionam melhor
-           - Sugestão: PETR4, VALE3, ITUB4, BBDC4, BBAS3
-        
-        4. **Aguarde alguns minutos**
-           - Pode ser problema temporário do Yahoo Finance
-           - Tente novamente em 5-10 minutos
+        1. Verifique os tickers
+        2. Tente período menor (6 meses)
+        3. Use ativos líquidos (PETR4, VALE3)
+        4. Aguarde alguns minutos
         """)
-        
-        if failed_tickers:
-            st.warning(f"**Ativos testados:** {', '.join(failed_tickers)}")
 
 else:
-    st.info("👆 **Clique no botão 🚀 ANALISAR para processar os ativos selecionados**")
+    st.info("👆 Clique em **🚀 ANALISAR**")
     
     if selected_tickers:
-        st.success(f"✅ {len(selected_tickers)} ativos selecionados e prontos para análise")
+        st.success(f"✅ {len(selected_tickers)} ativos prontos")
 
-# ========== FOOTER ==========
+# Footer
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #888;'>
-    <p><b>🎯 Cacas Channel Scanner v1.0.2</b> | Desenvolvido com ❤️ para traders brasileiros</p>
-    <p>⚠️ <i>Sistema educacional - Não constitui recomendação de investimento</i></p>
-    <p>📊 Powered by yfinance | 🚀 Built with Streamlit</p>
+    <p><b>🎯 Cacas Channel Scanner v1.0.3</b></p>
+    <p>⚠️ Apenas educacional - Não é recomendação de investimento</p>
 </div>
 """, unsafe_allow_html=True)
