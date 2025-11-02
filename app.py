@@ -1,301 +1,334 @@
 """
-Download de dados de mercado usando yfinance
-Versão otimizada para download em lote
+CACAS CHANNEL SCANNER
+Scanner de convergências multi-timeframe para B3
 """
 
-import yfinance as yf
-import pandas as pd
 import streamlit as st
-from datetime import datetime, timedelta
+import pandas as pd
+import sys
+from pathlib import Path
 import warnings
-import logging
 
-# Suprime todos os warnings e logs do yfinance
 warnings.filterwarnings('ignore')
-logging.getLogger('yfinance').setLevel(logging.CRITICAL)
 
+# Adiciona src ao path
+sys.path.append(str(Path(__file__).parent / 'src'))
 
-class MarketDataLoader:
-    """Classe para download de dados de mercado"""
+from data.asset_loader import B3AssetLoader
+from data.market_data import MarketDataLoader
+from indicators.cacas_channel import CacasChannel
+from signals.convergence import ConvergenceDetector
+from signals.risk_manager import RiskManager
+
+# Configuração da página
+st.set_page_config(
+    page_title="Cacas Channel Scanner",
+    page_icon="🎯",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# CSS
+st.markdown("""
+<style>
+    .main-header {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        color: #FF4B4B;
+        margin-bottom: 2rem;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Header
+st.markdown('<h1 class="main-header">🎯 CACAS CHANNEL SCANNER</h1>', unsafe_allow_html=True)
+st.markdown("**Scanner de convergências multi-timeframe para o mercado brasileiro**")
+st.markdown("---")
+
+# Inicializa
+@st.cache_resource
+def init_loaders():
+    return B3AssetLoader(), MarketDataLoader()
+
+asset_loader, market_loader = init_loaders()
+
+# ========== SIDEBAR ==========
+with st.sidebar:
+    st.header("⚙️ CONFIGURAÇÕES")
     
-    def __init__(self):
-        pass
+    # Ativos
+    st.subheader("📊 ATIVOS")
     
-    @staticmethod
-    def format_ticker_b3(ticker):
-        """
-        Formata ticker para padrão Yahoo Finance B3
-        
-        Args:
-            ticker (str): Ticker no formato B3 (ex: PETR4)
-        
-        Returns:
-            str: Ticker formatado para Yahoo Finance (ex: PETR4.SA)
-        """
-        if not ticker.endswith('.SA'):
-            return f"{ticker}.SA"
-        return ticker
+    # Seleção de categorias
+    selected_categories = st.multiselect(
+        "Categorias:",
+        options=['Ação', 'FII', 'ETF', 'BDR'],
+        default=['Ação'],
+        help="Selecione os tipos de ativos"
+    )
     
-    @st.cache_data(ttl=1800, show_spinner=False)
-    def download_single_ticker(_self, ticker, period='1y', interval='1d'):
-        """
-        Baixa dados de UM ticker usando Ticker API (mais confiável)
+    if selected_categories:
+        assets_df = asset_loader.filter_by_category(selected_categories)
         
-        Args:
-            ticker (str): Ticker do ativo
-            period (str): Período
-            interval (str): Intervalo
+        # MODO DE SELEÇÃO
+        selection_mode = st.radio(
+            "Modo de seleção:",
+            options=["Selecionar Todos", "Escolher Específicos"],
+            index=1,
+            help="Escolha como selecionar os ativos"
+        )
         
-        Returns:
-            pd.DataFrame: DataFrame com OHLCV ou None
-        """
-        try:
-            ticker_yf = _self.format_ticker_b3(ticker)
+        if selection_mode == "Selecionar Todos":
+            # TODOS OS ATIVOS DA CATEGORIA
+            selected_tickers = assets_df['ticker'].tolist()
+            st.success(f"✅ **{len(selected_tickers)} ativos selecionados**")
             
-            # Usa Ticker().history() - método mais estável
-            stock = yf.Ticker(ticker_yf)
-            
-            # Download direto via history (sem show_errors)
-            data = stock.history(
-                period=period,
-                interval=interval,
-                auto_adjust=False,
-                actions=False
-            )
-            
-            if data is None or data.empty:
-                return None
-            
-            # Padroniza colunas
-            if not data.columns.empty:
-                data.columns = data.columns.str.title()
-            
-            # Remove timezone
-            if hasattr(data.index, 'tz') and data.index.tz is not None:
-                data.index = data.index.tz_localize(None)
-            
-            # Limpa dados
-            data = data.dropna(how='all')
-            
-            # Valida mínimo de dados
-            if len(data) < 10:
-                return None
-            
-            return data
-            
-        except Exception:
-            return None
-    
-    def download_data(self, ticker, period='1y', interval='1d'):
-        """
-        Método público para download (compatibilidade)
+            # Mostra amostra
+            with st.expander("📋 Ver lista completa"):
+                st.write(assets_df[['ticker', 'nome']])
         
-        Args:
-            ticker (str): Ticker do ativo
-            period (str): Período
-            interval (str): Intervalo
-        
-        Returns:
-            pd.DataFrame: DataFrame com OHLCV
-        """
-        return self.download_single_ticker(ticker, period, interval)
-    
-    def download_multiple(self, tickers, period='1y', interval='1d', show_progress=True):
-        """
-        Baixa dados de múltiplos ativos de forma otimizada
-        
-        Args:
-            tickers (list): Lista de tickers
-            period (str): Período
-            interval (str): Intervalo  
-            show_progress (bool): Mostrar progresso
-        
-        Returns:
-            dict: {ticker: DataFrame}
-        """
-        results = {}
-        failed = []
-        
-        if show_progress:
-            progress_bar = st.progress(0)
-            status_text = st.empty()
-        
-        total = len(tickers)
-        
-        # Processa um por um (mais estável que batch)
-        for i, ticker in enumerate(tickers):
-            if show_progress:
-                progress = (i + 1) / total
-                progress_bar.progress(progress)
-                status_text.text(f"📊 Baixando: {ticker} ({i+1}/{total})")
-            
-            try:
-                data = self.download_single_ticker(ticker, period, interval)
+        else:
+            # SELEÇÃO ESPECÍFICA
+            with st.expander("🔍 Buscar e selecionar"):
+                search = st.text_input("Buscar:", placeholder="Ex: PETR, Vale")
                 
-                if data is not None and not data.empty and len(data) >= 10:
-                    results[ticker] = data
+                if search:
+                    filtered = asset_loader.search_assets(search, selected_categories)
+                    if not filtered.empty:
+                        st.success(f"✅ {len(filtered)} encontrados")
+                        display_df = filtered
+                    else:
+                        st.warning("Nada encontrado")
+                        display_df = assets_df.head(20)
                 else:
-                    failed.append(ticker)
-                    
-            except Exception:
-                failed.append(ticker)
-        
-        if show_progress:
-            progress_bar.empty()
-            status_text.empty()
-        
-        return results
+                    display_df = assets_df.head(20)
+                
+                selected_tickers = st.multiselect(
+                    "Ativos:",
+                    options=assets_df['ticker'].tolist(),
+                    default=display_df['ticker'].tolist()[:10],
+                    help="Selecione os ativos desejados"
+                )
+    else:
+        st.warning("⚠️ Selecione uma categoria")
+        selected_tickers = []
     
-    def get_daily_data(self, ticker, period='1y'):
-        """Retorna dados diários"""
-        return self.download_single_ticker(ticker, period=period, interval='1d')
+    st.markdown("---")
     
-    def get_weekly_data(self, ticker, period='2y'):
-        """Retorna dados semanais"""
-        # Baixa diários e converte (mais confiável)
-        daily = self.get_daily_data(ticker, period)
-        
-        if daily is not None and not daily.empty:
-            return self.resample_to_weekly(daily)
-        
-        # Fallback: tenta direto semanal
-        return self.download_single_ticker(ticker, period=period, interval='1wk')
+    # Período
+    st.subheader("📅 PERÍODO")
+    period_options = {
+        '6 meses': '6mo',
+        '1 ano': '1y',
+        '2 anos': '2y',
+        '3 anos': '3y',
+        '5 anos': '5y',
+        '10 anos': '10y'
+    }
+    period_label = st.selectbox(
+        "Período:",
+        options=list(period_options.keys()),
+        index=1
+    )
+    period = period_options[period_label]
     
-    def get_multi_timeframe(self, ticker, period='2y'):
-        """
-        Retorna dados em múltiplos timeframes
-        
-        Args:
-            ticker (str): Ticker
-            period (str): Período
-        
-        Returns:
-            dict: {'daily': DataFrame, 'weekly': DataFrame}
-        """
-        daily = self.get_daily_data(ticker, period)
-        weekly = self.get_weekly_data(ticker, period)
-        
-        return {
-            'daily': daily,
-            'weekly': weekly
-        }
+    st.markdown("---")
     
-    @staticmethod
-    def resample_to_weekly(daily_df):
-        """
-        Converte dados diários para semanais
-        
-        Args:
-            daily_df (pd.DataFrame): Dados diários
-        
-        Returns:
-            pd.DataFrame: Dados semanais
-        """
-        if daily_df is None or daily_df.empty:
-            return None
+    # Indicador
+    st.subheader("⚙️ INDICADOR")
+    with st.expander("Parâmetros", expanded=False):
+        upper = st.number_input("Upper:", 5, 100, 20)
+        under = st.number_input("Under:", 5, 100, 30)
+        ema = st.number_input("EMA:", 3, 50, 9)
+    
+    st.markdown("---")
+    
+    # Risco
+    st.subheader("🎯 RISCO")
+    atr_mult = st.slider("Stop (ATR×):", 1.0, 3.0, 1.5, 0.5)
+    target_mult = st.selectbox("Alvo (×Risco):", [1.5, 2.0, 2.5, 3.0], index=1)
+    
+    st.markdown("---")
+    
+    # Botão
+    analyze_button = st.button("🚀 ANALISAR", type="primary", use_container_width=True)
+
+# ========== MAIN ==========
+
+if not selected_tickers:
+    st.info("👈 **Selecione ativos na barra lateral**")
+    
+    # Stats
+    st.subheader("📊 Ativos Disponíveis")
+    counts = asset_loader.count_assets()
+    
+    cols = st.columns(5)
+    cols[0].metric("📈 Ações", counts['Ação'])
+    cols[1].metric("🏢 FIIs", counts['FII'])
+    cols[2].metric("📊 ETFs", counts['ETF'])
+    cols[3].metric("🌎 BDRs", counts['BDR'])
+    cols[4].metric("📦 Total", counts['Total'])
+
+elif analyze_button:
+    # ========== PROCESSAMENTO ==========
+    
+    st.subheader(f"🔄 Analisando {len(selected_tickers)} ativos...")
+    
+    # Progress
+    progress_bar = st.progress(0)
+    status_text = st.empty()
+    
+    # Inicia
+    indicator = CacasChannel(upper=upper, under=under, ema=ema)
+    detector = ConvergenceDetector()
+    risk_mgr = RiskManager(atr_multiplier=atr_mult)
+    
+    results = {}
+    failed = []
+    
+    total = len(selected_tickers)
+    
+    for i, ticker in enumerate(selected_tickers):
+        progress = (i + 1) / total
+        progress_bar.progress(progress)
+        status_text.text(f"📊 {ticker} ({i+1}/{total})")
         
         try:
-            # Aggregation
-            agg_dict = {
-                'Open': 'first',
-                'High': 'max',
-                'Low': 'min',
-                'Close': 'last',
-                'Volume': 'sum'
-            }
+            # Download
+            daily = market_loader.get_daily_data(ticker, period)
+            weekly = market_loader.get_weekly_data(ticker, period)
             
-            if 'Adj Close' in daily_df.columns:
-                agg_dict['Adj Close'] = 'last'
-            
-            # Resample para sexta-feira
-            weekly = daily_df.resample('W-FRI').agg(agg_dict)
-            
-            # Limpa
-            weekly = weekly.dropna(how='all')
-            
-            if weekly.empty:
-                return None
-            
-            return weekly
-            
-        except Exception:
-            return None
+            # Valida
+            if (market_loader.validate_dataframe(daily) and 
+                market_loader.validate_dataframe(weekly)):
+                
+                # Calcula
+                daily_ind = indicator.calculate_full(daily)
+                weekly_ind = indicator.calculate_full(weekly)
+                
+                # Cruza
+                daily_ind = indicator.detect_crossover(daily_ind)
+                weekly_ind = indicator.detect_crossover(weekly_ind)
+                
+                results[ticker] = {
+                    'daily': daily_ind,
+                    'weekly': weekly_ind
+                }
+            else:
+                failed.append(ticker)
+        except:
+            failed.append(ticker)
     
-    @staticmethod
-    def validate_dataframe(df):
-        """
-        Valida DataFrame
-        
-        Args:
-            df (pd.DataFrame): DataFrame para validar
-        
-        Returns:
-            bool: True se válido
-        """
-        if df is None or df.empty:
-            return False
-        
-        required = ['Open', 'High', 'Low', 'Close', 'Volume']
-        
-        # Checa colunas
-        has_cols = all(col in df.columns for col in required)
-        
-        # Checa quantidade
-        has_data = len(df) >= 10
-        
-        # Checa valores
-        has_values = not df[required].isna().all().any()
-        
-        return has_cols and has_data and has_values
+    progress_bar.empty()
+    status_text.empty()
     
-    @staticmethod
-    def get_period_dates(period_str):
-        """Converte período string para datas"""
-        end_date = datetime.now()
-        
-        period_map = {
-            '1mo': timedelta(days=30),
-            '3mo': timedelta(days=90),
-            '6mo': timedelta(days=180),
-            '1y': timedelta(days=365),
-            '2y': timedelta(days=730),
-            '3y': timedelta(days=1095),
-            '4y': timedelta(days=1460),
-            '5y': timedelta(days=1825),
-            '10y': timedelta(days=3650),
-        }
-        
-        delta = period_map.get(period_str, timedelta(days=365))
-        start_date = end_date - delta
-        
-        return start_date, end_date
+    # Resultado
+    success = len(results)
+    fail = len(failed)
     
-    def check_data_availability(self, ticker):
-        """Verifica se ticker tem dados"""
-        data = self.download_single_ticker(ticker, period='1mo', interval='1d')
-        return self.validate_dataframe(data)
-    
-    def filter_available_tickers(self, tickers, show_progress=True):
-        """Filtra tickers com dados disponíveis"""
-        available = []
+    if success > 0:
+        st.success(f"✅ **{success}/{total} ativos processados com sucesso!**")
         
-        if show_progress:
-            progress_bar = st.progress(0)
-            status_text = st.empty()
+        if fail > 0:
+            with st.expander(f"⚠️ {fail} ativos sem dados"):
+                st.warning(", ".join(failed))
         
-        total = len(tickers)
+        # ========== ANÁLISE ==========
+        st.markdown("---")
+        st.subheader("📊 RESULTADOS")
         
-        for i, ticker in enumerate(tickers):
-            if show_progress:
-                progress = (i + 1) / total
-                progress_bar.progress(progress)
-                status_text.text(f"🔍 Verificando: {ticker} ({i+1}/{total})")
+        # Convergências
+        conv_results = detector.scan_multiple_assets(results)
+        conv_results = detector.sort_by_priority(conv_results)
+        
+        # Tabela
+        st.dataframe(
+            conv_results[['ticker', 'status', 'descricao']],
+            use_container_width=True,
+            hide_index=True
+        )
+        
+        # Stats
+        st.markdown("---")
+        st.subheader("📈 Resumo")
+        
+        buys = detector.get_buy_signals(conv_results)
+        sells = detector.get_sell_signals(conv_results)
+        waiting = detector.get_waiting_signals(conv_results)
+        
+        cols = st.columns(4)
+        cols[0].metric("🟢 Compra", len(buys))
+        cols[1].metric("🔴 Venda", len(sells))
+        cols[2].metric("🟡 Aguardando", len(waiting))
+        cols[3].metric("📊 Total", len(conv_results))
+        
+        # Detalhes
+        if len(buys) > 0:
+            st.markdown("---")
+            st.subheader("🟢 SINAIS DE COMPRA")
             
-            if self.check_data_availability(ticker):
-                available.append(ticker)
+            for _, row in buys.iterrows():
+                ticker = row['ticker']
+                
+                with st.expander(f"📈 {ticker} - {row['status']}"):
+                    st.write(f"**{row['descricao']}**")
+                    
+                    daily_df = results[ticker]['daily']
+                    latest = daily_df.iloc[-1]
+                    
+                    col1, col2 = st.columns(2)
+                    
+                    with col1:
+                        st.metric("Preço", f"R$ {latest['Close']:.2f}")
+                        st.metric("Sinal Diário", "Alta ✅" if latest['sinal'] == 1 else "Baixa")
+                    
+                    with col2:
+                        plan = risk_mgr.generate_trade_plan(
+                            daily_df,
+                            entry_type='long',
+                            target_multiplier=target_mult
+                        )
+                        
+                        if plan:
+                            st.metric("Stop", f"R$ {plan['stop_loss']['price']:.2f}")
+                            st.metric("Alvo", f"R$ {plan['target']['price']:.2f}")
         
-        if show_progress:
-            progress_bar.empty()
-            status_text.empty()
+        # Download
+        st.markdown("---")
+        st.subheader("💾 Exportar")
         
-        return available
+        csv = conv_results.to_csv(index=False).encode('utf-8')
+        st.download_button(
+            "📥 Baixar CSV",
+            csv,
+            f"cacas_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv",
+            "text/csv",
+            use_container_width=True
+        )
+    
+    else:
+        st.error(f"❌ Nenhum ativo processado ({fail}/{total} falharam)")
+        
+        st.markdown("""
+        ### 🔧 Soluções:
+        1. Verifique os tickers
+        2. Tente período menor (6 meses)
+        3. Use ativos líquidos (PETR4, VALE3)
+        4. Aguarde alguns minutos
+        """)
+
+else:
+    st.info("👆 Clique em **🚀 ANALISAR**")
+    
+    if selected_tickers:
+        st.success(f"✅ {len(selected_tickers)} ativos prontos")
+
+# Footer
+st.markdown("---")
+st.markdown("""
+<div style='text-align: center; color: #888;'>
+    <p><b>🎯 Cacas Channel Scanner v1.0.3</b></p>
+    <p>⚠️ Apenas educacional - Não é recomendação de investimento</p>
+</div>
+""", unsafe_allow_html=True)
