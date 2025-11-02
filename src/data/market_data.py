@@ -1,6 +1,6 @@
 """
 Download de dados de mercado usando yfinance
-Versão robusta com múltiplas abordagens
+Versão otimizada para download em lote
 """
 
 import yfinance as yf
@@ -8,8 +8,11 @@ import pandas as pd
 import streamlit as st
 from datetime import datetime, timedelta
 import warnings
+import logging
 
+# Suprime todos os warnings e logs do yfinance
 warnings.filterwarnings('ignore')
+logging.getLogger('yfinance').setLevel(logging.CRITICAL)
 
 
 class MarketDataLoader:
@@ -33,56 +36,10 @@ class MarketDataLoader:
             return f"{ticker}.SA"
         return ticker
     
-    @st.cache_data(ttl=1800, show_spinner=False)  # Cache 30min
-    def download_data(_self, ticker, period='1y', interval='1d'):
+    @st.cache_data(ttl=1800, show_spinner=False)
+    def download_single_ticker(_self, ticker, period='1y', interval='1d'):
         """
-        Baixa dados históricos de um ativo usando Ticker API
-        
-        Args:
-            ticker (str): Ticker do ativo
-            period (str): Período ('1mo', '3mo', '6mo', '1y', '2y', '5y', '10y', 'max')
-            interval (str): Intervalo ('1d', '1wk', '1mo')
-        
-        Returns:
-            pd.DataFrame: DataFrame com OHLCV ou None se falhar
-        """
-        try:
-            # Formata ticker para B3
-            ticker_yf = _self.format_ticker_b3(ticker)
-            
-            # MÉTODO 1: Usando Ticker().history() - Mais robusto
-            stock = yf.Ticker(ticker_yf)
-            data = stock.history(period=period, interval=interval)
-            
-            if data.empty:
-                return None
-            
-            # Garante nomes de colunas em inglês padrão
-            data.columns = data.columns.str.title()
-            
-            # Remove timezone do índice se houver
-            if data.index.tz is not None:
-                data.index = data.index.tz_localize(None)
-            
-            # Remove linhas com NaN
-            data = data.dropna()
-            
-            if data.empty or len(data) < 10:  # Mínimo de 10 pontos de dados
-                return None
-            
-            return data
-            
-        except Exception as e:
-            # Tenta método alternativo
-            try:
-                return _self._download_fallback(ticker, period, interval)
-            except:
-                return None
-    
-    @staticmethod
-    def _download_fallback(ticker, period, interval):
-        """
-        Método alternativo usando download() sem parâmetros problemáticos
+        Baixa dados de UM ticker usando Ticker API (mais confiável)
         
         Args:
             ticker (str): Ticker do ativo
@@ -93,57 +50,70 @@ class MarketDataLoader:
             pd.DataFrame: DataFrame com OHLCV ou None
         """
         try:
-            ticker_yf = f"{ticker}.SA" if not ticker.endswith('.SA') else ticker
+            ticker_yf = _self.format_ticker_b3(ticker)
             
-            # Download básico
-            data = yf.download(
-                tickers=ticker_yf,
+            # Usa Ticker().history() - método mais estável
+            stock = yf.Ticker(ticker_yf)
+            
+            # Download direto via history (sem show_errors)
+            data = stock.history(
                 period=period,
                 interval=interval,
-                progress=False,
                 auto_adjust=False,
-                repair=True
+                actions=False
             )
             
-            if data.empty:
+            if data is None or data.empty:
                 return None
             
-            # Remove MultiIndex se houver
-            if isinstance(data.columns, pd.MultiIndex):
-                data.columns = data.columns.droplevel(1)
-            
-            # Padroniza nomes
-            data.columns = data.columns.str.title()
+            # Padroniza colunas
+            if not data.columns.empty:
+                data.columns = data.columns.str.title()
             
             # Remove timezone
-            if data.index.tz is not None:
+            if hasattr(data.index, 'tz') and data.index.tz is not None:
                 data.index = data.index.tz_localize(None)
             
             # Limpa dados
-            data = data.dropna()
+            data = data.dropna(how='all')
             
-            if data.empty or len(data) < 10:
+            # Valida mínimo de dados
+            if len(data) < 10:
                 return None
             
             return data
             
-        except:
+        except Exception:
             return None
+    
+    def download_data(self, ticker, period='1y', interval='1d'):
+        """
+        Método público para download (compatibilidade)
+        
+        Args:
+            ticker (str): Ticker do ativo
+            period (str): Período
+            interval (str): Intervalo
+        
+        Returns:
+            pd.DataFrame: DataFrame com OHLCV
+        """
+        return self.download_single_ticker(ticker, period, interval)
     
     def download_multiple(self, tickers, period='1y', interval='1d', show_progress=True):
         """
-        Baixa dados de múltiplos ativos com retry automático
+        Baixa dados de múltiplos ativos de forma otimizada
         
         Args:
             tickers (list): Lista de tickers
-            period (str): Período de dados
-            interval (str): Intervalo dos dados
-            show_progress (bool): Mostrar barra de progresso
+            period (str): Período
+            interval (str): Intervalo  
+            show_progress (bool): Mostrar progresso
         
         Returns:
-            dict: Dicionário {ticker: DataFrame}
+            dict: {ticker: DataFrame}
         """
-        data_dict = {}
+        results = {}
         failed = []
         
         if show_progress:
@@ -152,68 +122,51 @@ class MarketDataLoader:
         
         total = len(tickers)
         
+        # Processa um por um (mais estável que batch)
         for i, ticker in enumerate(tickers):
             if show_progress:
                 progress = (i + 1) / total
                 progress_bar.progress(progress)
                 status_text.text(f"📊 Baixando: {ticker} ({i+1}/{total})")
             
-            data = self.download_data(ticker, period, interval)
-            
-            if data is not None and not data.empty and len(data) >= 10:
-                data_dict[ticker] = data
-            else:
+            try:
+                data = self.download_single_ticker(ticker, period, interval)
+                
+                if data is not None and not data.empty and len(data) >= 10:
+                    results[ticker] = data
+                else:
+                    failed.append(ticker)
+                    
+            except Exception:
                 failed.append(ticker)
         
         if show_progress:
             progress_bar.empty()
             status_text.empty()
-            
-            if failed and len(failed) < len(tickers):
-                st.info(f"ℹ️ {len(failed)} ativos sem dados: {', '.join(failed[:5])}{'...' if len(failed) > 5 else ''}")
         
-        return data_dict
+        return results
     
     def get_daily_data(self, ticker, period='1y'):
-        """
-        Retorna dados diários
-        
-        Args:
-            ticker (str): Ticker do ativo
-            period (str): Período
-        
-        Returns:
-            pd.DataFrame: Dados diários
-        """
-        return self.download_data(ticker, period=period, interval='1d')
+        """Retorna dados diários"""
+        return self.download_single_ticker(ticker, period=period, interval='1d')
     
     def get_weekly_data(self, ticker, period='2y'):
-        """
-        Retorna dados semanais
-        
-        Args:
-            ticker (str): Ticker do ativo
-            period (str): Período
-        
-        Returns:
-            pd.DataFrame: Dados semanais
-        """
-        # Para semanais, primeiro baixa diários e resample
-        # Mais confiável que pedir direto semanal
+        """Retorna dados semanais"""
+        # Baixa diários e converte (mais confiável)
         daily = self.get_daily_data(ticker, period)
         
-        if daily is None or daily.empty:
-            # Tenta direto semanal como fallback
-            return self.download_data(ticker, period=period, interval='1wk')
+        if daily is not None and not daily.empty:
+            return self.resample_to_weekly(daily)
         
-        return self.resample_to_weekly(daily)
+        # Fallback: tenta direto semanal
+        return self.download_single_ticker(ticker, period=period, interval='1wk')
     
     def get_multi_timeframe(self, ticker, period='2y'):
         """
         Retorna dados em múltiplos timeframes
         
         Args:
-            ticker (str): Ticker do ativo
+            ticker (str): Ticker
             period (str): Período
         
         Returns:
@@ -233,16 +186,16 @@ class MarketDataLoader:
         Converte dados diários para semanais
         
         Args:
-            daily_df (pd.DataFrame): DataFrame com dados diários
+            daily_df (pd.DataFrame): Dados diários
         
         Returns:
-            pd.DataFrame: DataFrame com dados semanais
+            pd.DataFrame: Dados semanais
         """
         if daily_df is None or daily_df.empty:
             return None
         
         try:
-            # Define aggregation correta
+            # Aggregation
             agg_dict = {
                 'Open': 'first',
                 'High': 'max',
@@ -251,35 +204,53 @@ class MarketDataLoader:
                 'Volume': 'sum'
             }
             
-            # Adiciona Adj Close se existir
             if 'Adj Close' in daily_df.columns:
                 agg_dict['Adj Close'] = 'last'
             
-            # Resample para semanal (fecha na sexta-feira)
+            # Resample para sexta-feira
             weekly = daily_df.resample('W-FRI').agg(agg_dict)
             
-            # Remove linhas com NaN
-            weekly = weekly.dropna()
+            # Limpa
+            weekly = weekly.dropna(how='all')
             
             if weekly.empty:
                 return None
             
             return weekly
             
-        except Exception as e:
+        except Exception:
             return None
     
     @staticmethod
-    def get_period_dates(period_str):
+    def validate_dataframe(df):
         """
-        Converte string de período para datas
+        Valida DataFrame
         
         Args:
-            period_str (str): Período ('6mo', '1y', '2y', etc)
+            df (pd.DataFrame): DataFrame para validar
         
         Returns:
-            tuple: (start_date, end_date)
+            bool: True se válido
         """
+        if df is None or df.empty:
+            return False
+        
+        required = ['Open', 'High', 'Low', 'Close', 'Volume']
+        
+        # Checa colunas
+        has_cols = all(col in df.columns for col in required)
+        
+        # Checa quantidade
+        has_data = len(df) >= 10
+        
+        # Checa valores
+        has_values = not df[required].isna().all().any()
+        
+        return has_cols and has_data and has_values
+    
+    @staticmethod
+    def get_period_dates(period_str):
+        """Converte período string para datas"""
         end_date = datetime.now()
         
         period_map = {
@@ -294,37 +265,18 @@ class MarketDataLoader:
             '10y': timedelta(days=3650),
         }
         
-        if period_str in period_map:
-            start_date = end_date - period_map[period_str]
-        else:
-            start_date = end_date - timedelta(days=365)
+        delta = period_map.get(period_str, timedelta(days=365))
+        start_date = end_date - delta
         
         return start_date, end_date
     
     def check_data_availability(self, ticker):
-        """
-        Verifica se dados estão disponíveis para o ticker
-        
-        Args:
-            ticker (str): Ticker do ativo
-        
-        Returns:
-            bool: True se dados disponíveis, False caso contrário
-        """
-        data = self.download_data(ticker, period='1mo', interval='1d')
-        return data is not None and not data.empty and len(data) >= 5
+        """Verifica se ticker tem dados"""
+        data = self.download_single_ticker(ticker, period='1mo', interval='1d')
+        return self.validate_dataframe(data)
     
     def filter_available_tickers(self, tickers, show_progress=True):
-        """
-        Filtra apenas tickers com dados disponíveis
-        
-        Args:
-            tickers (list): Lista de tickers
-            show_progress (bool): Mostrar progresso
-        
-        Returns:
-            list: Lista de tickers com dados disponíveis
-        """
+        """Filtra tickers com dados disponíveis"""
         available = []
         
         if show_progress:
@@ -347,30 +299,3 @@ class MarketDataLoader:
             status_text.empty()
         
         return available
-    
-    @staticmethod
-    def validate_dataframe(df):
-        """
-        Valida se DataFrame tem estrutura correta
-        
-        Args:
-            df (pd.DataFrame): DataFrame para validar
-        
-        Returns:
-            bool: True se válido, False caso contrário
-        """
-        if df is None or df.empty:
-            return False
-        
-        required_cols = ['Open', 'High', 'Low', 'Close', 'Volume']
-        
-        # Checa colunas necessárias
-        has_required = all(col in df.columns for col in required_cols)
-        
-        # Checa quantidade mínima de dados
-        has_min_data = len(df) >= 10
-        
-        # Checa se tem valores válidos
-        has_valid_data = not df[required_cols].isna().all().any()
-        
-        return has_required and has_min_data and has_valid_data
