@@ -1,5 +1,5 @@
 """
-Carregador de ativos B3 a partir dos CSVs no repositório
+Carregador de ativos multi-mercado (B3, US Stocks, US ETFs, US REITs, Crypto)
 """
 
 import pandas as pd
@@ -7,137 +7,178 @@ import streamlit as st
 from pathlib import Path
 
 
-class B3AssetLoader:
-    """Carrega ativos B3 dos CSVs no repositório"""
+class AssetLoader:
+    """Carrega ativos de múltiplos mercados dos CSVs no repositório"""
     
     def __init__(self):
         # Caminho para pasta data (funciona no Streamlit Cloud)
         self.data_dir = Path(__file__).parent.parent.parent / "data"
     
+    # ==================== B3 BRASIL ====================
+    
     @st.cache_data(ttl=3600)  # Cache por 1 hora
-    def load_acoes(_self):
-        """
-        Carrega lista de ações
-        
-        Returns:
-            pd.DataFrame: DataFrame com colunas ticker, nome, setor, subsetor
-        """
+    def load_b3_acoes(_self):
+        """Carrega ações brasileiras (B3)"""
         try:
             df = pd.read_csv(_self.data_dir / "b3_acoes.csv")
+            df['categoria'] = 'Ação BR'
             return df
         except FileNotFoundError:
             st.error("❌ Arquivo b3_acoes.csv não encontrado!")
-            return pd.DataFrame(columns=['ticker', 'nome', 'setor', 'subsetor'])
+            return pd.DataFrame(columns=['ticker', 'nome', 'setor', 'categoria'])
     
     @st.cache_data(ttl=3600)
-    def load_fiis(_self):
-        """
-        Carrega lista de FIIs
-        
-        Returns:
-            pd.DataFrame: DataFrame com colunas ticker, nome, tipo, segmento
-        """
+    def load_b3_fiis(_self):
+        """Carrega FIIs brasileiros (B3)"""
         try:
             df = pd.read_csv(_self.data_dir / "b3_fiis.csv")
+            df['categoria'] = 'FII'
             return df
         except FileNotFoundError:
             st.error("❌ Arquivo b3_fiis.csv não encontrado!")
-            return pd.DataFrame(columns=['ticker', 'nome', 'tipo', 'segmento'])
+            return pd.DataFrame(columns=['ticker', 'nome', 'tipo', 'categoria'])
     
     @st.cache_data(ttl=3600)
-    def load_etfs(_self):
-        """
-        Carrega lista de ETFs
-        
-        Returns:
-            pd.DataFrame: DataFrame com colunas ticker, nome, tipo, benchmark
-        """
+    def load_b3_etfs(_self):
+        """Carrega ETFs brasileiros (B3)"""
         try:
             df = pd.read_csv(_self.data_dir / "b3_etfs.csv")
+            df['categoria'] = 'ETF BR'
             return df
         except FileNotFoundError:
             st.error("❌ Arquivo b3_etfs.csv não encontrado!")
-            return pd.DataFrame(columns=['ticker', 'nome', 'tipo', 'benchmark'])
+            return pd.DataFrame(columns=['ticker', 'nome', 'tipo', 'categoria'])
     
     @st.cache_data(ttl=3600)
-    def load_bdrs(_self):
-        """
-        Carrega lista de BDRs
-        
-        Returns:
-            pd.DataFrame: DataFrame com colunas ticker, nome, empresa_original, pais, setor
-        """
+    def load_b3_bdrs(_self):
+        """Carrega BDRs brasileiros (B3)"""
         try:
             df = pd.read_csv(_self.data_dir / "b3_bdrs.csv")
+            df['categoria'] = 'BDR'
             return df
         except FileNotFoundError:
             st.error("❌ Arquivo b3_bdrs.csv não encontrado!")
-            return pd.DataFrame(columns=['ticker', 'nome', 'empresa_original', 'pais', 'setor'])
+            return pd.DataFrame(columns=['ticker', 'nome', 'empresa_original', 'categoria'])
+    
+    # ==================== MERCADO AMERICANO ====================
+    
+    @st.cache_data(ttl=3600)
+    def load_us_stocks(_self):
+        """Carrega ações americanas (US Stock)"""
+        try:
+            df = pd.read_csv(_self.data_dir / "us_stocks.csv")
+            df['categoria'] = 'Ação US'
+            return df
+        except FileNotFoundError:
+            st.warning("❌ Arquivo us_stocks.csv não encontrado!")
+            return pd.DataFrame(columns=['ticker', 'nome', 'setor', 'categoria'])
+    
+    @st.cache_data(ttl=3600)
+    def load_us_etfs(_self):
+        """Carrega ETFs americanos (US ETF)"""
+        try:
+            df = pd.read_csv(_self.data_dir / "us_etfs.csv")
+            df['categoria'] = 'ETF US'
+            return df
+        except FileNotFoundError:
+            st.warning("❌ Arquivo us_etfs.csv não encontrado!")
+            return pd.DataFrame(columns=['ticker', 'nome', 'tipo', 'categoria'])
+    
+    @st.cache_data(ttl=3600)
+    def load_us_reits(_self):
+        """Carrega REITs americanos (US REIT)"""
+        try:
+            df = pd.read_csv(_self.data_dir / "us_reits.csv")
+            df['categoria'] = 'REIT US'
+            return df
+        except FileNotFoundError:
+            st.warning("❌ Arquivo us_reits.csv não encontrado!")
+            return pd.DataFrame(columns=['ticker', 'nome', 'tipo', 'categoria'])
+    
+    # ==================== CRIPTOMOEDAS ====================
+    
+    @st.cache_data(ttl=3600)
+    def load_crypto(_self):
+        """Carrega criptomoedas (Crypto)"""
+        try:
+            df = pd.read_csv(_self.data_dir / "crypto.csv")
+            df['categoria'] = 'Crypto'
+            return df
+        except FileNotFoundError:
+            st.warning("❌ Arquivo crypto.csv não encontrado!")
+            return pd.DataFrame(columns=['ticker', 'nome', 'tipo', 'categoria'])
+    
+    # ==================== MÉTODOS GERAIS ====================
     
     def load_all(self):
         """
-        Carrega todos os ativos com categoria
+        Carrega TODOS os ativos de TODOS os mercados
         
         Returns:
             pd.DataFrame: DataFrame consolidado com todos os ativos
         """
-        acoes = self.load_acoes()
-        acoes['categoria'] = 'Ação'
+        dfs = []
         
-        fiis = self.load_fiis()
-        fiis['categoria'] = 'FII'
+        # Brasil (B3)
+        for loader in [self.load_b3_acoes, self.load_b3_fiis, 
+                       self.load_b3_etfs, self.load_b3_bdrs]:
+            df = loader()
+            if not df.empty:
+                dfs.append(df[['ticker', 'nome', 'categoria']])
         
-        etfs = self.load_etfs()
-        etfs['categoria'] = 'ETF'
+        # Estados Unidos
+        for loader in [self.load_us_stocks, self.load_us_etfs, self.load_us_reits]:
+            df = loader()
+            if not df.empty:
+                dfs.append(df[['ticker', 'nome', 'categoria']])
         
-        bdrs = self.load_bdrs()
-        bdrs['categoria'] = 'BDR'
+        # Criptomoedas
+        df = self.load_crypto()
+        if not df.empty:
+            dfs.append(df[['ticker', 'nome', 'categoria']])
         
-        # Concatena todos (apenas colunas comuns)
-        all_assets = pd.concat([
-            acoes[['ticker', 'nome', 'categoria']],
-            fiis[['ticker', 'nome', 'categoria']],
-            etfs[['ticker', 'nome', 'categoria']],
-            bdrs[['ticker', 'nome', 'categoria']]
-        ], ignore_index=True)
-        
-        return all_assets
+        if dfs:
+            result = pd.concat(dfs, ignore_index=True)
+            result = result.drop_duplicates(subset=['ticker'])
+            return result
+        else:
+            return pd.DataFrame(columns=['ticker', 'nome', 'categoria'])
     
     def filter_by_category(self, categories):
         """
         Filtra ativos por categoria
         
         Args:
-            categories (list): Lista com ['Ação', 'FII', 'ETF', 'BDR']
+            categories (list): Lista com categorias desejadas
+                - Brasil: 'Ação BR', 'FII', 'ETF BR', 'BDR'
+                - EUA: 'Ação US', 'ETF US', 'REIT US'
+                - Crypto: 'Crypto'
         
         Returns:
             pd.DataFrame: DataFrame filtrado
         """
         dfs = []
         
-        if 'Ação' in categories:
-            df = self.load_acoes()
-            df['categoria'] = 'Ação'
-            dfs.append(df[['ticker', 'nome', 'categoria']])
+        # Mapeia categorias para funções de carregamento
+        category_map = {
+            'Ação BR': self.load_b3_acoes,
+            'FII': self.load_b3_fiis,
+            'ETF BR': self.load_b3_etfs,
+            'BDR': self.load_b3_bdrs,
+            'Ação US': self.load_us_stocks,
+            'ETF US': self.load_us_etfs,
+            'REIT US': self.load_us_reits,
+            'Crypto': self.load_crypto
+        }
         
-        if 'FII' in categories:
-            df = self.load_fiis()
-            df['categoria'] = 'FII'
-            dfs.append(df[['ticker', 'nome', 'categoria']])
-        
-        if 'ETF' in categories:
-            df = self.load_etfs()
-            df['categoria'] = 'ETF'
-            dfs.append(df[['ticker', 'nome', 'categoria']])
-        
-        if 'BDR' in categories:
-            df = self.load_bdrs()
-            df['categoria'] = 'BDR'
-            dfs.append(df[['ticker', 'nome', 'categoria']])
+        for category in categories:
+            if category in category_map:
+                df = category_map[category]()
+                if not df.empty:
+                    dfs.append(df[['ticker', 'nome', 'categoria']])
         
         if dfs:
             result = pd.concat(dfs, ignore_index=True)
-            # Remove duplicatas (caso existam)
             result = result.drop_duplicates(subset=['ticker'])
             return result
         else:
@@ -207,10 +248,40 @@ class B3AssetLoader:
         Returns:
             dict: Dicionário com contagem por categoria
         """
+        counts = {}
+        
+        # Brasil
+        counts['Ação BR'] = len(self.load_b3_acoes())
+        counts['FII'] = len(self.load_b3_fiis())
+        counts['ETF BR'] = len(self.load_b3_etfs())
+        counts['BDR'] = len(self.load_b3_bdrs())
+        
+        # EUA
+        counts['Ação US'] = len(self.load_us_stocks())
+        counts['ETF US'] = len(self.load_us_etfs())
+        counts['REIT US'] = len(self.load_us_reits())
+        
+        # Crypto
+        counts['Crypto'] = len(self.load_crypto())
+        
+        # Total
+        counts['Total'] = sum(counts.values())
+        
+        return counts
+    
+    def get_market_groups(self):
+        """
+        Retorna grupos de mercados organizados
+        
+        Returns:
+            dict: Dicionário com grupos de mercados
+        """
         return {
-            'Ação': len(self.load_acoes()),
-            'FII': len(self.load_fiis()),
-            'ETF': len(self.load_etfs()),
-            'BDR': len(self.load_bdrs()),
-            'Total': len(self.load_all())
+            '🇧🇷 Brasil (B3)': ['Ação BR', 'FII', 'ETF BR', 'BDR'],
+            '🇺🇸 Estados Unidos': ['Ação US', 'ETF US', 'REIT US'],
+            '₿ Criptomoedas': ['Crypto']
         }
+
+
+# Compatibilidade com código antigo (alias)
+B3AssetLoader = AssetLoader
