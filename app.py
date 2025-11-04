@@ -14,7 +14,7 @@ warnings.filterwarnings('ignore')
 # Adiciona src ao path
 sys.path.append(str(Path(__file__).parent / 'src'))
 
-from data.asset_loader import B3AssetLoader
+from data.asset_loader import AssetLoader
 from data.market_data import MarketDataLoader
 from indicators.cacas_channel import CacasChannel
 from signals.convergence import ConvergenceDetector
@@ -50,7 +50,7 @@ st.markdown("---")
 # Inicializa
 @st.cache_resource
 def init_loaders():
-    return B3AssetLoader(), MarketDataLoader()
+    return AssetLoader(), MarketDataLoader()
 
 asset_loader, market_loader = init_loaders()
 
@@ -61,11 +61,23 @@ with st.sidebar:
     # Ativos
     st.subheader("📊 ATIVOS")
     
-    # Seleção de categorias
+    # Seleção de MERCADO primeiro
+    market_groups = asset_loader.get_market_groups()
+    
+    selected_market = st.radio(
+        "Mercado:",
+        options=list(market_groups.keys()),
+        index=0,
+        help="Escolha o mercado"
+    )
+    
+    # Categorias disponíveis para o mercado selecionado
+    available_categories = market_groups[selected_market]
+    
     selected_categories = st.multiselect(
         "Categorias:",
-        options=['Ação', 'FII', 'ETF', 'BDR'],
-        default=['Ação'],
+        options=available_categories,
+        default=[available_categories[0]] if available_categories else [],
         help="Selecione os tipos de ativos"
     )
     
@@ -160,16 +172,30 @@ with st.sidebar:
 if not selected_tickers:
     st.info("👈 **Selecione ativos na barra lateral**")
     
-    # Stats
+    # Stats - Organizado por mercado
     st.subheader("📊 Ativos Disponíveis")
     counts = asset_loader.count_assets()
     
-    cols = st.columns(5)
-    cols[0].metric("📈 Ações", counts['Ação'])
+    # Brasil
+    st.markdown("**🇧🇷 Brasil (B3)**")
+    cols = st.columns(4)
+    cols[0].metric("📈 Ações BR", counts['Ação BR'])
     cols[1].metric("🏢 FIIs", counts['FII'])
-    cols[2].metric("📊 ETFs", counts['ETF'])
+    cols[2].metric("📊 ETFs BR", counts['ETF BR'])
     cols[3].metric("🌎 BDRs", counts['BDR'])
-    cols[4].metric("📦 Total", counts['Total'])
+    
+    # Estados Unidos
+    st.markdown("**🇺🇸 Estados Unidos**")
+    cols = st.columns(3)
+    cols[0].metric("📈 Ações US", counts['Ação US'])
+    cols[1].metric("📊 ETFs US", counts['ETF US'])
+    cols[2].metric("🏢 REITs US", counts['REIT US'])
+    
+    # Criptomoedas
+    st.markdown("**₿ Criptomoedas**")
+    cols = st.columns(2)
+    cols[0].metric("🪙 Crypto", counts['Crypto'])
+    cols[1].metric("📦 TOTAL GERAL", counts['Total'])
 
 elif analyze_button:
     # ========== PROCESSAMENTO ==========
