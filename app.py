@@ -365,6 +365,115 @@ if 'analysis_done' in st.session_state and st.session_state['analysis_done'] and
                         "sinal_texto": "Sinal"
                     }
                 )
+                
+                # ========== BACKTESTING ==========
+                st.markdown("---")
+                st.markdown("#### 📈 BACKTEST DA ESTRATÉGIA")
+                st.info("📊 Testando performance histórica da estratégia com os parâmetros atuais...")
+                
+                # Executar backtest
+                backtester = CacasBacktester(
+                    atr_multiplier=atr_mult,
+                    target_multiplier=target_mult
+                )
+                
+                bt_results = backtester.run_backtest(daily_df, weekly_df)
+                
+                if bt_results['total_trades'] > 0:
+                    # Métricas principais em colunas
+                    col1, col2, col3, col4 = st.columns(4)
+                    
+                    with col1:
+                        st.metric(
+                            "Win Rate",
+                            f"{bt_results['win_rate']:.1f}%",
+                            delta=f"Ajustado: {bt_results['adjusted_win_rate']:.1f}%"
+                        )
+                    
+                    with col2:
+                        st.metric(
+                            "Retorno Total",
+                            f"{bt_results['total_return']:.2f}%",
+                            delta=f"Médio: {bt_results['avg_return']:.2f}%"
+                        )
+                    
+                    with col3:
+                        st.metric(
+                            "Profit Factor",
+                            f"{bt_results['profit_factor']:.2f}x",
+                            delta="Maior é melhor"
+                        )
+                    
+                    with col4:
+                        st.metric(
+                            "Total Trades",
+                            bt_results['total_trades'],
+                            delta=f"Alvos: {bt_results['targets_hit']}"
+                        )
+                    
+                    # Detalhes expandidos
+                    with st.expander("🔍 Ver Detalhes Completos do Backtest"):
+                        col_a, col_b = st.columns(2)
+                        
+                        with col_a:
+                            st.markdown("**📈 Performance**")
+                            st.write(f"Retorno Médio (Wins): **{bt_results['avg_win']:.2f}%**")
+                            st.write(f"Retorno Médio (Losses): **{bt_results['avg_loss']:.2f}%**")
+                            st.write(f"Melhor Trade: **{bt_results['best_trade']:.2f}%**")
+                            st.write(f"Pior Trade: **{bt_results['worst_trade']:.2f}%**")
+                            st.write(f"Expectância: **{bt_results['expectancy']:.2f}%**")
+                        
+                        with col_b:
+                            st.markdown("**🛡️ Risco**")
+                            st.write(f"Max Drawdown: **{bt_results['max_drawdown']:.2f}%**")
+                            st.write(f"Sharpe Ratio: **{bt_results['sharpe_ratio']:.2f}**")
+                            st.write(f"Stops Atingidos: **{bt_results['stops_hit']}** ({bt_results['stops_hit']/bt_results['total_trades']*100:.1f}%)")
+                            st.write(f"Alvos Atingidos: **{bt_results['targets_hit']}** ({bt_results['targets_hit']/bt_results['total_trades']*100:.1f}%)")
+                            st.write(f"Tempo Médio: **{bt_results['avg_bars_in_trade']:.0f} dias**")
+                        
+                        # Tabela de trades
+                        if len(bt_results['trades_list']) > 0:
+                            st.markdown("---")
+                            st.markdown("**📋 Histórico de Trades**")
+                            
+                            trades_df = pd.DataFrame(bt_results['trades_list'])
+                            trades_df['entry_date'] = pd.to_datetime(trades_df['entry_date']).dt.strftime('%d/%m/%Y')
+                            trades_df['exit_date'] = pd.to_datetime(trades_df['exit_date']).dt.strftime('%d/%m/%Y')
+                            
+                            st.dataframe(
+                                trades_df[['entry_date', 'entry_price', 'exit_date', 'exit_price', 'return_pct', 'exit_reason']].round(2),
+                                use_container_width=True,
+                                column_config={
+                                    "entry_date": "Entrada",
+                                    "entry_price": "Preço Entrada",
+                                    "exit_date": "Saída",
+                                    "exit_price": "Preço Saída",
+                                    "return_pct": st.column_config.NumberColumn("Retorno %", format="%.2f%%"),
+                                    "exit_reason": "Razão"
+                                }
+                            )
+                    
+                    # Interpretação
+                    st.markdown("---")
+                    st.markdown("**💡 Interpretação:**")
+                    
+                    if bt_results['win_rate'] >= 60:
+                        st.success(f"✅ **Estratégia FORTE** - Win rate de {bt_results['win_rate']:.1f}% é excelente!")
+                    elif bt_results['win_rate'] >= 50:
+                        st.info(f"ℹ️ **Estratégia BOA** - Win rate de {bt_results['win_rate']:.1f}% é positivo.")
+                    else:
+                        st.warning(f"⚠️ **Estratégia FRACA** - Win rate de {bt_results['win_rate']:.1f}% está abaixo de 50%.")
+                    
+                    if bt_results['profit_factor'] >= 2.0:
+                        st.success(f"✅ **Profit Factor {bt_results['profit_factor']:.2f}** - Ótimo! Cada R$ 1 perdido gera R$ {bt_results['profit_factor']:.2f} de ganho.")
+                    elif bt_results['profit_factor'] >= 1.5:
+                        st.info(f"ℹ️ **Profit Factor {bt_results['profit_factor']:.2f}** - Bom! Lucrativo mas pode melhorar.")
+                    else:
+                        st.warning(f"⚠️ **Profit Factor {bt_results['profit_factor']:.2f}** - Baixo. Revise parâmetros de stop/alvo.")
+                    
+                else:
+                    st.warning("⚠️ Nenhum trade identificado no período histórico. A estratégia não gerou sinais suficientes.")
+
         else:
             st.info("ℹ️ Nenhum sinal de compra encontrado nos ativos analisados.")
         
