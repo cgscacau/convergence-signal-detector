@@ -1,0 +1,99 @@
+ticker,nome,tipo,categoria
+BTC-USD,Bitcoin,Layer 1,Crypto
+ETH-USD,Ethereum,Layer 1,Crypto
+USDT-USD,Tether,Stablecoin,Crypto
+BNB-USD,Binance Coin,Exchange,Crypto
+SOL-USD,Solana,Layer 1,Crypto
+XRP-USD,Ripple,Payment,Crypto
+USDC-USD,USD Coin,Stablecoin,Crypto
+ADA-USD,Cardano,Layer 1,Crypto
+AVAX-USD,Avalanche,Layer 1,Crypto
+DOGE-USD,Dogecoin,Meme,Crypto
+TRX-USD,TRON,Layer 1,Crypto
+DOT-USD,Polkadot,Layer 0,Crypto
+MATIC-USD,Polygon,Layer 2,Crypto
+LTC-USD,Litecoin,Payment,Crypto
+SHIB-USD,Shiba Inu,Meme,Crypto
+LINK-USD,Chainlink,Oracle,Crypto
+BCH-USD,Bitcoin Cash,Payment,Crypto
+UNI-USD,Uniswap,DEX,Crypto
+XLM-USD,Stellar,Payment,Crypto
+ATOM-USD,Cosmos,Layer 0,Crypto
+NEAR-USD,NEAR Protocol,Layer 1,Crypto
+APT-USD,Aptos,Layer 1,Crypto
+FIL-USD,Filecoin,Storage,Crypto
+ETC-USD,Ethereum Classic,Layer 1,Crypto
+HBAR-USD,Hedera,Layer 1,Crypto
+VET-USD,VeChain,Supply Chain,Crypto
+ALGO-USD,Algorand,Layer 1,Crypto
+AAVE-USD,Aave,Lending,Crypto
+XMR-USD,Monero,Privacy,Crypto
+ICP-USD,Internet Computer,Layer 1,Crypto
+QNT-USD,Quant,Interoperability,Crypto
+CRO-USD,Cronos,Exchange,Crypto
+ARB-USD,Arbitrum,Layer 2,Crypto
+OP-USD,Optimism,Layer 2,Crypto
+MKR-USD,Maker,Stablecoin,Crypto
+GRT-USD,The Graph,Indexing,Crypto
+SAND-USD,The Sandbox,Metaverse,Crypto
+MANA-USD,Decentraland,Metaverse,Crypto
+AXS-USD,Axie Infinity,Gaming,Crypto
+THETA-USD,Theta Network,Video,Crypto
+FTM-USD,Fantom,Layer 1,Crypto
+EGLD-USD,MultiversX,Layer 1,Crypto
+EOS-USD,EOS,Layer 1,Crypto
+FLOW-USD,Flow,Layer 1,Crypto
+XTZ-USD,Tezos,Layer 1,Crypto
+RUNE-USD,THORChain,DEX,Crypto
+SNX-USD,Synthetix,Derivatives,Crypto
+NEO-USD,Neo,Layer 1,Crypto
+ZEC-USD,Zcash,Privacy,Crypto
+DASH-USD,Dash,Payment,Crypto
+KAVA-USD,Kava,DeFi,Crypto
+COMP-USD,Compound,Lending,Crypto
+YFI-USD,yearn.finance,Yield,Crypto
+SUSHI-USD,SushiSwap,DEX,Crypto
+BAT-USD,Basic Attention Token,Advertising,Crypto
+ZRX-USD,0x,DEX,Crypto
+ENJ-USD,Enjin Coin,Gaming,Crypto
+CHZ-USD,Chiliz,Sports,Crypto
+WAVES-USD,Waves,Layer 1,Crypto
+ZIL-USD,Zilliqa,Layer 1,Crypto
+ICX-USD,ICON,Layer 1,Crypto
+ONT-USD,Ontology,Layer 1,Crypto
+QTUM-USD,Qtum,Layer 1,Crypto
+IOTA-USD,IOTA,IoT,Crypto
+SC-USD,Siacoin,Storage,Crypto
+DGB-USD,DigiByte,Payment,Crypto
+RVN-USD,Ravencoin,Asset Transfer,Crypto
+DCR-USD,Decred,Governance,Crypto
+LSK-USD,Lisk,Layer 1,Crypto
+STEEM-USD,Steem,Social,Crypto
+REP-USD,Augur,Prediction Market,Crypto
+KMD-USD,Komodo,Privacy,Crypto
+BNT-USD,Bancor,DEX,Crypto
+ANT-USD,Aragon,DAO,Crypto
+GNO-USD,Gnosis,Prediction Market,Crypto
+LRC-USD,Loopring,Layer 2,Crypto
+OMG-USD,OMG Network,Layer 2,Crypto
+STORJ-USD,Storj,Storage,Crypto
+CVC-USD,Civic,Identity,Crypto
+POWR-USD,Power Ledger,Energy,Crypto
+REN-USD,Ren,Interoperability,Crypto
+FUN-USD,FunFair,Gaming,Crypto
+HOT-USD,Holo,Cloud Computing,Crypto
+DENT-USD,Dent,Mobile Data,Crypto
+WAXP-USD,WAX,NFT,Crypto
+CELR-USD,Celer Network,Layer 2,Crypto
+ANKR-USD,Ankr,Infrastructure,Crypto
+SKL-USD,SKALE,Layer 2,Crypto
+NKN-USD,NKN,Networking,Crypto
+OCEAN-USD,Ocean Protocol,Data,Crypto
+FET-USD,Fetch.ai,AI,Crypto
+CTSI-USD,Cartesi,Layer 2,Crypto
+INJ-USD,Injective,DEX,Crypto
+ROSE-USD,Oasis Network,Privacy,Crypto
+IMX-USD,Immutable X,Layer 2,Crypto
+LDO-USD,Lido DAO,Staking,Crypto
+BLUR-USD,Blur,NFT,Crypto
+PEPE-USD,Pepe,Meme,Crypto
