@@ -1,0 +1,102 @@
+ticker,nome,setor,categoria
+AAPL,Apple Inc.,Technology,US Stock
+MSFT,Microsoft Corporation,Technology,US Stock
+GOOGL,Alphabet Inc. Class A,Technology,US Stock
+AMZN,Amazon.com Inc.,Consumer Cyclical,US Stock
+NVDA,NVIDIA Corporation,Technology,US Stock
+TSLA,Tesla Inc.,Consumer Cyclical,US Stock
+META,Meta Platforms Inc.,Technology,US Stock
+BRK-B,Berkshire Hathaway Inc. Class B,Financial Services,US Stock
+V,Visa Inc.,Financial Services,US Stock
+JNJ,Johnson & Johnson,Healthcare,US Stock
+WMT,Walmart Inc.,Consumer Defensive,US Stock
+JPM,JPMorgan Chase & Co.,Financial Services,US Stock
+MA,Mastercard Inc.,Financial Services,US Stock
+PG,Procter & Gamble Co.,Consumer Defensive,US Stock
+UNH,UnitedHealth Group Inc.,Healthcare,US Stock
+HD,Home Depot Inc.,Consumer Cyclical,US Stock
+DIS,Walt Disney Co.,Communication Services,US Stock
+PYPL,PayPal Holdings Inc.,Financial Services,US Stock
+BAC,Bank of America Corp.,Financial Services,US Stock
+ADBE,Adobe Inc.,Technology,US Stock
+NFLX,Netflix Inc.,Communication Services,US Stock
+CRM,Salesforce Inc.,Technology,US Stock
+CMCSA,Comcast Corporation,Communication Services,US Stock
+CSCO,Cisco Systems Inc.,Technology,US Stock
+PEP,PepsiCo Inc.,Consumer Defensive,US Stock
+KO,Coca-Cola Co.,Consumer Defensive,US Stock
+INTC,Intel Corporation,Technology,US Stock
+ABT,Abbott Laboratories,Healthcare,US Stock
+MRK,Merck & Co. Inc.,Healthcare,US Stock
+COST,Costco Wholesale Corp.,Consumer Defensive,US Stock
+NKE,Nike Inc.,Consumer Cyclical,US Stock
+TMO,Thermo Fisher Scientific,Healthcare,US Stock
+AVGO,Broadcom Inc.,Technology,US Stock
+ACN,Accenture PLC,Technology,US Stock
+LLY,Eli Lilly and Co.,Healthcare,US Stock
+TXN,Texas Instruments Inc.,Technology,US Stock
+ORCL,Oracle Corporation,Technology,US Stock
+MDT,Medtronic PLC,Healthcare,US Stock
+UNP,Union Pacific Corp.,Industrials,US Stock
+NEE,NextEra Energy Inc.,Utilities,US Stock
+UPS,United Parcel Service,Industrials,US Stock
+DHR,Danaher Corporation,Healthcare,US Stock
+BMY,Bristol-Myers Squibb,Healthcare,US Stock
+HON,Honeywell International,Industrials,US Stock
+QCOM,QUALCOMM Inc.,Technology,US Stock
+PM,Philip Morris International,Consumer Defensive,US Stock
+T,AT&T Inc.,Communication Services,US Stock
+CVX,Chevron Corporation,Energy,US Stock
+XOM,Exxon Mobil Corporation,Energy,US Stock
+LOW,Lowe's Companies Inc.,Consumer Cyclical,US Stock
+BA,Boeing Co.,Industrials,US Stock
+IBM,IBM,Technology,US Stock
+AMGN,Amgen Inc.,Healthcare,US Stock
+GE,General Electric Co.,Industrials,US Stock
+CAT,Caterpillar Inc.,Industrials,US Stock
+AMD,Advanced Micro Devices,Technology,US Stock
+SBUX,Starbucks Corporation,Consumer Cyclical,US Stock
+MCD,McDonald's Corp.,Consumer Cyclical,US Stock
+MMM,3M Co.,Industrials,US Stock
+GS,Goldman Sachs Group Inc.,Financial Services,US Stock
+BLK,BlackRock Inc.,Financial Services,US Stock
+AXP,American Express Co.,Financial Services,US Stock
+LMT,Lockheed Martin Corp.,Industrials,US Stock
+CVS,CVS Health Corporation,Healthcare,US Stock
+GILD,Gilead Sciences Inc.,Healthcare,US Stock
+BKNG,Booking Holdings Inc.,Consumer Cyclical,US Stock
+TGT,Target Corporation,Consumer Defensive,US Stock
+MO,Altria Group Inc.,Consumer Defensive,US Stock
+ISRG,Intuitive Surgical Inc.,Healthcare,US Stock
+CHTR,Charter Communications,Communication Services,US Stock
+CI,Cigna Corporation,Healthcare,US Stock
+MS,Morgan Stanley,Financial Services,US Stock
+SPGI,S&P Global Inc.,Financial Services,US Stock
+ZTS,Zoetis Inc.,Healthcare,US Stock
+MDLZ,Mondelez International,Consumer Defensive,US Stock
+PLD,Prologis Inc.,Real Estate,US Stock
+SYK,Stryker Corporation,Healthcare,US Stock
+DUK,Duke Energy Corp.,Utilities,US Stock
+BDX,Becton Dickinson and Co.,Healthcare,US Stock
+C,Citigroup Inc.,Financial Services,US Stock
+SO,Southern Co.,Utilities,US Stock
+CL,Colgate-Palmolive Co.,Consumer Defensive,US Stock
+NOC,Northrop Grumman Corp.,Industrials,US Stock
+USB,U.S. Bancorp,Financial Services,US Stock
+TJX,TJX Companies Inc.,Consumer Cyclical,US Stock
+MMC,Marsh & McLennan,Financial Services,US Stock
+EOG,EOG Resources Inc.,Energy,US Stock
+PNC,PNC Financial Services,Financial Services,US Stock
+FIS,Fidelity National Information,Technology,US Stock
+REGN,Regeneron Pharmaceuticals,Healthcare,US Stock
+CB,Chubb Ltd.,Financial Services,US Stock
+CSX,CSX Corporation,Industrials,US Stock
+NSC,Norfolk Southern Corp.,Industrials,US Stock
+SLB,Schlumberger NV,Energy,US Stock
+ITW,Illinois Tool Works,Industrials,US Stock
+D,Dominion Energy Inc.,Utilities,US Stock
+HUM,Humana Inc.,Healthcare,US Stock
+ICE,Intercontinental Exchange,Financial Services,US Stock
+WFC,Wells Fargo & Co.,Financial Services,US Stock
+F,Ford Motor Co.,Consumer Cyclical,US Stock
+GM,General Motors Co.,Consumer Cyclical,US Stock
