@@ -2,6 +2,7 @@ ticker,nome,setor,categoria
 AAPL,Apple Inc.,Technology,US Stock
 MSFT,Microsoft Corporation,Technology,US Stock
 GOOGL,Alphabet Inc. Class A,Technology,US Stock
+GOOG,Alphabet Inc. Class C,Technology,US Stock
 AMZN,Amazon.com Inc.,Consumer Cyclical,US Stock
 NVDA,NVIDIA Corporation,Technology,US Stock
 TSLA,Tesla Inc.,Consumer Cyclical,US Stock
@@ -100,3 +101,276 @@ ICE,Intercontinental Exchange,Financial Services,US Stock
 WFC,Wells Fargo & Co.,Financial Services,US Stock
 F,Ford Motor Co.,Consumer Cyclical,US Stock
 GM,General Motors Co.,Consumer Cyclical,US Stock
+ADP,Automatic Data Processing,Technology,US Stock
+COP,ConocoPhillips,Energy,US Stock
+DE,Deere & Co.,Industrials,US Stock
+GD,General Dynamics Corp.,Industrials,US Stock
+CME,CME Group Inc.,Financial Services,US Stock
+APD,Air Products and Chemicals,Basic Materials,US Stock
+TFC,Truist Financial Corp.,Financial Services,US Stock
+SCHW,Charles Schwab Corp.,Financial Services,US Stock
+SHW,Sherwin-Williams Co.,Basic Materials,US Stock
+AON,Aon PLC,Financial Services,US Stock
+BK,Bank of New York Mellon,Financial Services,US Stock
+CCI,Crown Castle Inc.,Real Estate,US Stock
+AMT,American Tower Corp.,Real Estate,US Stock
+LRCX,Lam Research Corp.,Technology,US Stock
+AMAT,Applied Materials Inc.,Technology,US Stock
+KLAC,KLA Corporation,Technology,US Stock
+MU,Micron Technology Inc.,Technology,US Stock
+NOW,ServiceNow Inc.,Technology,US Stock
+INTU,Intuit Inc.,Technology,US Stock
+ASML,ASML Holding NV,Technology,US Stock
+SHOP,Shopify Inc.,Technology,US Stock
+ABNB,Airbnb Inc.,Consumer Cyclical,US Stock
+UBER,Uber Technologies Inc.,Technology,US Stock
+SNOW,Snowflake Inc.,Technology,US Stock
+SQ,Block Inc.,Technology,US Stock
+PANW,Palo Alto Networks,Technology,US Stock
+CRWD,CrowdStrike Holdings,Technology,US Stock
+ZM,Zoom Video Communications,Technology,US Stock
+DOCU,DocuSign Inc.,Technology,US Stock
+SPOT,Spotify Technology SA,Communication Services,US Stock
+PINS,Pinterest Inc.,Communication Services,US Stock
+SNAP,Snap Inc.,Communication Services,US Stock
+TWLO,Twilio Inc.,Technology,US Stock
+DDOG,Datadog Inc.,Technology,US Stock
+NET,Cloudflare Inc.,Technology,US Stock
+OKTA,Okta Inc.,Technology,US Stock
+WDAY,Workday Inc.,Technology,US Stock
+ZS,Zscaler Inc.,Technology,US Stock
+COIN,Coinbase Global Inc.,Financial Services,US Stock
+RBLX,Roblox Corporation,Communication Services,US Stock
+U,Unity Software Inc.,Technology,US Stock
+PLTR,Palantir Technologies,Technology,US Stock
+DASH,DoorDash Inc.,Consumer Cyclical,US Stock
+LYFT,Lyft Inc.,Technology,US Stock
+RIVN,Rivian Automotive Inc.,Consumer Cyclical,US Stock
+LCID,Lucid Group Inc.,Consumer Cyclical,US Stock
+NIO,NIO Inc.,Consumer Cyclical,US Stock
+XPEV,XPeng Inc.,Consumer Cyclical,US Stock
+LI,Li Auto Inc.,Consumer Cyclical,US Stock
+MRNA,Moderna Inc.,Healthcare,US Stock
+BNTX,BioNTech SE,Healthcare,US Stock
+PFE,Pfizer Inc.,Healthcare,US Stock
+AZN,AstraZeneca PLC,Healthcare,US Stock
+NVO,Novo Nordisk A/S,Healthcare,US Stock
+ABBV,AbbVie Inc.,Healthcare,US Stock
+BIIB,Biogen Inc.,Healthcare,US Stock
+VRTX,Vertex Pharmaceuticals,Healthcare,US Stock
+ALNY,Alnylam Pharmaceuticals,Healthcare,US Stock
+SGEN,Seagen Inc.,Healthcare,US Stock
+ILMN,Illumina Inc.,Healthcare,US Stock
+IDXX,IDEXX Laboratories,Healthcare,US Stock
+A,Agilent Technologies,Healthcare,US Stock
+ALGN,Align Technology Inc.,Healthcare,US Stock
+DGX,Quest Diagnostics,Healthcare,US Stock
+DVA,DaVita Inc.,Healthcare,US Stock
+HCA,HCA Healthcare Inc.,Healthcare,US Stock
+MCK,McKesson Corporation,Healthcare,US Stock
+CAH,Cardinal Health Inc.,Healthcare,US Stock
+CNC,Centene Corporation,Healthcare,US Stock
+MOH,Molina Healthcare Inc.,Healthcare,US Stock
+ELV,Elevance Health Inc.,Healthcare,US Stock
+BSX,Boston Scientific Corp.,Healthcare,US Stock
+EW,Edwards Lifesciences,Healthcare,US Stock
+BAX,Baxter International,Healthcare,US Stock
+RMD,ResMed Inc.,Healthcare,US Stock
+ZBH,Zimmer Biomet Holdings,Healthcare,US Stock
+HOLX,Hologic Inc.,Healthcare,US Stock
+PKI,PerkinElmer Inc.,Healthcare,US Stock
+TECH,Bio-Techne Corporation,Healthcare,US Stock
+WAT,Waters Corporation,Healthcare,US Stock
+MTD,Mettler-Toledo International,Healthcare,US Stock
+CTLT,Catalent Inc.,Healthcare,US Stock
+CRL,Charles River Laboratories,Healthcare,US Stock
+IQV,IQVIA Holdings Inc.,Healthcare,US Stock
+LH,Laboratory Corp. of America,Healthcare,US Stock
+DIS,Walt Disney Co.,Communication Services,US Stock
+CMCSA,Comcast Corporation,Communication Services,US Stock
+NFLX,Netflix Inc.,Communication Services,US Stock
+META,Meta Platforms Inc.,Communication Services,US Stock
+GOOGL,Alphabet Inc. Class A,Communication Services,US Stock
+GOOG,Alphabet Inc. Class C,Communication Services,US Stock
+VZ,Verizon Communications,Communication Services,US Stock
+TMUS,T-Mobile US Inc.,Communication Services,US Stock
+CHTR,Charter Communications,Communication Services,US Stock
+EA,Electronic Arts Inc.,Communication Services,US Stock
+TTWO,Take-Two Interactive,Communication Services,US Stock
+ATVI,Activision Blizzard,Communication Services,US Stock
+MTCH,Match Group Inc.,Communication Services,US Stock
+LYV,Live Nation Entertainment,Communication Services,US Stock
+NWSA,News Corp. Class A,Communication Services,US Stock
+NWS,News Corp. Class B,Communication Services,US Stock
+FOXA,Fox Corporation Class A,Communication Services,US Stock
+FOX,Fox Corporation Class B,Communication Services,US Stock
+DIS,Walt Disney Co.,Communication Services,US Stock
+PARA,Paramount Global Class B,Communication Services,US Stock
+WBD,Warner Bros. Discovery,Communication Services,US Stock
+OMC,Omnicom Group Inc.,Communication Services,US Stock
+IPG,Interpublic Group,Communication Services,US Stock
+KR,Kroger Co.,Consumer Defensive,US Stock
+SYY,Sysco Corporation,Consumer Defensive,US Stock
+MNST,Monster Beverage Corp.,Consumer Defensive,US Stock
+KHC,Kraft Heinz Co.,Consumer Defensive,US Stock
+GIS,General Mills Inc.,Consumer Defensive,US Stock
+HSY,Hershey Co.,Consumer Defensive,US Stock
+K,Kellogg Co.,Consumer Defensive,US Stock
+CAG,Conagra Brands Inc.,Consumer Defensive,US Stock
+CPB,Campbell Soup Co.,Consumer Defensive,US Stock
+MKC,McCormick & Co. Inc.,Consumer Defensive,US Stock
+STZ,Constellation Brands Inc.,Consumer Defensive,US Stock
+TAP,Molson Coors Beverage Co.,Consumer Defensive,US Stock
+BF-B,Brown-Forman Corp. Class B,Consumer Defensive,US Stock
+CLX,Clorox Co.,Consumer Defensive,US Stock
+CHD,Church & Dwight Co. Inc.,Consumer Defensive,US Stock
+KMB,Kimberly-Clark Corp.,Consumer Defensive,US Stock
+EL,Estee Lauder Companies,Consumer Defensive,US Stock
+CL,Colgate-Palmolive Co.,Consumer Defensive,US Stock
+PG,Procter & Gamble Co.,Consumer Defensive,US Stock
+AMZN,Amazon.com Inc.,Consumer Cyclical,US Stock
+HD,Home Depot Inc.,Consumer Cyclical,US Stock
+MCD,McDonald's Corp.,Consumer Cyclical,US Stock
+NKE,Nike Inc.,Consumer Cyclical,US Stock
+SBUX,Starbucks Corporation,Consumer Cyclical,US Stock
+TGT,Target Corporation,Consumer Cyclical,US Stock
+LOW,Lowe's Companies Inc.,Consumer Cyclical,US Stock
+TJX,TJX Companies Inc.,Consumer Cyclical,US Stock
+BKNG,Booking Holdings Inc.,Consumer Cyclical,US Stock
+MAR,Marriott International,Consumer Cyclical,US Stock
+HLT,Hilton Worldwide Holdings,Consumer Cyclical,US Stock
+CMG,Chipotle Mexican Grill,Consumer Cyclical,US Stock
+YUM,Yum! Brands Inc.,Consumer Cyclical,US Stock
+DRI,Darden Restaurants Inc.,Consumer Cyclical,US Stock
+ORLY,O'Reilly Automotive Inc.,Consumer Cyclical,US Stock
+AZO,AutoZone Inc.,Consumer Cyclical,US Stock
+BBY,Best Buy Co. Inc.,Consumer Cyclical,US Stock
+ROST,Ross Stores Inc.,Consumer Cyclical,US Stock
+DG,Dollar General Corp.,Consumer Cyclical,US Stock
+DLTR,Dollar Tree Inc.,Consumer Cyclical,US Stock
+EBAY,eBay Inc.,Consumer Cyclical,US Stock
+ETSY,Etsy Inc.,Consumer Cyclical,US Stock
+W,Wayfair Inc.,Consumer Cyclical,US Stock
+CPRT,Copart Inc.,Consumer Cyclical,US Stock
+KMX,CarMax Inc.,Consumer Cyclical,US Stock
+TPR,Tapestry Inc.,Consumer Cyclical,US Stock
+RL,Ralph Lauren Corp.,Consumer Cyclical,US Stock
+LULU,Lululemon Athletica,Consumer Cyclical,US Stock
+UAA,Under Armour Inc. Class A,Consumer Cyclical,US Stock
+UA,Under Armour Inc. Class C,Consumer Cyclical,US Stock
+NWL,Newell Brands Inc.,Consumer Cyclical,US Stock
+HAS,Hasbro Inc.,Consumer Cyclical,US Stock
+MAT,Mattel Inc.,Consumer Cyclical,US Stock
+LVS,Las Vegas Sands Corp.,Consumer Cyclical,US Stock
+WYNN,Wynn Resorts Ltd.,Consumer Cyclical,US Stock
+MGM,MGM Resorts International,Consumer Cyclical,US Stock
+CZR,Caesars Entertainment,Consumer Cyclical,US Stock
+DKNG,DraftKings Inc.,Consumer Cyclical,US Stock
+PENN,Penn Entertainment Inc.,Consumer Cyclical,US Stock
+LUV,Southwest Airlines Co.,Industrials,US Stock
+DAL,Delta Air Lines Inc.,Industrials,US Stock
+UAL,United Airlines Holdings,Industrials,US Stock
+AAL,American Airlines Group,Industrials,US Stock
+ALK,Alaska Air Group Inc.,Industrials,US Stock
+JBLU,JetBlue Airways Corp.,Industrials,US Stock
+BA,Boeing Co.,Industrials,US Stock
+LMT,Lockheed Martin Corp.,Industrials,US Stock
+NOC,Northrop Grumman Corp.,Industrials,US Stock
+RTX,Raytheon Technologies,Industrials,US Stock
+GD,General Dynamics Corp.,Industrials,US Stock
+LHX,L3Harris Technologies,Industrials,US Stock
+HII,Huntington Ingalls Industries,Industrials,US Stock
+TXT,Textron Inc.,Industrials,US Stock
+CAT,Caterpillar Inc.,Industrials,US Stock
+DE,Deere & Co.,Industrials,US Stock
+CNH,CNH Industrial NV,Industrials,US Stock
+PCAR,PACCAR Inc.,Industrials,US Stock
+CMI,Cummins Inc.,Industrials,US Stock
+EMR,Emerson Electric Co.,Industrials,US Stock
+ROK,Rockwell Automation,Industrials,US Stock
+PH,Parker-Hannifin Corp.,Industrials,US Stock
+ETN,Eaton Corporation PLC,Industrials,US Stock
+ITW,Illinois Tool Works,Industrials,US Stock
+DOV,Dover Corporation,Industrials,US Stock
+IR,Ingersoll Rand Inc.,Industrials,US Stock
+CARR,Carrier Global Corp.,Industrials,US Stock
+OTIS,Otis Worldwide Corp.,Industrials,US Stock
+GE,General Electric Co.,Industrials,US Stock
+HON,Honeywell International,Industrials,US Stock
+MMM,3M Co.,Industrials,US Stock
+UNP,Union Pacific Corp.,Industrials,US Stock
+NSC,Norfolk Southern Corp.,Industrials,US Stock
+CSX,CSX Corporation,Industrials,US Stock
+KSU,Kansas City Southern,Industrials,US Stock
+UPS,United Parcel Service,Industrials,US Stock
+FDX,FedEx Corporation,Industrials,US Stock
+XPO,XPO Logistics Inc.,Industrials,US Stock
+JBHT,J.B. Hunt Transport Services,Industrials,US Stock
+ODFL,Old Dominion Freight Line,Industrials,US Stock
+CHRW,C.H. Robinson Worldwide,Industrials,US Stock
+EXPD,Expeditors International,Industrials,US Stock
+URI,United Rentals Inc.,Industrials,US Stock
+RSG,Republic Services Inc.,Industrials,US Stock
+WM,Waste Management Inc.,Industrials,US Stock
+WCN,Waste Connections Inc.,Industrials,US Stock
+ROL,Rollins Inc.,Industrials,US Stock
+FTV,Fortive Corporation,Industrials,US Stock
+TT,Trane Technologies PLC,Industrials,US Stock
+JCI,Johnson Controls International,Industrials,US Stock
+SWK,Stanley Black & Decker,Industrials,US Stock
+WHR,Whirlpool Corporation,Industrials,US Stock
+DHI,D.R. Horton Inc.,Industrials,US Stock
+LEN,Lennar Corp.,Industrials,US Stock
+PHM,PulteGroup Inc.,Industrials,US Stock
+NVR,NVR Inc.,Industrials,US Stock
+BLD,TopBuild Corp.,Industrials,US Stock
+MAS,Masco Corporation,Industrials,US Stock
+OC,Owens Corning,Industrials,US Stock
+VMC,Vulcan Materials Co.,Industrials,US Stock
+MLM,Martin Marietta Materials,Industrials,US Stock
+XOM,Exxon Mobil Corporation,Energy,US Stock
+CVX,Chevron Corporation,Energy,US Stock
+COP,ConocoPhillips,Energy,US Stock
+EOG,EOG Resources Inc.,Energy,US Stock
+SLB,Schlumberger NV,Energy,US Stock
+PXD,Pioneer Natural Resources,Energy,US Stock
+MPC,Marathon Petroleum Corp.,Energy,US Stock
+PSX,Phillips 66,Energy,US Stock
+VLO,Valero Energy Corp.,Energy,US Stock
+OXY,Occidental Petroleum,Energy,US Stock
+HAL,Halliburton Co.,Energy,US Stock
+BKR,Baker Hughes Co.,Energy,US Stock
+DVN,Devon Energy Corp.,Energy,US Stock
+FANG,Diamondback Energy Inc.,Energy,US Stock
+HES,Hess Corporation,Energy,US Stock
+MRO,Marathon Oil Corp.,Energy,US Stock
+APA,APA Corporation,Energy,US Stock
+OKE,ONEOK Inc.,Energy,US Stock
+WMB,Williams Companies Inc.,Energy,US Stock
+KMI,Kinder Morgan Inc.,Energy,US Stock
+LNG,Cheniere Energy Inc.,Energy,US Stock
+NEE,NextEra Energy Inc.,Utilities,US Stock
+DUK,Duke Energy Corp.,Utilities,US Stock
+SO,Southern Co.,Utilities,US Stock
+D,Dominion Energy Inc.,Utilities,US Stock
+AEP,American Electric Power,Utilities,US Stock
+EXC,Exelon Corporation,Utilities,US Stock
+XEL,Xcel Energy Inc.,Utilities,US Stock
+SRE,Sempra Energy,Utilities,US Stock
+PCG,PG&E Corporation,Utilities,US Stock
+ED,Consolidated Edison Inc.,Utilities,US Stock
+EIX,Edison International,Utilities,US Stock
+WEC,WEC Energy Group Inc.,Utilities,US Stock
+AWK,American Water Works,Utilities,US Stock
+ES,Eversource Energy,Utilities,US Stock
+DTE,DTE Energy Co.,Utilities,US Stock
+PPL,PPL Corporation,Utilities,US Stock
+FE,FirstEnergy Corp.,Utilities,US Stock
+AEE,Ameren Corporation,Utilities,US Stock
+CMS,CMS Energy Corporation,Utilities,US Stock
+CNP,CenterPoint Energy Inc.,Utilities,US Stock
+PEG,Public Service Enterprise,Utilities,US Stock
+LNT,Alliant Energy Corp.,Utilities,US Stock
+NI,NiSource Inc.,Utilities,US Stock
+ATO,Atmos Energy Corporation,Utilities,US Stock
+ETR,Entergy Corporation,Utilities,US Stock
