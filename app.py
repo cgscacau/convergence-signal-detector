@@ -368,8 +368,8 @@ if 'analysis_done' in st.session_state and st.session_state['analysis_done'] and
                 
                 # ========== BACKTESTING ==========
                 st.markdown("---")
-                st.markdown("#### 📈 BACKTEST DA ESTRATÉGIA")
-                st.info("📊 Testando performance histórica da estratégia com os parâmetros atuais...")
+                st.markdown(f"#### 📈 BACKTEST DA ESTRATÉGIA - {ticker}")
+                st.info(f"📊 Testando {ticker} com {len(daily_df)} dias de histórico...")
                 
                 # Executar backtest
                 backtester = CacasBacktester(
@@ -756,8 +756,8 @@ elif analyze_button:
                 
                 # ========== BACKTESTING ==========
                 st.markdown("---")
-                st.markdown("#### 📈 BACKTEST DA ESTRATÉGIA")
-                st.info("📊 Testando performance histórica da estratégia com os parâmetros atuais...")
+                st.markdown(f"#### 📈 BACKTEST DA ESTRATÉGIA - {ticker}")
+                st.info(f"📊 Testando {ticker} com {len(daily_df)} dias de histórico...")
                 
                 # Executar backtest
                 backtester = CacasBacktester(
