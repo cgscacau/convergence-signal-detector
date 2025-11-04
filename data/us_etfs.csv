@@ -1,0 +1,95 @@
+ticker,nome,tipo,categoria
+SPY,SPDR S&P 500 ETF Trust,Large Cap,US ETF
+QQQ,Invesco QQQ Trust,Technology,US ETF
+IWM,iShares Russell 2000 ETF,Small Cap,US ETF
+DIA,SPDR Dow Jones Industrial Average ETF,Large Cap,US ETF
+VTI,Vanguard Total Stock Market ETF,Total Market,US ETF
+VOO,Vanguard S&P 500 ETF,Large Cap,US ETF
+IVV,iShares Core S&P 500 ETF,Large Cap,US ETF
+VEA,Vanguard FTSE Developed Markets ETF,International,US ETF
+IEFA,iShares Core MSCI EAFE ETF,International,US ETF
+VWO,Vanguard FTSE Emerging Markets ETF,Emerging Markets,US ETF
+AGG,iShares Core U.S. Aggregate Bond ETF,Bonds,US ETF
+BND,Vanguard Total Bond Market ETF,Bonds,US ETF
+GLD,SPDR Gold Trust,Commodities,US ETF
+SLV,iShares Silver Trust,Commodities,US ETF
+USO,United States Oil Fund,Commodities,US ETF
+XLF,Financial Select Sector SPDR Fund,Financial,US ETF
+XLE,Energy Select Sector SPDR Fund,Energy,US ETF
+XLK,Technology Select Sector SPDR Fund,Technology,US ETF
+XLV,Health Care Select Sector SPDR Fund,Healthcare,US ETF
+XLI,Industrial Select Sector SPDR Fund,Industrials,US ETF
+XLP,Consumer Staples Select Sector SPDR,Consumer Staples,US ETF
+XLY,Consumer Discretionary Select Sector,Consumer Discretionary,US ETF
+XLU,Utilities Select Sector SPDR Fund,Utilities,US ETF
+XLB,Materials Select Sector SPDR Fund,Materials,US ETF
+XLRE,Real Estate Select Sector SPDR Fund,Real Estate,US ETF
+VIG,Vanguard Dividend Appreciation ETF,Dividend,US ETF
+VYM,Vanguard High Dividend Yield ETF,Dividend,US ETF
+SCHD,Schwab U.S. Dividend Equity ETF,Dividend,US ETF
+SDY,SPDR S&P Dividend ETF,Dividend,US ETF
+DVY,iShares Select Dividend ETF,Dividend,US ETF
+VGT,Vanguard Information Technology ETF,Technology,US ETF
+VHT,Vanguard Health Care ETF,Healthcare,US ETF
+VFH,Vanguard Financials ETF,Financial,US ETF
+VDE,Vanguard Energy ETF,Energy,US ETF
+VAW,Vanguard Materials ETF,Materials,US ETF
+VNQ,Vanguard Real Estate ETF,Real Estate,US ETF
+VCR,Vanguard Consumer Discretionary ETF,Consumer Discretionary,US ETF
+VDC,Vanguard Consumer Staples ETF,Consumer Staples,US ETF
+VIS,Vanguard Industrials ETF,Industrials,US ETF
+VPU,Vanguard Utilities ETF,Utilities,US ETF
+IWF,iShares Russell 1000 Growth ETF,Growth,US ETF
+IWD,iShares Russell 1000 Value ETF,Value,US ETF
+MTUM,iShares MSCI USA Momentum Factor ETF,Factor,US ETF
+QUAL,iShares MSCI USA Quality Factor ETF,Factor,US ETF
+SIZE,iShares MSCI USA Size Factor ETF,Factor,US ETF
+USMV,iShares MSCI USA Min Vol Factor ETF,Low Volatility,US ETF
+VLUE,iShares MSCI USA Value Factor ETF,Factor,US ETF
+IJH,iShares Core S&P Mid-Cap ETF,Mid Cap,US ETF
+IJR,iShares Core S&P Small-Cap ETF,Small Cap,US ETF
+VO,Vanguard Mid-Cap ETF,Mid Cap,US ETF
+VB,Vanguard Small-Cap ETF,Small Cap,US ETF
+VBR,Vanguard Small-Cap Value ETF,Small Cap Value,US ETF
+VBK,Vanguard Small-Cap Growth ETF,Small Cap Growth,US ETF
+MGK,Vanguard Mega Cap Growth ETF,Mega Cap Growth,US ETF
+MGV,Vanguard Mega Cap Value ETF,Mega Cap Value,US ETF
+RSP,Invesco S&P 500 Equal Weight ETF,Equal Weight,US ETF
+ARKK,ARK Innovation ETF,Innovation,US ETF
+ARKW,ARK Next Generation Internet ETF,Internet,US ETF
+ARKG,ARK Genomic Revolution ETF,Genomics,US ETF
+ARKQ,ARK Autonomous Technology & Robotics,Robotics,US ETF
+ARKF,ARK Fintech Innovation ETF,Fintech,US ETF
+TAN,Invesco Solar ETF,Solar,US ETF
+ICLN,iShares Global Clean Energy ETF,Clean Energy,US ETF
+LIT,Global X Lithium & Battery Tech ETF,Lithium,US ETF
+BOTZ,Global X Robotics & AI ETF,Robotics,US ETF
+HACK,ETFMG Prime Cyber Security ETF,Cybersecurity,US ETF
+CLOU,Global X Cloud Computing ETF,Cloud Computing,US ETF
+FINX,Global X FinTech ETF,Fintech,US ETF
+ESPO,VanEck Video Gaming and eSports ETF,Gaming,US ETF
+SOXX,iShares Semiconductor ETF,Semiconductors,US ETF
+SMH,VanEck Semiconductor ETF,Semiconductors,US ETF
+IBB,iShares Biotechnology ETF,Biotechnology,US ETF
+XBI,SPDR S&P Biotech ETF,Biotechnology,US ETF
+IYR,iShares U.S. Real Estate ETF,Real Estate,US ETF
+USRT,iShares Core U.S. REIT ETF,REITs,US ETF
+RWR,SPDR Dow Jones REIT ETF,REITs,US ETF
+SCHH,Schwab U.S. REIT ETF,REITs,US ETF
+EEM,iShares MSCI Emerging Markets ETF,Emerging Markets,US ETF
+EFA,iShares MSCI EAFE ETF,International Developed,US ETF
+FXI,iShares China Large-Cap ETF,China,US ETF
+EWJ,iShares MSCI Japan ETF,Japan,US ETF
+EWZ,iShares MSCI Brazil ETF,Brazil,US ETF
+EWG,iShares MSCI Germany ETF,Germany,US ETF
+EWU,iShares MSCI United Kingdom ETF,UK,US ETF
+INDA,iShares MSCI India ETF,India,US ETF
+TLT,iShares 20+ Year Treasury Bond ETF,Treasury Bonds,US ETF
+IEF,iShares 7-10 Year Treasury Bond ETF,Treasury Bonds,US ETF
+SHY,iShares 1-3 Year Treasury Bond ETF,Treasury Bonds,US ETF
+LQD,iShares iBoxx Investment Grade Corp,Corporate Bonds,US ETF
+HYG,iShares iBoxx High Yield Corporate,High Yield Bonds,US ETF
+MUB,iShares National Muni Bond ETF,Municipal Bonds,US ETF
+TIP,iShares TIPS Bond ETF,Inflation Protected,US ETF
+EMB,iShares J.P. Morgan USD Emerging Markets,Emerging Market Bonds,US ETF
+BNDX,Vanguard Total International Bond ETF,International Bonds,US ETF
