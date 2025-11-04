@@ -1,235 +1,385 @@
-ticker,nome,tipo,segmento
-HGLG11,CSHG LOGÍSTICA,Tijolo,Logística
-KNRI11,KINEA RENDA,Híbrido,Renda Urbana
-MXRF11,MAXI RENDA,Tijolo,Lajes Corporativas
-VISC11,VINCI SHOPPING,Tijolo,Shopping Centers
-XPML11,XP MALLS,Tijolo,Shopping Centers
-BTLG11,BTG LOGÍSTICA,Tijolo,Logística
-KNCR11,KINEA CRED,Papel,CRIs
-KNIP11,KINEA ÍNDICES,Híbrido,Renda Urbana
-HGRU11,CSHG REAL ESTATE,Híbrido,Renda Urbana
-BCFF11,BTG CRÉDITO,Papel,CRIs
-PVBI11,VBI PRIME,Tijolo,Lajes Corporativas
-XPLG11,XP LOG,Tijolo,Logística
-RZTR11,RIZA TERRAX,Híbrido,Desenvolvimento
-RECT11,RECEBÍVEIS IMOB,Papel,CRIs
-KFOF11,KINEA FOF,FOF,Fundo de Fundos
-IRDM11,IRIDIUM RECEB,Papel,CRIs
-HGRE11,CSHG RECEBÍVEIS,Papel,CRIs
-KNSC11,KINEA SECURITIES,Papel,CRIs
-VGIR11,VALORA RE III,Tijolo,Lajes Corporativas
-BRCO11,BRESCO LOGÍSTICA,Tijolo,Logística
-JSRE11,JS REAL ESTATE,Tijolo,Lajes Corporativas
-RBVA11,RIO BRAVO RENDA,Híbrido,Renda Urbana
-TRXF11,TRX REAL ESTATE,Tijolo,Lajes Corporativas
-CVBI11,VBI CRI,Papel,CRIs
-VILG11,VINCI LOG,Tijolo,Logística
-VCJR11,VIC LOGÍSTICA,Tijolo,Logística
-TGAR11,TG ATIVO REAL,Tijolo,Lajes Corporativas
-XPCI11,XP CRÉDITO,Papel,CRIs
-BRCR11,BC FUND,Papel,CRIs
-RBRR11,RBR RENDIMENTO,Híbrido,Renda Urbana
-ALZR11,ALIANZA TRUST,Tijolo,Lajes Corporativas
-MCHY11,MUBADALA CSHG HY,Papel,CRIs High Yield
-HGBS11,CSHG BRASIL SHOP,Tijolo,Shopping Centers
-RBRY11,RBR ALPHA,Híbrido,Multiestratégia
-MALL11,MALLS BRASIL,Tijolo,Shopping Centers
-GGRC11,GGR COVEPI,Tijolo,Lajes Corporativas
-TORD11,TORRE NORTE,Tijolo,Lajes Corporativas
-HGPO11,CSHG PRIME OFF,Tijoblolo,Lajes Corporativas
-VRTA11,VECTIS RENDA,Tijolo,Lajes Corporativas
-TEPP11,TELLUS PROPERTIES,Tijolo,Lajes Corporativas
-RBRP11,RBR PROPERTIES,Tijolo,Lajes Corporativas
-BLMG11,BLUEMACAW LOG,Tijolo,Logística
-PATL11,PÁTRIA LOG,Tijolo,Logística
-BBPO11,BB PROGRESSIVO II,Papel,CRIs
-BBFI11B,BB RENDA CORP,Tijolo,Lajes Corporativas
-VINO11,VINCI OFFICES,Tijolo,Lajes Corporativas
-BARI11,BARIGUI REND,Tijolo,Lajes Corporativas
-IRDM11,IRIDIUM RECEB,Papel,CRIs
-CPTS11,CAPITÂNIA SEC,Papel,CRIs
-DEVA11,DEVANT RECEB,Papel,CRIs
-GTWR11,GUARDIAN TOWER,Tijolo,Lajes Corporativas
-RBRD11,RBR DIVIDEND,Híbrido,Dividendos
-HSML11,HSI MALLS,Tijolo,Shopping Centers
-SARE11,SÃO CARLOS,Tijolo,Lajes Corporativas
-XPPR11,XP PROPERTIES,Híbrido,Renda Urbana
-NEWL11,NOVO HORIZONTE,Tijolo,Logística
-VTLT11,VOTORANTIM LOG,Tijolo,Logística
-BTRA11,BTG TIJUCA,Tijolo,Lajes Corporativas
-OUJP11,OURINVEST JPP,Tijolo,Lajes Corporativas
-PORD11,PORTO REAL,Tijolo,Logística
-CARE11,CAIXA RENDA,Híbrido,Renda Urbana
-JPPA11,JPPA RENDA,Tijolo,Lajes Corporativas
-CBOP11,CB OFFICE PROPERTIES,Tijolo,Lajes Corporativas
-LVBI11,VBI LOGÍSTICA,Tijolo,Logística
-RZAK11,RIZA AKIN,Tijolo,Lajes Corporativas
-FEXC11,FATOR VERITÀ,Papel,CRIs
-BBRC11,BB RENDA CORP II,Tijolo,Lajes Corporativas
-FIGS11,GENERAL SHOPPING,Tijolo,Shopping Centers
-BBVJ11,BB VOTORANTIM,Tijolo,Lajes Corporativas
-RURA11,VELT RURA,Agro,Terras Agrícolas
-EURO11,EUROPAR,Tijolo,Shoppings
-FIIB11,INDUSTRIAL BR,Tijolo,Galpões Industriais
-RBRF11,RBR CRÉDITO,Papel,CRIs
-BCRI11,BTG CRI,Papel,CRIs
-NSLU11,NAVI LOG UNIT,Tijolo,Logística
-OUFF11,OURINVEST FUNDO,Híbrido,Renda Urbana
-HCTR11,HECTARE CE,Agro,Terras Agrícolas
-GALG11,GUARDIAN LOGÍSTICA,Tijolo,Logística
-VGIP11,VALORA HEDGE,Papel,CRIs
-BTCR11,BTG CRÉDITO PREM,Papel,CRIs Premium
-GAME11,GENERAL AMÉRICA,Tijolo,Shopping Centers
-OULG11,OURINVEST LOG,Tijolo,Logística
-CXRI11,CAIXA RI,Papel,CRIs
-RBVO11,RBR VALUE,Híbrido,Renda Urbana
-SNCI11,SUNO CONSEIL,Papel,CRIs
-BNFS11,BANCO SAFRA,Papel,CRIs
-CPTI11,CAPITÂNIA REC II,Papel,CRIs
-ABCP11,GRAND PLAZA,Tijolo,Shopping Centers
-AFHI11,AF INVEST CRED,Papel,CRIs High Yield
-BBIM11,BB RENDA IMOB,Híbrido,Renda Urbana
-SPXS11,SPX SANTANDER,Tijolo,Shopping Centers
-MFII11,MAUA CAPITAL,Híbrido,Renda Urbana
-FCFL11,FII CAIXA,Papel,CRIs
-MAXR11,MAX RETAIL,Tijolo,Varejo
-RBED11,RBR EDUCA,Tijolo,Educacional
-TSNC11,TESOURO SANTANDER,Papel,Títulos Públicos
-RECR11,REC RENDA,Papel,CRIs
-HGJH11,CSHG JHSF,Tijolo,Lajes Corporativas
-XPIN11,XP INFRA,Híbrido,Infraestrutura
-BTCI11,BTG CRI INFRA,Papel,CRIs Infraestrutura
-RBGS11,RBR LOG STRAT,Tijolo,Logística
-PVBI11,VBI PRIME PROPERTIES,Tijolo,Lajes Corporativas
-VIUR11,VINCI URB,Tijolo,Lajes Corporativas
-MCCI11,MAUA CAPITAL CRI,Papel,CRIs
-VIFI11,VINCI INST,Tijolo,Institucional
-KNHY11,KINEA HCRÉDITO,Papel,CRIs High Yield
-PRSV11,PÁTRIA RENDA,Tijolo,Lajes Corporativas
-HABT11,HABITASEC,Papel,CRIs
-JSAF11,JSA FAMILIAR,Tijolo,Residencial
-RNGO11,RIO NEGRO,Tijolo,Agronegócio
-BTWR11,BTG OFFICE,Tijolo,Lajes Corporativas
-VSLH11,VERSALHES,Tijolo,Lajes Corporativas
-RSPD11,RSPE IPCA,Papel,Títulos Públicos
-XTED11,XP TERRAS,Agro,Terras Agrícolas
-CYCR11,CY CAPITAL RECEB,Papel,CRIs
-RBHG11,RBR HIGH GRADE,Papel,CRIs
-KISU11,KILIMA SUNO,Papel,CRIs
-PQDP11,PARQUE DOM PEDRO,Tijolo,Shopping Centers
-ARCT11,ARCTIC,Tijolo,Lajes Corporativas
-RBRL11,RBR LOG,Tijolo,Logística
-EVBI11,EVOLUTIONIT BR,Tijolo,Data Center
-VERE11,VEREDAS RECEB,Papel,CRIs
-KNCV11,KINEA VENTURES,Desenvolvimento,Empreendimentos
-CACR11,CAIXA ACREFI,Papel,CRIs
-SPTW11,SP DOWNTOWN,Tijolo,Lajes Corporativas
-PLCR11,PLURAL RECEB,Papel,CRIs
-HGCR11,CSHG CRÉDITO,Papel,CRIs
-NEWU11,NOVO HORIZONTE,Tijolo,Logística
-FAED11,FATOR EDUCACIONAL,Tijolo,Educacional
-VGRI11,VALORA RE I,Tijolo,Lajes Corporativas
-RCRB11,REC RENDA CRÉDITO,Papel,CRIs
-NCRA11,NCH RECEB AGRO,Agro,CRAs
-MGFF11,MOGNO,Tijolo,Residencial
-VLOL11,VÁLORA LOGÍSTICA,Tijolo,Logística
-XPHT11,XP HOTEIS,Tijolo,Hotelaria
-BCIA11,BANCO PINE CRI,Papel,CRIs
-CVBI11,VBI CRI,Papel,CRIs
-HGFF11,CSHG FUNDO FOF,FOF,Fundo de Fundos
-FOFT11,FATOR FOF TORRE,FOF,Fundo de Fundos
-SAAG11,SANTANDER AGRO,Agro,CRAs
-HTMX11,HOTEL MAXINVEST,Tijolo,Hotelaria
-RBFF11,RBR FOF,FOF,Fundo de Fundos
-VCRI11,VINCI CRI,Papel,CRIs
-CBSC11,CB SECURITIES,Papel,CRIs
-DRIT11,DIRECT CRI,Papel,CRIs
-HGIC11,CSHG INFRA CRED,Papel,CRIs Infraestrutura
-VISC11,VINCI SHOPPING,Tijolo,Shopping Centers
-HGFF11,CSHG FOF,FOF,Fundo de Fundos
-ALZR11,ALIANZA TRUST,Tijolo,Lajes Corporativas
-VGHF11,VALORA HEDGE II,Papel,CRIs
-RBVA11,RIO BRAVO RENDA,Híbrido,Renda Urbana
-TRXL11,TRX LOGÍSTICA,Tijolo,Logística
-PORD11,PORTO REAL,Tijolo,Logística
-SNFF11,SUNO FOF,FOF,Fundo de Fundos
-LFTT11,LIFE TORRE,Tijolo,Lajes Corporativas
-AFOF11,AF INVEST FOF,FOF,Fundo de Fundos
-VGIP11,VALORA HEDGE I,Papel,CRIs
-KFOF11,KINEA FOF,FOF,Fundo de Fundos
-BTSG11,BTS GÁS,Papel,Debêntures
-KNRE11,KINEA REIT,Híbrido,Renda Urbana
-SDIL11,SDI LOG,Tijolo,Logística
-VCRA11,VINCI CRA,Agro,CRAs
-HSAF11,HSI ATIVOS FIN,Papel,CRIs
-XPID11,XP INDUSTRIAL,Tijolo,Industrial
-FVPQ11,FATOR VERITÀ II,Papel,CRIs
-APTO11,APARTAMENTO,Tijolo,Residencial
-GSFI11,GUARDIAN SEMI,Papel,CRIs
-GARE11,GUARDIAN RENDA,Tijolo,Lajes Corporativas
-DRIT11,DIRECT CRI,Papel,CRIs
-RBRL11,RBR LOGÍSTICA,Tijolo,Logística
-RBED11,RBR EDUCACIONAL,Tijolo,Educacional
-SADI11,SANTANDER DI,Papel,Títulos Públicos
-GGRC11,GGR COVEPI,Tijolo,Lajes Corporativas
-HFOF11,HEDGE TOP FOF,FOF,Fundo de Fundos
-BCRI11,BTG PACTUAL CRI,Papel,CRIs
-VIUR11,VINCI URBANO,Tijolo,Lajes Corporativas
-XPGA11,XP GAIA,Desenvolvimento,Residencial
-HCRI11,HECTARE CRÉDITO,Agro,CRAs
-FIIP11B,INDUSTRIAL BR II,Tijolo,Galpões Industriais
-RCRB11,REC CRÉDITO BR,Papel,CRIs
-RZTR11,RIZA TERRAX,Desenvolvimento,Terras e Desenvol
-AGCX11,AG CRÉDITO,Papel,CRIs
-BPFF11,BTG PACTUAL FOF,FOF,Fundo de Fundos
-VILG11,VINCI LOGÍSTICA,Tijolo,Logística
-HGIC11,CSHG INFRA,Papel,CRIs Infraestrutura
-BBVJ11,BB VOTORANTIM JP,Tijolo,Lajes Corporativas
-GCFF11,GC FUNDO FOF,FOF,Fundo de Fundos
-URPR11,URCA PRIME RENDA,Tijolo,Lajes Corporativas
-PVBI11,VBI PRIME OFFICE,Tijolo,Lajes Corporativas
-THRA11,THERA CORP,Tijolo,Lajes Corporativas
-VOTS11,VOTORANTIM SEC,Papel,CRIs
-REIT11,HEDGE REAL ESTATE,Híbrido,Renda Urbana
-VGIR11,VALORA RE III,Tijolo,Lajes Corporativas
-CXCE11,CAIXA CEDAE,Papel,Debêntures
-BROF11,BRAZILIAN OFFICE,Tijolo,Lajes Corporativas
-GCRI11,GC CRÉDITO,Papel,CRIs
-EDGA11,EDGARD GUINLE,Tijolo,Residencial
-RBDS11,RBR DESENV,Desenvolvimento,Empreendimentos
-PVBI11,VBI PRIME,Tijolo,Lajes Corporativas
-NSLU11,NAVI LOGÍSTICA,Tijolo,Logística
-BCFF11,BTG CRÉDITO FII,Papel,CRIs
-CVBI11,VBI CRÉDITO,Papel,CRIs
-KFOF11,KINEA FUNDO FOF,FOF,Fundo de Fundos
-BBFI11B,BB RENDA CORP I,Tijolo,Lajes Corporativas
-XPML11,XP MALLS FUNDO,Tijolo,Shopping Centers
-HGLG11,CSHG LOGÍSTICA,Tijolo,Logística
-KNRI11,KINEA RENDA IMOB,Híbrido,Renda Urbana
-MXRF11,MAXI RENDA FII,Tijolo,Lajes Corporativas
-VISC11,VINCI SHOPPING C,Tijolo,Shopping Centers
-BTLG11,BTG PACTUAL LOG,Tijolo,Logística
-KNCR11,KINEA CRÉDITIMOB,Papel,CRIs
-KNIP11,KINEA ÍNDICES P,Híbrido,Renda Urbana
-HGRU11,CSHG REAL URBANO,Híbrido,Renda Urbana
-PVBI11,VBI PRIME PROP,Tijolo,Lajes Corporativas
-XPLG11,XP LOGÍSTICA,Tijolo,Logística
-RZTR11,RIZA TERRAX,Desenvolvimento,Terras
-RECT11,RECEBÍVEIS IMOB,Papel,CRIs
-IRDM11,IRIDIUM RECEB,Papel,CRIs
-HGRE11,CSHG RECEBÍVEIS,Papel,CRIs
-KNSC11,KINEA SECURITIES,Papel,CRIs
-VGIR11,VALORA REAL III,Tijolo,Lajes Corporativas
-BRCO11,BRESCO LOG,Tijolo,Logística
-JSRE11,JS REAL ESTATE,Tijolo,Lajes Corporativas
-TRXF11,TRX REAL ESTATE,Tijolo,Lajes Corporativas
-CVBI11,VBI CRI FII,Papel,CRIs
-VILG11,VINCI LOGÍSTICA,Tijolo,Logística
-VCJR11,VIC LOGÍSTICA,Tijolo,Logística
-TGAR11,TG ATIVO REAL,Tijolo,Lajes Corporativas
-XPCI11,XP CRÉDITO IMOB,Papel,CRIs
-BRCR11,BC FUND CRI,Papel,CRIs
-RBRR11,RBR RENDIMENTO,Híbrido,Renda Urbana
-ALZR11,ALIANZA TRUST,Tijolo,Lajes Corporativas
-MCHY11,MUBADALA HY,Papel,CRIs High Yield
-HGBS11,CSHG BRASIL SHOP,Tijolo,Shopping Centers
+ticker,nome,tipo,segmento,categoria
+AAZQ11,AAZQ11,Outros,Outros,FII
+ABCP11,ABCP11,Shoppings,Shoppings,FII
+AFHF11,AFHF11,Outros,Outros,FII
+AFHI11,AFHI11,Outros,Outros,FII
+AGRX11,AGRX11,Outros,Outros,FII
+AIEC11,AIEC11,Escritórios,Escritórios,FII
+AJFI11,AJFI11,Shoppings,Shoppings,FII
+ALMI11,ALMI11,Escritórios,Escritórios,FII
+ALZC11,ALZC11,Outros,Outros,FII
+ALZR11,ALZR11,Multicategoria,Multicategoria,FII
+ANCR11,ANCR11,Shoppings,Shoppings,FII
+APTO11,APTO11,Residencial,Residencial,FII
+APXM11,APXM11,Shoppings,Shoppings,FII
+AROA11,AROA11,Multicategoria,Multicategoria,FII
+ARRI11,ARRI11,Multicategoria,Multicategoria,FII
+ARXD11,ARXD11,Multicategoria,Multicategoria,FII
+ASMT11,ASMT11,Outros,Outros,FII
+ASRF11,ASRF11,Outros,Outros,FII
+ATSA11,ATSA11,Shoppings,Shoppings,FII
+AURB11,AURB11,Logística,Logística,FII
+AZPL11,AZPL11,Logística,Logística,FII
+BBFI11,BBFI11,Escritórios,Escritórios,FII
+BBFO11,BBFO11,Multicategoria,Multicategoria,FII
+BBGO11,BBGO11,Outros,Outros,FII
+BBIG11,BBIG11,Shoppings,Shoppings,FII
+BBRC11,BBRC11,Outros,Outros,FII
+BCIA11,BCIA11,Multicategoria,Multicategoria,FII
+BCRI11,BCRI11,Outros,Outros,FII
+BGRB11,BGRB11,Escritórios,Escritórios,FII
+BICE11,BICE11,Outros,Outros,FII
+BIME11,BIME11,Outros,Outros,FII
+BLCA11,BLCA11,Escritórios,Escritórios,FII
+BLMG11,BLMG11,Multicategoria,Multicategoria,FII
+BLMO11,BLMO11,Escritórios,Escritórios,FII
+BLOG11,BLOG11,Multicategoria,Multicategoria,FII
+BMLC11,BMLC11,Outros,Outros,FII
+BNFS11,BNFS11,Varejo,Varejo,FII
+BPML11,BPML11,Multicategoria,Multicategoria,FII
+BRCO11,BRCO11,Logística,Logística,FII
+BRCR11,BRCR11,Multicategoria,Multicategoria,FII
+BRIM11,BRIM11,Residencial,Residencial,FII
+BRIP11,BRIP11,Multicategoria,Multicategoria,FII
+BROF11,BROF11,Multicategoria,Multicategoria,FII
+BTAL11,BTAL11,Logística,Logística,FII
+BTCI11,BTCI11,Outros,Outros,FII
+BTHF11,BTHF11,Outros,Outros,FII
+BTHI11,BTHI11,Hotel,Hotel,FII
+BTLG11,BTLG11,Outros,Outros,FII
+BTRA11,BTRA11,Outros,Outros,FII
+BTSG11,BTSG11,Logística,Logística,FII
+BTWR11,BTWR11,Escritórios,Escritórios,FII
+BTYU11,BTYU11,Outros,Outros,FII
+BVAR11,BVAR11,Varejo,Varejo,FII
+CACR11,CACR11,Multicategoria,Multicategoria,FII
+CARE11,CARE11,Multicategoria,Multicategoria,FII
+CBOP11,CBOP11,Escritórios,Escritórios,FII
+CCME11,CCME11,Outros,Outros,FII
+CEOC11,CEOC11,Escritórios,Escritórios,FII
+CFHI11,CFHI11,Multicategoria,Multicategoria,FII
+CFII11,CFII11,Multicategoria,Multicategoria,FII
+CJCT11,CJCT11,Escritórios,Escritórios,FII
+CLIN11,CLIN11,Outros,Outros,FII
+CNES11,CNES11,Escritórios,Escritórios,FII
+CPLG11,CPLG11,Logística,Logística,FII
+CPOF11,CPOF11,Outros,Outros,FII
+CPSH11,CPSH11,Shoppings,Shoppings,FII
+CPTR11,CPTR11,Outros,Outros,FII
+CPTS11,CPTS11,Outros,Outros,FII
+CPUR11,CPUR11,Outros,Outros,FII
+CRAA11,CRAA11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+CRFF11,CRFF11,Multicategoria,Multicategoria,FII
+CTXT11,CTXT11,Escritórios,Escritórios,FII
+CVBI11,CVBI11,Outros,Outros,FII
+CXAG11,CXAG11,Varejo,Varejo,FII
+CXCE11,CXCE11,Escritórios,Escritórios,FII
+CXCI11,CXCI11,Multicategoria,Multicategoria,FII
+CXCO11,CXCO11,Multicategoria,Multicategoria,FII
+CXRI11,CXRI11,Multicategoria,Multicategoria,FII
+CXTL11,CXTL11,Logística,Logística,FII
+DAMA11,DAMA11,Outros,Outros,FII
+DAMT11,DAMT11,Shoppings,Shoppings,FII
+DAYM11,DAYM11,Outros,Outros,FII
+DCRA11,DCRA11,Outros,Outros,FII
+DEVA11,DEVA11,Multicategoria,Multicategoria,FII
+DPRO11,DPRO11,Multicategoria,Multicategoria,FII
+DVFF11,DVFF11,Outros,Outros,FII
+EDFO11,EDFO11,Residencial,Residencial,FII
+EDGA11,EDGA11,Outros,Outros,FII
+EGAF11,EGAF11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+EIRA11,EIRA11,Multicategoria,Multicategoria,FII
+EMET11,EMET11,Multicategoria,Multicategoria,FII
+EQIR11,EQIR11,Outros,Outros,FII
+ERPA11,ERPA11,Multicategoria,Multicategoria,FII
+EURO11,EURO11,Logística,Logística,FII
+EXES11,EXES11,Outros,Outros,FII
+FAED11,FAED11,Outros,Outros,FII
+FAMB11,FAMB11,Outros,Outros,FII
+FATN11,FATN11,Multicategoria,Multicategoria,FII
+FCFL11,FCFL11,Outros,Outros,FII
+FGAA11,FGAA11,Outros,Outros,FII
+FIGS11,FIGS11,Shoppings,Shoppings,FII
+FIIB11,FIIB11,Logística,Logística,FII
+FIIP11,FIIP11,Logística,Logística,FII
+FISC11,FISC11,Escritórios,Escritórios,FII
+FIXX11,FIXX11,Outros,Outros,FII
+FLCR11,FLCR11,Outros,Outros,FII
+FLMA11,FLMA11,Escritórios,Escritórios,FII
+FLRP11,FLRP11,Shoppings,Shoppings,FII
+FMOF11,FMOF11,Escritórios,Escritórios,FII
+FPAB11,FPAB11,Escritórios,Escritórios,FII
+FPNG11,FPNG11,Multicategoria,Multicategoria,FII
+FTCA11,FTCA11,Outros,Outros,FII
+FTCE11,FTCE11,Multicategoria,Multicategoria,FII
+FVPQ11,FVPQ11,Shoppings,Shoppings,FII
+FYTO11,FYTO11,Outros,Outros,FII
+FZDA11,FZDA11,Outros,Outros,FII
+FZDB11,FZDB11,Outros,Outros,FII
+GAME11,GAME11,Outros,Outros,FII
+GARE11,GARE11,Multicategoria,Multicategoria,FII
+GCOI11,GCOI11,Residencial,Residencial,FII
+GCRA11,GCRA11,Multicategoria,Multicategoria,FII
+GCRI11,GCRI11,Outros,Outros,FII
+GFDL11,GFDL11,Logística,Logística,FII
+GGRC11,GGRC11,Multicategoria,Multicategoria,FII
+GLCR11,GLCR11,Multicategoria,Multicategoria,FII
+GLOG11,GLOG11,Logística,Logística,FII
+GLPF11,GLPF11,Logística,Logística,FII
+GRUL11,GRUL11,Logística,Logística,FII
+GRWA11,GRWA11,Outros,Outros,FII
+GSFI11,GSFI11,Shoppings,Shoppings,FII
+GTWR11,GTWR11,Escritórios,Escritórios,FII
+GZIT11,GZIT11,Shoppings,Shoppings,FII
+HAAA11,HAAA11,Escritórios,Escritórios,FII
+HABT11,HABT11,Multicategoria,Multicategoria,FII
+HBCR11,HBCR11,Outros,Outros,FII
+HCHG11,HCHG11,Outros,Outros,FII
+HCRI11,HCRI11,Hospital,Hospital,FII
+HCTR11,HCTR11,Multicategoria,Multicategoria,FII
+HDEL11,HDEL11,Logística,Logística,FII
+HFOF11,HFOF11,Multicategoria,Multicategoria,FII
+HGAG11,HGAG11,Outros,Outros,FII
+HGBL11,HGBL11,Logística,Logística,FII
+HGBS11,HGBS11,Shoppings,Shoppings,FII
+HGCR11,HGCR11,Outros,Outros,FII
+HGIC11,HGIC11,Multicategoria,Multicategoria,FII
+HGLG11,HGLG11,Multicategoria,Multicategoria,FII
+HGPO11,HGPO11,Escritórios,Escritórios,FII
+HGRE11,HGRE11,Escritórios,Escritórios,FII
+HGRU11,HGRU11,Outros,Outros,FII
+HLOG11,HLOG11,Logística,Logística,FII
+HOFC11,HOFC11,Escritórios,Escritórios,FII
+HOSI11,HOSI11,Residencial,Residencial,FII
+HPDP11,HPDP11,Shoppings,Shoppings,FII
+HRDF11,HRDF11,Multicategoria,Multicategoria,FII
+HREC11,HREC11,Multicategoria,Multicategoria,FII
+HRES11,HRES11,Multicategoria,Multicategoria,FII
+HSAF11,HSAF11,Outros,Outros,FII
+HSLG11,HSLG11,Logística,Logística,FII
+HSML11,HSML11,Shoppings,Shoppings,FII
+HSRE11,HSRE11,Outros,Outros,FII
+HTMX11,HTMX11,Hotel,Hotel,FII
+HUCG11,HUCG11,Hospital,Hospital,FII
+HUSC11,HUSC11,Hospital,Hospital,FII
+HUSI11,HUSI11,Hospital,Hospital,FII
+IAAG11,IAAG11,Outros,Outros,FII
+IAGR11,IAGR11,Multicategoria,Multicategoria,FII
+IBBP11,IBBP11,Logística,Logística,FII
+IBCR11,IBCR11,Outros,Outros,FII
+ICRI11,ICRI11,Outros,Outros,FII
+INLG11,INLG11,Logística,Logística,FII
+INRD11,INRD11,Residencial,Residencial,FII
+IRDM11,IRDM11,Outros,Outros,FII
+IRIM11,IRIM11,Outros,Outros,FII
+ISCJ11,ISCJ11,Outros,Outros,FII
+ITIP11,ITIP11,Outros,Outros,FII
+ITIT11,ITIT11,Outros,Outros,FII
+ITRI11,ITRI11,Outros,Outros,FII
+JASC11,JASC11,Varejo,Varejo,FII
+JCCJ11,JCCJ11,Shoppings,Shoppings,FII
+JCIN11,JCIN11,Shoppings,Shoppings,FII
+JFLL11,JFLL11,Multicategoria,Multicategoria,FII
+JGPX11,JGPX11,Outros,Outros,FII
+JPPA11,JPPA11,Multicategoria,Multicategoria,FII
+JPPC11,JPPC11,Multicategoria,Multicategoria,FII
+JSAF11,JSAF11,Multicategoria,Multicategoria,FII
+JSCR11,JSCR11,Multicategoria,Multicategoria,FII
+JSRE11,JSRE11,Multicategoria,Multicategoria,FII
+KCRE11,KCRE11,Multicategoria,Multicategoria,FII
+KDOL11,KDOL11,Multicategoria,Multicategoria,FII
+KEVE11,KEVE11,Residencial,Residencial,FII
+KFOF11,KFOF11,Multicategoria,Multicategoria,FII
+KISU11,KISU11,Outros,Outros,FII
+KIVO11,KIVO11,Outros,Outros,FII
+KNCA11,KNCA11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+KNCR11,KNCR11,Multicategoria,Multicategoria,FII
+KNHF11,KNHF11,Multicategoria,Multicategoria,FII
+KNHY11,KNHY11,Multicategoria,Multicategoria,FII
+KNIP11,KNIP11,Multicategoria,Multicategoria,FII
+KNRE11,KNRE11,Residencial,Residencial,FII
+KNRI11,KNRI11,Multicategoria,Multicategoria,FII
+KNSC11,KNSC11,Multicategoria,Multicategoria,FII
+KNUQ11,KNUQ11,Multicategoria,Multicategoria,FII
+KOPA11,KOPA11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+KORE11,KORE11,Outros,Outros,FII
+LAFI11,LAFI11,Outros,Outros,FII
+LASC11,LASC11,Shoppings,Shoppings,FII
+LIFE11,LIFE11,Residencial,Residencial,FII
+LPLP11,LPLP11,Residencial,Residencial,FII
+LRDI11,LRDI11,Outros,Outros,FII
+LSAG11,LSAG11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+LSOI11,LSOI11,Residencial,Residencial,FII
+LTMT11,LTMT11,Multicategoria,Multicategoria,FII
+LVBI11,LVBI11,Logística,Logística,FII
+MALL11,MALL11,Shoppings,Shoppings,FII
+MANA11,MANA11,Outros,Outros,FII
+MAXR11,MAXR11,Outros,Outros,FII
+MCCI11,MCCI11,Outros,Outros,FII
+MCEM11,MCEM11,Outros,Outros,FII
+MCLO11,MCLO11,Logística,Logística,FII
+MCRE11,MCRE11,Outros,Outros,FII
+MFII11,MFII11,Multicategoria,Multicategoria,FII
+MGHT11,MGHT11,Hotel,Hotel,FII
+MXRF11,MXRF11,Logística,Logística,FII
+NAUI11,NAUI11,Multicategoria,Multicategoria,FII
+NAVT11,NAVT11,Outros,Outros,FII
+NCHB11B,NCHB11B,Outros,Outros,FII
+NCRA11,NCRA11,Outros,Outros,FII
+NCRI11,NCRI11,Outros,Outros,FII
+NEWL11,NEWL11,Multicategoria,Multicategoria,FII
+NEWU11,NEWU11,Multicategoria,Multicategoria,FII
+NEXG11,NEXG11,Outros,Outros,FII
+NSLU11,NSLU11,Hospital,Hospital,FII
+NVHO11,NVHO11,Hospital,Hospital,FII
+OCRE11,OCRE11,Multicategoria,Multicategoria,FII
+OIAG11,OIAG11,Outros,Outros,FII
+ONDV11,ONDV11,Outros,Outros,FII
+OUJP11,OUJP11,Multicategoria,Multicategoria,FII
+OULG11,OULG11,Logística,Logística,FII
+PATA11,PATA11,Outros,Outros,FII
+PATC11,PATC11,Outros,Outros,FII
+PATL11,PATL11,Logística,Logística,FII
+PCIP11,PCIP11,Outros,Outros,FII
+PDBM11,PDBM11,Outros,Outros,FII
+PEMA11,PEMA11,Multicategoria,Multicategoria,FII
+PLAG11,PLAG11,Outros,Outros,FII
+PLCA11,PLCA11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+PLRI11,PLRI11,Multicategoria,Multicategoria,FII
+PMFO11,PMFO11,Outros,Outros,FII
+PMIS11,PMIS11,Outros,Outros,FII
+PMLL11,PMLL11,Shoppings,Shoppings,FII
+PNCR11,PNCR11,Residencial,Residencial,FII
+PNDL11,PNDL11,Multicategoria,Multicategoria,FII
+PNPR11,PNPR11,Multicategoria,Multicategoria,FII
+PORD11,PORD11,Multicategoria,Multicategoria,FII
+PQAG11,PQAG11,Logística,Logística,FII
+PQDP11,PQDP11,Shoppings,Shoppings,FII
+PRSN11,PRSN11,Multicategoria,Multicategoria,FII
+PRSV11,PRSV11,Escritórios,Escritórios,FII
+PULV11,PULV11,Outros,Outros,FII
+PVBI11,PVBI11,Escritórios,Escritórios,FII
+QAGR11,QAGR11,Outros,Outros,FII
+RBCO11,RBCO11,Escritórios,Escritórios,FII
+RBDS11,RBDS11,Residencial,Residencial,FII
+RBFF11,RBFF11,Outros,Outros,FII
+RBHG11,RBHG11,Outros,Outros,FII
+RBHY11,RBHY11,Outros,Outros,FII
+RBIR11,RBIR11,Residencial,Residencial,FII
+RBLG11,RBLG11,Logística,Logística,FII
+RBOP11,RBOP11,Outros,Outros,FII
+RBRD11,RBRD11,Multicategoria,Multicategoria,FII
+RBRF11,RBRF11,Multicategoria,Multicategoria,FII
+RBRI11,RBRI11,Outros,Outros,FII
+RBRL11,RBRL11,Logística,Logística,FII
+RBRP11,RBRP11,Outros,Outros,FII
+RBRR11,RBRR11,Outros,Outros,FII
+RBRS11,RBRS11,Residencial,Residencial,FII
+RBRX11,RBRX11,Outros,Outros,FII
+RBRY11,RBRY11,Outros,Outros,FII
+RBTS11,RBTS11,Multicategoria,Multicategoria,FII
+RBVA11,RBVA11,Varejo,Varejo,FII
+RCRB11,RCRB11,Escritórios,Escritórios,FII
+RCRI11,RCRI11,Outros,Outros,FII
+RECD11,RECD11,Outros,Outros,FII
+RECM11,RECM11,Multicategoria,Multicategoria,FII
+RECR11,RECR11,Multicategoria,Multicategoria,FII
+RECT11,RECT11,Multicategoria,Multicategoria,FII
+REIT11,REIT11,Outros,Outros,FII
+RELG11,RELG11,Multicategoria,Multicategoria,FII
+RENV11,RENV11,Multicategoria,Multicategoria,FII
+RFOF11,RFOF11,Outros,Outros,FII
+RINV11,RINV11,Outros,Outros,FII
+RMAI11,RMAI11,Outros,Outros,FII
+RNGO11,RNGO11,Escritórios,Escritórios,FII
+RPRI11,RPRI11,Outros,Outros,FII
+RRCI11,RRCI11,Outros,Outros,FII
+RSPD11,RSPD11,Residencial,Residencial,FII
+RURA11,RURA11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+RVBI11,RVBI11,Outros,Outros,FII
+RZAG11,RZAG11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+RZAK11,RZAK11,Outros,Outros,FII
+RZAT11,RZAT11,Outros,Outros,FII
+RZEO11,RZEO11,Outros,Outros,FII
+RZLC11,RZLC11,Outros,Outros,FII
+RZTR11,RZTR11,Outros,Outros,FII
+RZZR11,RZZR11,Logística,Logística,FII
+SADI11,SADI11,Multicategoria,Multicategoria,FII
+SAPI11,SAPI11,Multicategoria,Multicategoria,FII
+SARE11,SARE11,Multicategoria,Multicategoria,FII
+SCPF11,SCPF11,Shoppings,Shoppings,FII
+SEQR11,SEQR11,Logística,Logística,FII
+SHOP11,SHOP11,Shoppings,Shoppings,FII
+SHPH11,SHPH11,Shoppings,Shoppings,FII
+SHPP11,SHPP11,Shoppings,Shoppings,FII
+SJAU11,SJAU11,Logística,Logística,FII
+SMRE11,SMRE11,Multicategoria,Multicategoria,FII
+SNAG11,SNAG11,Multicategoria,Multicategoria,FII
+SNCI11,SNCI11,Outros,Outros,FII
+SNEL11,SNEL11,Outros,Outros,FII
+SNFF11,SNFF11,Outros,Outros,FII
+SNFZ11,SNFZ11,Multicategoria,Multicategoria,FII
+SNLG11,SNLG11,Logística,Logística,FII
+SNME11,SNME11,Outros,Outros,FII
+SOFF11,SOFF11,Outros,Outros,FII
+SPG211,SPG211,Outros,Outros,FII
+SPTW11,SPTW11,Outros,Outros,FII
+SPXS11,SPXS11,Outros,Outros,FII
+STRX11,STRX11,Shoppings,Shoppings,FII
+TELM11,TELM11,Outros,Outros,FII
+TEPP11,TEPP11,Outros,Outros,FII
+TGAR11,TGAR11,Multicategoria,Multicategoria,FII
+TJKB11,TJKB11,Hospital,Hospital,FII
+TMPS11,TMPS11,Outros,Outros,FII
+TOPP11,TOPP11,Outros,Outros,FII
+TORD11,TORD11,Multicategoria,Multicategoria,FII
+TRBL11,TRBL11,Logística,Logística,FII
+TRNT11,TRNT11,Escritórios,Escritórios,FII
+TRXB11,TRXB11,Multicategoria,Multicategoria,FII
+TRXF11,TRXF11,Multicategoria,Multicategoria,FII
+TRXY11,TRXY11,Multicategoria,Multicategoria,FII
+TVRI11,TVRI11,Escritórios,Escritórios,FII
+URHF11,URHF11,Multicategoria,Multicategoria,FII
+URPR11,URPR11,Outros,Outros,FII
+VCJR11,VCJR11,Outros,Outros,FII
+VCRA11,VCRA11,Títulos e Val. Mob.,Títulos e Val. Mob.,FII
+VCRI11,VCRI11,Outros,Outros,FII
+VCRR11,VCRR11,Logística,Logística,FII
+VGHF11,VGHF11,Outros,Outros,FII
+VGIA11,VGIA11,Outros,Outros,FII
+VGII11,VGII11,Multicategoria,Multicategoria,FII
+VGIP11,VGIP11,Outros,Outros,FII
+VGIR11,VGIR11,Outros,Outros,FII
+VGRI11,VGRI11,Outros,Outros,FII
+VHFA11,VHFA11,Outros,Outros,FII
+VILG11,VILG11,Logística,Logística,FII
+VINO11,VINO11,Multicategoria,Multicategoria,FII
+VISC11,VISC11,Shoppings,Shoppings,FII
+VIUR11,VIUR11,Outros,Outros,FII
+VOTS11,VOTS11,Multicategoria,Multicategoria,FII
+VPSI11,VPSI11,Shoppings,Shoppings,FII
+VRTA11,VRTA11,Outros,Outros,FII
+VRTM11,VRTM11,Multicategoria,Multicategoria,FII
+VSHO11,VSHO11,Shoppings,Shoppings,FII
+VSLH11,VSLH11,Multicategoria,Multicategoria,FII
+VTLT11,VTLT11,Logística,Logística,FII
+VTPL11,VTPL11,Outros,Outros,FII
+VVCR11,VVCR11,Outros,Outros,FII
+VVMR11,VVMR11,Multicategoria,Multicategoria,FII
+VVRI11,VVRI11,Multicategoria,Multicategoria,FII
+VXXV11,VXXV11,Outros,Outros,FII
+WHGR11,WHGR11,Multicategoria,Multicategoria,FII
+WPLZ11,WPLZ11,Shoppings,Shoppings,FII
+WSEC11,WSEC11,Outros,Outros,FII
+WTSP11,WTSP11,Multicategoria,Multicategoria,FII
+XPCA11,XPCA11,Multicategoria,Multicategoria,FII
+XPCI11,XPCI11,Outros,Outros,FII
+XPCM11,XPCM11,Escritórios,Escritórios,FII
+XPIN11,XPIN11,Logística,Logística,FII
+XPLG11,XPLG11,Logística,Logística,FII
+XPML11,XPML11,Shoppings,Shoppings,FII
+XPSF11,XPSF11,Outros,Outros,FII
+ZAGH11,ZAGH11,Outros,Outros,FII
+ZAVC11,ZAVC11,Outros,Outros,FII
+ZAVI11,ZAVI11,Multicategoria,Multicategoria,FII
+ZIFI11,ZIFI11,Outros,Outros,FII
