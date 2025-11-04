@@ -1,299 +1,418 @@
-ticker,nome,setor,subsetor
-PETR4,PETROBRAS PN,Petróleo e Gás,Exploração e Refino
-VALE3,VALE ON,Mineração,Minerais Metálicos
-ITUB4,ITAU UNIBANCO PN,Financeiro,Bancos
-BBDC4,BRADESCO PN,Financeiro,Bancos
-BBAS3,BANCO DO BRASIL ON,Financeiro,Bancos
-ABEV3,AMBEV ON,Consumo,Bebidas
-B3SA3,B3 ON,Financeiro,Serviços Financeiros
-RENT3,LOCALIZA ON,Consumo Cíclico,Aluguel de Carros
-WEGE3,WEG ON,Bens Industriais,Máquinas e Equipamentos
-SUZB3,SUZANO ON,Materiais Básicos,Papel e Celulose
-RAIL3,RUMO ON,Bens Industriais,Transporte
-JBSS3,JBS ON,Consumo,Alimentos
-MGLU3,MAGAZINE LUIZA ON,Consumo Cíclico,Varejo
-HAPV3,HAPVIDA ON,Saúde,Planos de Saúde
-RADL3,RAIA DROGASIL ON,Saúde,Farmácias
-GGBR4,GERDAU PN,Materiais Básicos,Siderurgia
-USIM5,USIMINAS PNA,Materiais Básicos,Siderurgia
-CSNA3,CSN ON,Materiais Básicos,Siderurgia
-KLBN11,KLABIN UNIT,Materiais Básicos,Papel e Celulose
-BEEF3,MINERVA ON,Consumo,Alimentos
-BRFS3,BRF ON,Consumo,Alimentos
-LREN3,LOJAS RENNER ON,Consumo Cíclico,Varejo
-ELET3,ELETROBRAS ON,Utilidade Pública,Energia Elétrica
-CMIG4,CEMIG PN,Utilidade Pública,Energia Elétrica
-CPLE6,COPEL PNB,Utilidade Pública,Energia Elétrica
-ENBR3,ENERGIAS BR ON,Utilidade Pública,Energia Elétrica
-TAEE11,TAESA UNIT,Utilidade Pública,Energia Elétrica
-SBSP3,SABESP ON,Utilidade Pública,Água e Saneamento
-CSAN3,COSAN ON,Petróleo e Gás,Combustíveis
-PRIO3,PRIO ON,Petróleo e Gás,Exploração
-EQTL3,EQUATORIAL ON,Utilidade Pública,Energia Elétrica
-VIVT3,TELEFONICA ON,Telecomunicações,Telefonia
-TIMS3,TIM ON,Telecomunicações,Telefonia
-TOTS3,TOTVS ON,Tecnologia,Software
-LWSA3,LOCAWEB ON,Tecnologia,Software
-AZUL4,AZUL PN,Bens Industriais,Transporte Aéreo
-GOLL4,GOL PN,Bens Industriais,Transporte Aéreo
-EMBR3,EMBRAER ON,Bens Industriais,Aeronaves
-CCRO3,CCR ON,Bens Industriais,Concessões Rodoviárias
-CYRE3,CYRELA ON,Construção,Incorporações
-MRFG3,MARFRIG ON,Consumo,Alimentos
-QUAL3,QUALICORP ON,Saúde,Administração de Planos
-FLRY3,FLEURY ON,Saúde,Diagnósticos
-PCAR3,PÃO DE AÇUCAR ON,Consumo,Varejo Alimentar
-ASAI3,ASSAI ON,Consumo,Varejo Alimentar
-CRFB3,CARREFOUR BR ON,Consumo,Varejo Alimentar
-IGTI11,IGUATEMI UNIT,Consumo Cíclico,Shopping Centers
-MULT3,MULTIPLAN ON,Consumo Cíclico,Shopping Centers
-MRVE3,MRV ON,Construção,Incorporações
-EZTC3,EZTEC ON,Construção,Incorporações
-COGN3,COGNA ON,Educação,Ensino Superior
-YDUQ3,YDUQS ON,Educação,Ensino Superior
-VIVA3,VIVARA ON,Consumo Cíclico,Varejo
-PETZ3,PETZ ON,Consumo Cíclico,Varejo
-AMER3,AMERICANAS ON,Consumo Cíclico,Varejo
-VAMO3,VAMOS ON,Bens Industriais,Aluguel de Veículos
-IRBR3,IRB BRASIL ON,Financeiro,Seguros
-SULA11,SUL AMERICA UNIT,Financeiro,Seguros
-BBSE3,BB SEGURIDADE ON,Financeiro,Seguros
-ENEV3,ENEVA ON,Utilidade Pública,Energia
-CVCB3,CVC BRASIL ON,Consumo Cíclico,Turismo
-GOAU4,GERDAU METALURGICA PN,Materiais Básicos,Siderurgia
-BRAP4,BRADESPAR PN,Mineração,Participações
-EGIE3,ENGIE BRASIL ON,Utilidade Pública,Energia
-RECV3,PETRORECONCAVO ON,Petróleo e Gás,Exploração
-AURE3,AUREN ON,Utilidade Pública,Energia
-NTCO3,NATURA ON,Consumo,Cosméticos
-SMTO3,SAO MARTINHO ON,Consumo,Açúcar e Álcool
-BRKM5,BRASKEM PNA,Materiais Básicos,Petroquímicos
-RAIZ4,RAIZEN PN,Petróleo e Gás,Combustíveis
-DXCO3,DEXCO ON,Construção,Materiais de Construção
-SEER3,SER EDUCACIONAL ON,Educação,Ensino
-BHIA3,CASAS BAHIA ON,Consumo Cíclico,Varejo
-SIMH3,SIMPAR ON,Bens Industriais,Holdings
-STBP3,SANTOS BRASIL ON,Bens Industriais,Portos
-ALOS3,ALLOS ON,Consumo Cíclico,Shopping Centers
-BRML3,BR MALLS ON,Consumo Cíclico,Shopping Centers
-ALSO3,ALIANSCE SONAE ON,Consumo Cíclico,Shopping Centers
-UGPA3,ULTRAPAR ON,Petróleo e Gás,Combustíveis
-GRND3,GRENDENE ON,Consumo Cíclico,Calçados
-SOMA3,GRUPO SOMA ON,Consumo Cíclico,Varejo Vestuário
-SLCE3,SLC AGRICOLA ON,Consumo,Agronegócio
-BLAU3,BLAU ON,Farmacêutica,Medicamentos
-POMO4,MARCOPOLO PN,Bens Industriais,Veículos
-EVEN3,EVEN ON,Construção,Incorporações
-TRIS3,TRISUL ON,Construção,Incorporações
-JHSF3,JHSF ON,Construção,Incorporações
-WIZC3,WIZ CO ON,Financeiro,Corretora de Seguros
-TTEN3,3TENTOS ON,Consumo,Agronegócio
-MATD3,MATER DEI ON,Saúde,Hospitais
-ONCO3,ONCOCLÍNICAS ON,Saúde,Hospitais
-BPAC11,BTGP BANCO UNIT,Financeiro,Bancos
-SANB11,SANTANDER BR UNIT,Financeiro,Bancos
-BPAN4,BANCO PAN PN,Financeiro,Bancos
-BMGB4,BANCO BMG PN,Financeiro,Bancos
-PINE4,PINE PN,Financeiro,Banco de Investimento
-AALR3,ALIANSCE SONAE ON,Consumo Cíclico,Shopping Centers
-MDIA3,M.DIAS BRANCO ON,Consumo,Alimentos
-GMAT3,GRUPO MATEUS ON,Consumo,Varejo Alimentar
-MILS3,MILLS ON,Construção,Incorporações
-SGPS3,SPRINGS ON,Consumo,Têxtil
-TUPY3,TUPY ON,Bens Industriais,Autopeças
-VLID3,VALID ON,Tecnologia,Processamento de Dados
-NINJ3,NINJA ON,Tecnologia,Software
-BIDI11,BANCO INTER UNIT,Financeiro,Bancos
-CASH3,MELIUZ ON,Tecnologia,Serviços Financeiros
-MEAL3,IMC ON,Consumo,Alimentos
-POSI3,POSITIVO ON,Tecnologia,Computadores
-LOGN3,LOG IN ON,Bens Industriais,Logística
-MOVI3,MOVIDA ON,Consumo Cíclico,Aluguel de Carros
-INTB3,INTELBRAS ON,Tecnologia,Equipamentos
-ESPA3,ESPACOLASER ON,Saúde,Estética
-HYPE3,HYPERA ON,Farmacêutica,Medicamentos
-PRNR3,PRUMO ON,Petróleo e Gás,Logística
-TPIS3,TRIUNFO PART ON,Bens Industriais,Concessões
-ECOR3,ECORODOVIAS ON,Bens Industriais,Concessões
-WEST3,WESTWING ON,Consumo Cíclico,Varejo Online
-KEPL3,KEPLER WEBER ON,Bens Industriais,Máquinas Agrícolas
-AGRO3,BRASILAGRO ON,Consumo,Agronegócio
-CAML3,CAMIL ON,Consumo,Alimentos
-MBLY3,MOBLY ON,Consumo Cíclico,Varejo Online
-CLSA3,CLEARSALE ON,Tecnologia,Serviços de Segurança
-TEND3,TENDA ON,Construção,Incorporações
-POMO3,MARCOPOLO ON,Bens Industriais,Veículos
-TFCO4,TRACK FIELD PN,Consumo Cíclico,Vestuário
-FESA4,FERBASA PN,Materiais Básicos,Mineração
-UNIP6,UNIPAR PNB,Materiais Básicos,Petroquímicos
-LUPA3,LUPATECH ON,Petróleo e Gás,Equipamentos
-VULC3,VULCABRAS ON,Consumo Cíclico,Calçados
-RCSL3,RECRUSUL ON,Materiais Básicos,Siderurgia
-SOJA3,BOA SAFRA ON,Consumo,Agronegócio
-DMVF3,D1000 VAREJO ON,Consumo Cíclico,Varejo
-NGRD3,NEOGRID ON,Tecnologia,Software
-IFCM3,INFRACOMMERCE ON,Tecnologia,E-commerce
-AERI3,AERIS ON,Bens Industriais,Aeronaves
-SHUL4,SCHULZ PN,Bens Industriais,Máquinas
-HBSA3,HIDROVIAS ON,Bens Industriais,Transporte Hidroviário
-RRRP3,3R PETROLEUM ON,Petróleo e Gás,Exploração
-PTBL3,PBG ON,Consumo,Bebidas
-CMIN3,CSN MINERAÇÃO ON,Mineração,Minerais Metálicos
-CIEL3,CIELO ON,Tecnologia,Meios de Pagamento
-LJQQ3,QUERO-QUERO ON,Construção,Varejo
-LEVE3,MAHLE METAL LEVE ON,Bens Industriais,Autopeças
-FRAS3,FRAS-LE ON,Bens Industriais,Autopeças
-BOAS3,BOA VISTA ON,Tecnologia,Análise de Crédito
-DIRR3,DIRECIONAL ON,Construção,Incorporações
-GUAR3,GUARARAPES ON,Consumo Cíclico,Vestuário
-ARZZ3,AREZZO ON,Consumo Cíclico,Calçados
-ALPK3,ALLPARK ON,Bens Industriais,Estacionamentos
-ALUP11,ALUPAR UNIT,Utilidade Pública,Energia
-NEOE3,NEOENERGIA ON,Utilidade Pública,Energia
-TRPL4,TRAN PAULIST PN,Utilidade Pública,Energia
-CPFE3,CPFL ENERGIA ON,Utilidade Pública,Energia
-ELPL4,ELETROPAULO PN,Utilidade Pública,Energia
-LIGT3,LIGHT ON,Utilidade Pública,Energia
-SAPR11,SANEPAR UNIT,Utilidade Pública,Saneamento
-CESP6,CESP PNB,Utilidade Pública,Energia
-ANIM3,ANIMA ON,Educação,Ensino
-CRPG5,CRISTAL PNA,Consumo,Bebidas
-GSHP3,GENERALSHOPP ON,Consumo Cíclico,Shopping Centers
-PSSA3,PORTO SEGURO ON,Financeiro,Seguros
-DESK3,DESKTOP ON,Tecnologia,Software
-SYNE3,SYN PROP TECH ON,Tecnologia,PropTech
-ORVR3,ORIZON ON,Utilidade Pública,Saneamento
-PGMN3,PAGUE MENOS ON,Saúde,Farmácias
-OPCT3,OCEANPACT ON,Petróleo e Gás,Serviços
-ODPV3,ODONTOPREV ON,Saúde,Planos Odontológicos
-GPIV33,GPA INVEST BDR,Consumo,Varejo
-JALL3,JALLESMACHADO ON,Consumo,Açúcar e Álcool
-BALM4,BAUMER PN,Bens Industriais,Máquinas
-TCSA3,TECNISA ON,Construção,Incorporações
-AVLL3,ALPHAVILLE ON,Construção,Incorporações
-PLPL3,PLANO E PLANO ON,Construção,Incorporações
-BMKS3,BRK AMBIENTAL ON,Utilidade Pública,Saneamento
-SAPR4,SANEPAR PN,Utilidade Pública,Saneamento
-CSMG3,COPASA ON,Utilidade Pública,Saneamento
-LUXM4,TREVISA PN,Consumo,Alimentos
-MTRE3,MITRE REALTY ON,Construção,Incorporações
-LAVV3,LAVVI ON,Construção,Incorporações
-AGXY3,AGROGALAXY ON,Consumo,Agronegócio
-JSLG3,JSL ON,Bens Industriais,Transporte Rodoviário
-RDOR3,REDE DOR ON,Saúde,Hospitais
-DASA3,DASA ON,Saúde,Diagnósticos
-ABCB4,ABC BRASIL PN,Financeiro,Bancos
-BRSR6,BANRISUL PNB,Financeiro,Bancos
-CTSA4,SANTANENSE PN,Consumo,Têxtil
-RSID3,ROSSI RESID ON,Construção,Incorporações
-PDGR3,PDG REALTY ON,Construção,Incorporações
-AMBP3,AMBIPAR ON,Utilidade Pública,Gestão Ambiental
-PORT3,WILSON SONS ON,Bens Industriais,Portos
-CEAB3,CEA MODAS ON,Consumo Cíclico,Vestuário
-MODL11,GRUPO MULTI UNIT,Consumo Cíclico,Shopping Centers
-SMFT3,SMART FIT ON,Consumo Cíclico,Fitness
-SHOW3,TIME FOR FUN ON,Consumo Cíclico,Entretenimento
-CARD3,CSU CARDSYST ON,Tecnologia,Serviços
-BMOB3,BEMOBI TECH ON,Tecnologia,Software
-CURY3,CURY ON,Construção,Incorporações
-PTNT4,PETTENATI PN,Consumo,Têxtil
-TELB4,TELEBRAS PN,Telecomunicações,Telefonia
-OIBR3,OI ON,Telecomunicações,Telefonia
-BIOM3,BIOMM ON,Farmacêutica,Biotecnologia
-ROMI3,ROMI ON,Bens Industriais,Máquinas
-EMAE4,EMAE PN,Utilidade Pública,Energia
-EUCA4,EUCATEX PN,Construção,Materiais de Construção
-IGBR3,IGB ON,Construção,Incorporações
-TGMA3,TEGMA ON,Bens Industriais,Logística
-ATOM3,ATOM ON,Bens Industriais,Estacionamentos
-LAND3,TERRA SANTA ON,Consumo,Agronegócio
-BIOM3,BIOMM ON,Farmacêutica,Biotecnologia
-CBAV3,CBA ON,Materiais Básicos,Mineração
-HETA4,HERCULES PN,Bens Industriais,Transporte Marítimo
-MYPK3,IOCHPE MAXION ON,Bens Industriais,Autopeças
-VITT3,VITTIA ON,Consumo,Agroquímicos
-PNVL3,DIMED ON,Saúde,Farmácias
-PFRM3,PROFARMA ON,Saúde,Farmácias
-JFEN3,JOAO FORTES ON,Construção,Incorporações
-AMAR3,LOJAS MARISA ON,Consumo Cíclico,Vestuário
-FHER3,FER HERINGER ON,Consumo,Fertilizantes
-MBLS3,MOBILIS ON,Construção,Incorporações
-HOOT4,HOTEIS OTHON PN,Consumo Cíclico,Hotelaria
-CTKA4,KARSTEN PN,Consumo,Têxtil Lar
-RANI3,IRANI ON,Materiais Básicos,Papel e Celulose
-MELK3,MELNICK ON,Construção,Incorporações
-ALPA4,ALPARGATAS PN,Consumo Cíclico,Calçados
-LLIS3,LE LIS BLANC ON,Consumo Cíclico,Vestuário
-KLBN4,KLABIN PN,Materiais Básicos,Papel e Celulose
-PETR3,PETROBRAS ON,Petróleo e Gás,Exploração e Refino
-VALE5,VALE PNA,Mineração,Minerais Metálicos
-BBDC3,BRADESCO ON,Financeiro,Bancos
-ITSA4,ITAUSA PN,Financeiro,Holdings
-ELET6,ELETROBRAS PNB,Utilidade Pública,Energia Elétrica
-CMIG3,CEMIG ON,Utilidade Pública,Energia Elétrica
-VIVT4,TELEFONICA PN,Telecomunicações,Telefonia
-USIM3,USIMINAS ON,Materiais Básicos,Siderurgia
-GGBR3,GERDAU ON,Materiais Básicos,Siderurgia
-EMBR4,EMBRAER PN,Bens Industriais,Aeronaves
-KLBN3,KLABIN ON,Materiais Básicos,Papel e Celulose
-GOAU3,GERDAU MET ON,Materiais Básicos,Siderurgia
-BRAP3,BRADESPAR ON,Mineração,Participações
-CPLE3,COPEL ON,Utilidade Pública,Energia Elétrica
-SBSP6,SABESP PNB,Utilidade Pública,Água e Saneamento
-TAEE3,TAESA ON,Utilidade Pública,Energia Elétrica
-PRIO3,PRIO ON,Petróleo e Gás,Exploração
-RAPT4,RANDON PART PN,Bens Industriais,Veículos
-BRDT3,PETROBRAS BR ON,Petróleo e Gás,Refino
-PETZ4,PETZ PN,Consumo Cíclico,Varejo
-COCE5,COELCE PNA,Utilidade Pública,Energia Elétrica
-PEAB3,PETROBRAS ANP ON,Petróleo e Gás,Combustíveis
-PEAB4,PETROBRAS ANP PN,Petróleo e Gás,Combustíveis
-TASA4,TAURUS ARMAS PN,Bens Industriais,Armas e Munições
-CSAB4,ALFA CONSORCIO PN,Financeiro,Consórcios
-LAME4,LOJAS AMERICANAS PN,Consumo Cíclico,Varejo
-VVAR3,VIAVAREJO ON,Consumo Cíclico,Varejo
-HBOR3,HELBOR ON,Construção,Incorporações
-SCAR3,SAO CARLOS ON,Construção,Incorporações
-AESB3,AES BRASIL ON,Utilidade Pública,Energia
-TRPL3,TRAN PAULIST ON,Utilidade Pública,Energia
-CLSC4,CELESC PN,Utilidade Pública,Energia
-RNEW11,RENOVA UNIT,Utilidade Pública,Energia Renovável
-FIQE3,UNIFIQUE ON,Telecomunicações,Internet
-DESK3,DESKTOP ON,Tecnologia,Software
-MDNE3,MOURA DUBEUX ON,Construção,Incorporações
-OIBR4,OI PN,Telecomunicações,Telefonia
-SGAS4,SULGIPE GAS PN,Utilidade Pública,Gás
-GEPA4,GERAÇÃO PARANA PN,Utilidade Pública,Energia
-CNTO3,BAUMER ON,Bens Industriais,Máquinas
-CSRN3,COPASA ON,Utilidade Pública,Saneamento
-BRGE12,ALFA INVEST UNIT,Financeiro,Investimentos
-AEIN3,AUREN ENERGIA ON,Utilidade Pública,Energia
-CSED3,CRUZEIRO SUL ON,Educação,Ensino
-GETT11,GETNET UNIT,Tecnologia,Meios de Pagamento
-BRGE3,ALFA INVEST ON,Financeiro,Investimentos
-MRSA3B,MRS LOG ON,Bens Industriais,Transporte Ferroviário
-MLFT4,MELHOR FROTA PN,Bens Industriais,Logística
-BRGE5,ALFA INVEST PNA,Financeiro,Investimentos
-BRGE6,ALFA INVEST PNB,Financeiro,Investimentos
-BRGE7,ALFA INVEST PNC,Financeiro,Investimentos
-BRGE8,ALFA INVEST PND,Financeiro,Investimentos
-CSNA3,CSN ON,Materiais Básicos,Siderurgia
-BBDC4,BRADESCO PN,Financeiro,Bancos
-ITUB4,ITAU UNIBANCO PN,Financeiro,Bancos
-PETR4,PETROBRAS PN,Petróleo e Gás,Exploração e Refino
-VALE3,VALE ON,Mineração,Minerais Metálicos
-BBAS3,BANCO DO BRASIL ON,Financeiro,Bancos
-ABEV3,AMBEV ON,Consumo,Bebidas
-B3SA3,B3 ON,Financeiro,Serviços Financeiros
-RENT3,LOCALIZA ON,Consumo Cíclico,Aluguel de Carros
-WEGE3,WEG ON,Bens Industriais,Máquinas e Equipamentos
-SUZB3,SUZANO ON,Materiais Básicos,Papel e Celulose
-RAIL3,RUMO ON,Bens Industriais,Transporte
-JBSS3,JBS ON,Consumo,Alimentos
-MGLU3,MAGAZINE LUIZA ON,Consumo Cíclico,Varejo
-HAPV3,HAPVIDA ON,Saúde,Planos de Saúde
-RADL3,RAIA DROGASIL ON,Saúde,Farmácias
-GGBR4,GERDAU PN,Materiais Básicos,Siderurgia
-USIM5,USIMINAS PNA,Materiais Básicos,Siderurgia
-LREN3,LOJAS RENNER ON,Consumo Cíclico,Varejo
-ELET3,ELETROBRAS ON,Utilidade Pública,Energia Elétrica
+ticker,nome,setor,subsetor,categoria
+AALR3,AALR3,Outros,Outros,AÃ§Ã£o
+ABCB4,ABCB4,Outros,Outros,AÃ§Ã£o
+ABEV3,ABEV3,Alimentos e Bebidas,Alimentos e Bebidas,AÃ§Ã£o
+ADHM3,ADHM3,Outros,Outros,AÃ§Ã£o
+ADMF3,ADMF3,Outros,Outros,AÃ§Ã£o
+AERI3,AERI3,Outros,Outros,AÃ§Ã£o
+AFLT3,AFLT3,Outros,Outros,AÃ§Ã£o
+AGRO3,AGRO3,Outros,Outros,AÃ§Ã£o
+AGXY3,AGXY3,Outros,Outros,AÃ§Ã£o
+AHEB3,AHEB3,Outros,Outros,AÃ§Ã£o
+ALLD3,ALLD3,Outros,Outros,AÃ§Ã£o
+ALOS3,ALOS3,Outros,Outros,AÃ§Ã£o
+ALPA3,ALPA3,Outros,Outros,AÃ§Ã£o
+ALPA4,ALPA4,Outros,Outros,AÃ§Ã£o
+ALPK3,ALPK3,Outros,Outros,AÃ§Ã£o
+ALUP11,ALUP11,Outros,Outros,AÃ§Ã£o
+ALUP3,ALUP3,Outros,Outros,AÃ§Ã£o
+ALUP4,ALUP4,Outros,Outros,AÃ§Ã£o
+AMAR3,AMAR3,Outros,Outros,AÃ§Ã£o
+AMBP3,AMBP3,Outros,Outros,AÃ§Ã£o
+AMER3,AMER3,Varejo,Varejo,AÃ§Ã£o
+AMOB3,AMOB3,Outros,Outros,AÃ§Ã£o
+ANIM3,ANIM3,Outros,Outros,AÃ§Ã£o
+ARML3,ARML3,Outros,Outros,AÃ§Ã£o
+ASAI3,ASAI3,Outros,Outros,AÃ§Ã£o
+ATED3,ATED3,Outros,Outros,AÃ§Ã£o
+AURA33,AURA33,Outros,Outros,AÃ§Ã£o
+AURE3,AURE3,Outros,Outros,AÃ§Ã£o
+AVLL3,AVLL3,Outros,Outros,AÃ§Ã£o
+AZEV3,AZEV3,Outros,Outros,AÃ§Ã£o
+AZEV4,AZEV4,Outros,Outros,AÃ§Ã£o
+AZTE3,AZTE3,Outros,Outros,AÃ§Ã£o
+AZUL4,AZUL4,Outros,Outros,AÃ§Ã£o
+AZZA3,AZZA3,Outros,Outros,AÃ§Ã£o
+B3SA3,B3SA3,Outros,Outros,AÃ§Ã£o
+BALM3,BALM3,Outros,Outros,AÃ§Ã£o
+BALM4,BALM4,Outros,Outros,AÃ§Ã£o
+BAUH4,BAUH4,Outros,Outros,AÃ§Ã£o
+BAZA3,BAZA3,Outros,Outros,AÃ§Ã£o
+BBAS3,BBAS3,Financeiro,Financeiro,AÃ§Ã£o
+BBDC3,BBDC3,Financeiro,Financeiro,AÃ§Ã£o
+BBDC4,BBDC4,Financeiro,Financeiro,AÃ§Ã£o
+BBSE3,BBSE3,Outros,Outros,AÃ§Ã£o
+BDLL3,BDLL3,Outros,Outros,AÃ§Ã£o
+BDLL4,BDLL4,Outros,Outros,AÃ§Ã£o
+BEEF3,BEEF3,Alimentos e Bebidas,Alimentos e Bebidas,AÃ§Ã£o
+BEES3,BEES3,Outros,Outros,AÃ§Ã£o
+BEES4,BEES4,Outros,Outros,AÃ§Ã£o
+BGIP3,BGIP3,Outros,Outros,AÃ§Ã£o
+BGIP4,BGIP4,Outros,Outros,AÃ§Ã£o
+BHIA3,BHIA3,Outros,Outros,AÃ§Ã£o
+BIED3,BIED3,Outros,Outros,AÃ§Ã£o
+BIOM3,BIOM3,Outros,Outros,AÃ§Ã£o
+BLAU3,BLAU3,Outros,Outros,AÃ§Ã£o
+BLUT3,BLUT3,Outros,Outros,AÃ§Ã£o
+BLUT4,BLUT4,Outros,Outros,AÃ§Ã£o
+BMEB3,BMEB3,Outros,Outros,AÃ§Ã£o
+BMEB4,BMEB4,Outros,Outros,AÃ§Ã£o
+BMGB4,BMGB4,Financeiro,Financeiro,AÃ§Ã£o
+BMIN3,BMIN3,Outros,Outros,AÃ§Ã£o
+BMIN4,BMIN4,Outros,Outros,AÃ§Ã£o
+BMKS3,BMKS3,Outros,Outros,AÃ§Ã£o
+BMOB3,BMOB3,Outros,Outros,AÃ§Ã£o
+BNBR3,BNBR3,Outros,Outros,AÃ§Ã£o
+BOBR4,BOBR4,Outros,Outros,AÃ§Ã£o
+BPAC11,BPAC11,Financeiro,Financeiro,AÃ§Ã£o
+BPAC3,BPAC3,Financeiro,Financeiro,AÃ§Ã£o
+BPAC5,BPAC5,Financeiro,Financeiro,AÃ§Ã£o
+BPAN4,BPAN4,Financeiro,Financeiro,AÃ§Ã£o
+BRAP3,BRAP3,Outros,Outros,AÃ§Ã£o
+BRAP4,BRAP4,Outros,Outros,AÃ§Ã£o
+BRAV3,BRAV3,Outros,Outros,AÃ§Ã£o
+BRBI11,BRBI11,Outros,Outros,AÃ§Ã£o
+BRFS3,BRFS3,Outros,Outros,AÃ§Ã£o
+BRKM3,BRKM3,Outros,Outros,AÃ§Ã£o
+BRKM5,BRKM5,Outros,Outros,AÃ§Ã£o
+BRKM6,BRKM6,Outros,Outros,AÃ§Ã£o
+BRSR3,BRSR3,Outros,Outros,AÃ§Ã£o
+BRSR5,BRSR5,Outros,Outros,AÃ§Ã£o
+BRSR6,BRSR6,Outros,Outros,AÃ§Ã£o
+BRST3,BRST3,Outros,Outros,AÃ§Ã£o
+BSLI3,BSLI3,Outros,Outros,AÃ§Ã£o
+BSLI4,BSLI4,Outros,Outros,AÃ§Ã£o
+CALI3,CALI3,Outros,Outros,AÃ§Ã£o
+CAMB3,CAMB3,Outros,Outros,AÃ§Ã£o
+CAML3,CAML3,Outros,Outros,AÃ§Ã£o
+CASH3,CASH3,Outros,Outros,AÃ§Ã£o
+CBAV3,CBAV3,Outros,Outros,AÃ§Ã£o
+CBEE3,CBEE3,Outros,Outros,AÃ§Ã£o
+CEAB3,CEAB3,Varejo,Varejo,AÃ§Ã£o
+CEBR3,CEBR3,Outros,Outros,AÃ§Ã£o
+CEBR5,CEBR5,Outros,Outros,AÃ§Ã£o
+CEBR6,CEBR6,Outros,Outros,AÃ§Ã£o
+CEDO3,CEDO3,Outros,Outros,AÃ§Ã£o
+CEDO4,CEDO4,Outros,Outros,AÃ§Ã£o
+CEEB3,CEEB3,Outros,Outros,AÃ§Ã£o
+CEEB5,CEEB5,Outros,Outros,AÃ§Ã£o
+CEED3,CEED3,Outros,Outros,AÃ§Ã£o
+CEGR3,CEGR3,Outros,Outros,AÃ§Ã£o
+CGAS3,CGAS3,Outros,Outros,AÃ§Ã£o
+CGAS5,CGAS5,Outros,Outros,AÃ§Ã£o
+CGRA3,CGRA3,Outros,Outros,AÃ§Ã£o
+CGRA4,CGRA4,Outros,Outros,AÃ§Ã£o
+CLSC3,CLSC3,Outros,Outros,AÃ§Ã£o
+CLSC4,CLSC4,Outros,Outros,AÃ§Ã£o
+CMIG3,CMIG3,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+CMIG4,CMIG4,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+CMIN3,CMIN3,Outros,Outros,AÃ§Ã£o
+COCE3,COCE3,Outros,Outros,AÃ§Ã£o
+COCE5,COCE5,Outros,Outros,AÃ§Ã£o
+COGN3,COGN3,Outros,Outros,AÃ§Ã£o
+CPFE3,CPFE3,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+CPLE3,CPLE3,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+CPLE5,CPLE5,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+CPLE6,CPLE6,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+CRPG3,CRPG3,Outros,Outros,AÃ§Ã£o
+CRPG5,CRPG5,Outros,Outros,AÃ§Ã£o
+CRPG6,CRPG6,Outros,Outros,AÃ§Ã£o
+CSAN3,CSAN3,Outros,Outros,AÃ§Ã£o
+CSED3,CSED3,Outros,Outros,AÃ§Ã£o
+CSMG3,CSMG3,Outros,Outros,AÃ§Ã£o
+CSNA3,CSNA3,MineraÃ§Ã£o,MineraÃ§Ã£o,AÃ§Ã£o
+CSUD3,CSUD3,Outros,Outros,AÃ§Ã£o
+CTAX3,CTAX3,Outros,Outros,AÃ§Ã£o
+CTKA3,CTKA3,Outros,Outros,AÃ§Ã£o
+CTKA4,CTKA4,Outros,Outros,AÃ§Ã£o
+CTSA3,CTSA3,Outros,Outros,AÃ§Ã£o
+CTSA4,CTSA4,Outros,Outros,AÃ§Ã£o
+CURY3,CURY3,Outros,Outros,AÃ§Ã£o
+CVCB3,CVCB3,Outros,Outros,AÃ§Ã£o
+CXSE3,CXSE3,Outros,Outros,AÃ§Ã£o
+CYRE3,CYRE3,ConstruÃ§Ã£o Civil,ConstruÃ§Ã£o Civil,AÃ§Ã£o
+DASA3,DASA3,SaÃºde,SaÃºde,AÃ§Ã£o
+DESK3,DESK3,Outros,Outros,AÃ§Ã£o
+DEXP3,DEXP3,Outros,Outros,AÃ§Ã£o
+DEXP4,DEXP4,Outros,Outros,AÃ§Ã£o
+DIRR3,DIRR3,ConstruÃ§Ã£o Civil,ConstruÃ§Ã£o Civil,AÃ§Ã£o
+DMVF3,DMVF3,Outros,Outros,AÃ§Ã£o
+DOHL4,DOHL4,Outros,Outros,AÃ§Ã£o
+DOTZ3,DOTZ3,Outros,Outros,AÃ§Ã£o
+DTCY3,DTCY3,Outros,Outros,AÃ§Ã£o
+DXCO3,DXCO3,Outros,Outros,AÃ§Ã£o
+EALT3,EALT3,Outros,Outros,AÃ§Ã£o
+EALT4,EALT4,Outros,Outros,AÃ§Ã£o
+ECOR3,ECOR3,Outros,Outros,AÃ§Ã£o
+EGIE3,EGIE3,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+EKTR3,EKTR3,Outros,Outros,AÃ§Ã£o
+EKTR4,EKTR4,Outros,Outros,AÃ§Ã£o
+ELET3,ELET3,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+ELET5,ELET5,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+ELET6,ELET6,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+EMAE4,EMAE4,Outros,Outros,AÃ§Ã£o
+EMBR3,EMBR3,Outros,Outros,AÃ§Ã£o
+ENEV3,ENEV3,Outros,Outros,AÃ§Ã£o
+ENGI11,ENGI11,PetrÃ³leo e GÃ¡s,PetrÃ³leo e GÃ¡s,AÃ§Ã£o
+ENGI3,ENGI3,PetrÃ³leo e GÃ¡s,PetrÃ³leo e GÃ¡s,AÃ§Ã£o
+ENGI4,ENGI4,PetrÃ³leo e GÃ¡s,PetrÃ³leo e GÃ¡s,AÃ§Ã£o
+ENJU3,ENJU3,Outros,Outros,AÃ§Ã£o
+ENMT3,ENMT3,Outros,Outros,AÃ§Ã£o
+ENMT4,ENMT4,Outros,Outros,AÃ§Ã£o
+EPAR3,EPAR3,Outros,Outros,AÃ§Ã£o
+EQMA3B,EQMA3B,Outros,Outros,AÃ§Ã£o
+EQPA3,EQPA3,Outros,Outros,AÃ§Ã£o
+EQPA5,EQPA5,Outros,Outros,AÃ§Ã£o
+EQPA7,EQPA7,Outros,Outros,AÃ§Ã£o
+EQTL3,EQTL3,Outros,Outros,AÃ§Ã£o
+ESPA3,ESPA3,Outros,Outros,AÃ§Ã£o
+ESTR3,ESTR3,Outros,Outros,AÃ§Ã£o
+ESTR4,ESTR4,Outros,Outros,AÃ§Ã£o
+ETER3,ETER3,Outros,Outros,AÃ§Ã£o
+EUCA3,EUCA3,Outros,Outros,AÃ§Ã£o
+EUCA4,EUCA4,Outros,Outros,AÃ§Ã£o
+EVEN3,EVEN3,ConstruÃ§Ã£o Civil,ConstruÃ§Ã£o Civil,AÃ§Ã£o
+EZTC3,EZTC3,ConstruÃ§Ã£o Civil,ConstruÃ§Ã£o Civil,AÃ§Ã£o
+FESA3,FESA3,Outros,Outros,AÃ§Ã£o
+FESA4,FESA4,Outros,Outros,AÃ§Ã£o
+FHER3,FHER3,Outros,Outros,AÃ§Ã£o
+FICT3,FICT3,Outros,Outros,AÃ§Ã£o
+FIEI3,FIEI3,Outros,Outros,AÃ§Ã£o
+FIQE3,FIQE3,Outros,Outros,AÃ§Ã£o
+FLRY3,FLRY3,SaÃºde,SaÃºde,AÃ§Ã£o
+FRAS3,FRAS3,Outros,Outros,AÃ§Ã£o
+FRIO3,FRIO3,Outros,Outros,AÃ§Ã£o
+GEPA3,GEPA3,Outros,Outros,AÃ§Ã£o
+GEPA4,GEPA4,Outros,Outros,AÃ§Ã£o
+GFSA3,GFSA3,Outros,Outros,AÃ§Ã£o
+GGBR3,GGBR3,MineraÃ§Ã£o,MineraÃ§Ã£o,AÃ§Ã£o
+GGBR4,GGBR4,MineraÃ§Ã£o,MineraÃ§Ã£o,AÃ§Ã£o
+GGPS3,GGPS3,Outros,Outros,AÃ§Ã£o
+GMAT3,GMAT3,Outros,Outros,AÃ§Ã£o
+GOAU3,GOAU3,MineraÃ§Ã£o,MineraÃ§Ã£o,AÃ§Ã£o
+GOAU4,GOAU4,MineraÃ§Ã£o,MineraÃ§Ã£o,AÃ§Ã£o
+GPAR3,GPAR3,Outros,Outros,AÃ§Ã£o
+GRND3,GRND3,Outros,Outros,AÃ§Ã£o
+GSHP3,GSHP3,Outros,Outros,AÃ§Ã£o
+GUAR3,GUAR3,Outros,Outros,AÃ§Ã£o
+HAGA3,HAGA3,Outros,Outros,AÃ§Ã£o
+HAGA4,HAGA4,Outros,Outros,AÃ§Ã£o
+HAPV3,HAPV3,SaÃºde,SaÃºde,AÃ§Ã£o
+HBOR3,HBOR3,ConstruÃ§Ã£o Civil,ConstruÃ§Ã£o Civil,AÃ§Ã£o
+HBRE3,HBRE3,Outros,Outros,AÃ§Ã£o
+HBSA3,HBSA3,Outros,Outros,AÃ§Ã£o
+HBTS5,HBTS5,Outros,Outros,AÃ§Ã£o
+HETA4,HETA4,Outros,Outros,AÃ§Ã£o
+HOOT4,HOOT4,Outros,Outros,AÃ§Ã£o
+HYPE3,HYPE3,SaÃºde,SaÃºde,AÃ§Ã£o
+IFCM3,IFCM3,Outros,Outros,AÃ§Ã£o
+IGBR3,IGBR3,Outros,Outros,AÃ§Ã£o
+IGTI11,IGTI11,Outros,Outros,AÃ§Ã£o
+IGTI3,IGTI3,Outros,Outros,AÃ§Ã£o
+INEP3,INEP3,Outros,Outros,AÃ§Ã£o
+INEP4,INEP4,Outros,Outros,AÃ§Ã£o
+INTB3,INTB3,Outros,Outros,AÃ§Ã£o
+IRBR3,IRBR3,Outros,Outros,AÃ§Ã£o
+ISAE3,ISAE3,Outros,Outros,AÃ§Ã£o
+ISAE4,ISAE4,Outros,Outros,AÃ§Ã£o
+ITSA3,ITSA3,Outros,Outros,AÃ§Ã£o
+ITSA4,ITSA4,Outros,Outros,AÃ§Ã£o
+ITUB3,ITUB3,Financeiro,Financeiro,AÃ§Ã£o
+ITUB4,ITUB4,Financeiro,Financeiro,AÃ§Ã£o
+JALL3,JALL3,Outros,Outros,AÃ§Ã£o
+JFEN3,JFEN3,Outros,Outros,AÃ§Ã£o
+JHSF3,JHSF3,ConstruÃ§Ã£o Civil,ConstruÃ§Ã£o Civil,AÃ§Ã£o
+JOPA3,JOPA3,Outros,Outros,AÃ§Ã£o
+JPSA3,JPSA3,Outros,Outros,AÃ§Ã£o
+JSLG3,JSLG3,Outros,Outros,AÃ§Ã£o
+KEPL3,KEPL3,Outros,Outros,AÃ§Ã£o
+KLBN11,KLBN11,Papel e Celulose,Papel e Celulose,AÃ§Ã£o
+KLBN3,KLBN3,Papel e Celulose,Papel e Celulose,AÃ§Ã£o
+KLBN4,KLBN4,Papel e Celulose,Papel e Celulose,AÃ§Ã£o
+LAND3,LAND3,Outros,Outros,AÃ§Ã£o
+LAVV3,LAVV3,Outros,Outros,AÃ§Ã£o
+LEVE3,LEVE3,Outros,Outros,AÃ§Ã£o
+LIGT3,LIGT3,Outros,Outros,AÃ§Ã£o
+LJQQ3,LJQQ3,Outros,Outros,AÃ§Ã£o
+LOGG3,LOGG3,Outros,Outros,AÃ§Ã£o
+LOGN3,LOGN3,LogÃ­stica,LogÃ­stica,AÃ§Ã£o
+LPSB3,LPSB3,Outros,Outros,AÃ§Ã£o
+LREN3,LREN3,Varejo,Varejo,AÃ§Ã£o
+LUPA3,LUPA3,Outros,Outros,AÃ§Ã£o
+LUXM4,LUXM4,Outros,Outros,AÃ§Ã£o
+LWSA3,LWSA3,Outros,Outros,AÃ§Ã£o
+MAPT4,MAPT4,Outros,Outros,AÃ§Ã£o
+MATD3,MATD3,SaÃºde,SaÃºde,AÃ§Ã£o
+MBRF3,MBRF3,Outros,Outros,AÃ§Ã£o
+MDIA3,MDIA3,Outros,Outros,AÃ§Ã£o
+MDNE3,MDNE3,Outros,Outros,AÃ§Ã£o
+MEAL3,MEAL3,Outros,Outros,AÃ§Ã£o
+MELK3,MELK3,Outros,Outros,AÃ§Ã£o
+MERC4,MERC4,Outros,Outros,AÃ§Ã£o
+MGEL4,MGEL4,Outros,Outros,AÃ§Ã£o
+MGLU3,MGLU3,Varejo,Varejo,AÃ§Ã£o
+MILS3,MILS3,Outros,Outros,AÃ§Ã£o
+MLAS3,MLAS3,Outros,Outros,AÃ§Ã£o
+MNDL3,MNDL3,Outros,Outros,AÃ§Ã£o
+MNPR3,MNPR3,Outros,Outros,AÃ§Ã£o
+MOAR3,MOAR3,Outros,Outros,AÃ§Ã£o
+MOTV3,MOTV3,Outros,Outros,AÃ§Ã£o
+MOVI3,MOVI3,Outros,Outros,AÃ§Ã£o
+MRSA3B,MRSA3B,Outros,Outros,AÃ§Ã£o
+MRSA5B,MRSA5B,Outros,Outros,AÃ§Ã£o
+MRSA6B,MRSA6B,Outros,Outros,AÃ§Ã£o
+MRVE3,MRVE3,ConstruÃ§Ã£o Civil,ConstruÃ§Ã£o Civil,AÃ§Ã£o
+MSPA3,MSPA3,Outros,Outros,AÃ§Ã£o
+MSPA4,MSPA4,Outros,Outros,AÃ§Ã£o
+MTRE3,MTRE3,Outros,Outros,AÃ§Ã£o
+MTSA4,MTSA4,Outros,Outros,AÃ§Ã£o
+MULT3,MULT3,Outros,Outros,AÃ§Ã£o
+MWET3,MWET3,Outros,Outros,AÃ§Ã£o
+MWET4,MWET4,Outros,Outros,AÃ§Ã£o
+MYPK3,MYPK3,Outros,Outros,AÃ§Ã£o
+NATU3,NATU3,Outros,Outros,AÃ§Ã£o
+NEOE3,NEOE3,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+NEXP3,NEXP3,Outros,Outros,AÃ§Ã£o
+NGRD3,NGRD3,Outros,Outros,AÃ§Ã£o
+NORD3,NORD3,Outros,Outros,AÃ§Ã£o
+NUTR3,NUTR3,Outros,Outros,AÃ§Ã£o
+OBTC3,OBTC3,Outros,Outros,AÃ§Ã£o
+ODPV3,ODPV3,Outros,Outros,AÃ§Ã£o
+OFSA3,OFSA3,Outros,Outros,AÃ§Ã£o
+OIBR3,OIBR3,TelecomunicaÃ§Ãµes,TelecomunicaÃ§Ãµes,AÃ§Ã£o
+OIBR4,OIBR4,TelecomunicaÃ§Ãµes,TelecomunicaÃ§Ãµes,AÃ§Ã£o
+ONCO3,ONCO3,Outros,Outros,AÃ§Ã£o
+OPCT3,OPCT3,Outros,Outros,AÃ§Ã£o
+ORVR3,ORVR3,Outros,Outros,AÃ§Ã£o
+OSXB3,OSXB3,Outros,Outros,AÃ§Ã£o
+PATI3,PATI3,Outros,Outros,AÃ§Ã£o
+PATI4,PATI4,Outros,Outros,AÃ§Ã£o
+PCAR3,PCAR3,Alimentos e Bebidas,Alimentos e Bebidas,AÃ§Ã£o
+PDGR3,PDGR3,Outros,Outros,AÃ§Ã£o
+PDTC3,PDTC3,Outros,Outros,AÃ§Ã£o
+PEAB3,PEAB3,Outros,Outros,AÃ§Ã£o
+PEAB4,PEAB4,Outros,Outros,AÃ§Ã£o
+PETR3,PETR3,PetrÃ³leo e GÃ¡s,PetrÃ³leo e GÃ¡s,AÃ§Ã£o
+PETR4,PETR4,PetrÃ³leo e GÃ¡s,PetrÃ³leo e GÃ¡s,AÃ§Ã£o
+PETZ3,PETZ3,Outros,Outros,AÃ§Ã£o
+PFRM3,PFRM3,Outros,Outros,AÃ§Ã£o
+PGMN3,PGMN3,Outros,Outros,AÃ§Ã£o
+PINE3,PINE3,Financeiro,Financeiro,AÃ§Ã£o
+PINE4,PINE4,Financeiro,Financeiro,AÃ§Ã£o
+PLAS3,PLAS3,Outros,Outros,AÃ§Ã£o
+PLPL3,PLPL3,Outros,Outros,AÃ§Ã£o
+PMAM3,PMAM3,Outros,Outros,AÃ§Ã£o
+PNVL3,PNVL3,Outros,Outros,AÃ§Ã£o
+POMO3,POMO3,Outros,Outros,AÃ§Ã£o
+POMO4,POMO4,Outros,Outros,AÃ§Ã£o
+PORT3,PORT3,Outros,Outros,AÃ§Ã£o
+POSI3,POSI3,Outros,Outros,AÃ§Ã£o
+PRIO3,PRIO3,PetrÃ³leo e GÃ¡s,PetrÃ³leo e GÃ¡s,AÃ§Ã£o
+PRNR3,PRNR3,Outros,Outros,AÃ§Ã£o
+PSSA3,PSSA3,Outros,Outros,AÃ§Ã£o
+PTBL3,PTBL3,Outros,Outros,AÃ§Ã£o
+PTNT3,PTNT3,Outros,Outros,AÃ§Ã£o
+PTNT4,PTNT4,Outros,Outros,AÃ§Ã£o
+QUAL3,QUAL3,SaÃºde,SaÃºde,AÃ§Ã£o
+RADL3,RADL3,Outros,Outros,AÃ§Ã£o
+RAIL3,RAIL3,LogÃ­stica,LogÃ­stica,AÃ§Ã£o
+RAIZ4,RAIZ4,Outros,Outros,AÃ§Ã£o
+RANI3,RANI3,Papel e Celulose,Papel e Celulose,AÃ§Ã£o
+RAPT3,RAPT3,Outros,Outros,AÃ§Ã£o
+RAPT4,RAPT4,Outros,Outros,AÃ§Ã£o
+RCSL3,RCSL3,Outros,Outros,AÃ§Ã£o
+RCSL4,RCSL4,Outros,Outros,AÃ§Ã£o
+RDNI3,RDNI3,Outros,Outros,AÃ§Ã£o
+RDOR3,RDOR3,SaÃºde,SaÃºde,AÃ§Ã£o
+REAG3,REAG3,Outros,Outros,AÃ§Ã£o
+RECV3,RECV3,PetrÃ³leo e GÃ¡s,PetrÃ³leo e GÃ¡s,AÃ§Ã£o
+REDE3,REDE3,Outros,Outros,AÃ§Ã£o
+RENT3,RENT3,Outros,Outros,AÃ§Ã£o
+RNEW11,RNEW11,Outros,Outros,AÃ§Ã£o
+RNEW3,RNEW3,Outros,Outros,AÃ§Ã£o
+RNEW4,RNEW4,Outros,Outros,AÃ§Ã£o
+ROMI3,ROMI3,Outros,Outros,AÃ§Ã£o
+RPAD3,RPAD3,Outros,Outros,AÃ§Ã£o
+RPAD5,RPAD5,Outros,Outros,AÃ§Ã£o
+RPAD6,RPAD6,Outros,Outros,AÃ§Ã£o
+RPMG3,RPMG3,Outros,Outros,AÃ§Ã£o
+RSID3,RSID3,Outros,Outros,AÃ§Ã£o
+RSUL4,RSUL4,Outros,Outros,AÃ§Ã£o
+RVEE3,RVEE3,Outros,Outros,AÃ§Ã£o
+SANB11,SANB11,Financeiro,Financeiro,AÃ§Ã£o
+SANB3,SANB3,Financeiro,Financeiro,AÃ§Ã£o
+SANB4,SANB4,Financeiro,Financeiro,AÃ§Ã£o
+SAPR11,SAPR11,Outros,Outros,AÃ§Ã£o
+SAPR3,SAPR3,Outros,Outros,AÃ§Ã£o
+SAPR4,SAPR4,Outros,Outros,AÃ§Ã£o
+SBFG3,SBFG3,Outros,Outros,AÃ§Ã£o
+SBSP3,SBSP3,Outros,Outros,AÃ§Ã£o
+SCAR3,SCAR3,Outros,Outros,AÃ§Ã£o
+SEER3,SEER3,Outros,Outros,AÃ§Ã£o
+SEQL3,SEQL3,Outros,Outros,AÃ§Ã£o
+SHOW3,SHOW3,Outros,Outros,AÃ§Ã£o
+SHUL4,SHUL4,Outros,Outros,AÃ§Ã£o
+SIMH3,SIMH3,Outros,Outros,AÃ§Ã£o
+SLCE3,SLCE3,Alimentos e Bebidas,Alimentos e Bebidas,AÃ§Ã£o
+SMFT3,SMFT3,Outros,Outros,AÃ§Ã£o
+SMTO3,SMTO3,Alimentos e Bebidas,Alimentos e Bebidas,AÃ§Ã£o
+SNSY5,SNSY5,Outros,Outros,AÃ§Ã£o
+SOJA3,SOJA3,Outros,Outros,AÃ§Ã£o
+SOND3,SOND3,Outros,Outros,AÃ§Ã£o
+SOND5,SOND5,Outros,Outros,AÃ§Ã£o
+SOND6,SOND6,Outros,Outros,AÃ§Ã£o
+SRNA3,SRNA3,Outros,Outros,AÃ§Ã£o
+STBP3,STBP3,Outros,Outros,AÃ§Ã£o
+SUZB3,SUZB3,Papel e Celulose,Papel e Celulose,AÃ§Ã£o
+SYNE3,SYNE3,Outros,Outros,AÃ§Ã£o
+TAEE11,TAEE11,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+TAEE3,TAEE3,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+TAEE4,TAEE4,Energia ElÃ©trica,Energia ElÃ©trica,AÃ§Ã£o
+TASA3,TASA3,Outros,Outros,AÃ§Ã£o
+TASA4,TASA4,Outros,Outros,AÃ§Ã£o
+TCSA3,TCSA3,Outros,Outros,AÃ§Ã£o
+TECN3,TECN3,Outros,Outros,AÃ§Ã£o
+TELB3,TELB3,Outros,Outros,AÃ§Ã£o
+TELB4,TELB4,Outros,Outros,AÃ§Ã£o
+TEND3,TEND3,ConstruÃ§Ã£o Civil,ConstruÃ§Ã£o Civil,AÃ§Ã£o
+TFCO4,TFCO4,Outros,Outros,AÃ§Ã£o
+TGMA3,TGMA3,Outros,Outros,AÃ§Ã£o
+TIMS3,TIMS3,TelecomunicaÃ§Ãµes,TelecomunicaÃ§Ãµes,AÃ§Ã£o
+TKNO4,TKNO4,Outros,Outros,AÃ§Ã£o
+TOKY3,TOKY3,Outros,Outros,AÃ§Ã£o
+TOTS3,TOTS3,Outros,Outros,AÃ§Ã£o
+TPIS3,TPIS3,Outros,Outros,AÃ§Ã£o
+TRAD3,TRAD3,Outros,Outros,AÃ§Ã£o
+TRIS3,TRIS3,Outros,Outros,AÃ§Ã£o
+TTEN3,TTEN3,Outros,Outros,AÃ§Ã£o
+TUPY3,TUPY3,Outros,Outros,AÃ§Ã£o
+TXRX4,TXRX4,Outros,Outros,AÃ§Ã£o
+UCAS3,UCAS3,Outros,Outros,AÃ§Ã£o
+UGPA3,UGPA3,Outros,Outros,AÃ§Ã£o
+UNIP3,UNIP3,Outros,Outros,AÃ§Ã£o
+UNIP5,UNIP5,Outros,Outros,AÃ§Ã£o
+UNIP6,UNIP6,Outros,Outros,AÃ§Ã£o
+USIM3,USIM3,MineraÃ§Ã£o,MineraÃ§Ã£o,AÃ§Ã£o
+USIM5,USIM5,MineraÃ§Ã£o,MineraÃ§Ã£o,AÃ§Ã£o
+VALE3,VALE3,MineraÃ§Ã£o,MineraÃ§Ã£o,AÃ§Ã£o
+VAMO3,VAMO3,Outros,Outros,AÃ§Ã£o
+VBBR3,VBBR3,Outros,Outros,AÃ§Ã£o
+VITT3,VITT3,Outros,Outros,AÃ§Ã£o
+VIVA3,VIVA3,Varejo,Varejo,AÃ§Ã£o
+VIVR3,VIVR3,Outros,Outros,AÃ§Ã£o
+VIVT3,VIVT3,TelecomunicaÃ§Ãµes,TelecomunicaÃ§Ãµes,AÃ§Ã£o
+VLID3,VLID3,Outros,Outros,AÃ§Ã£o
+VSTE3,VSTE3,Outros,Outros,AÃ§Ã£o
+VTRU3,VTRU3,Outros,Outros,AÃ§Ã£o
+VULC3,VULC3,Outros,Outros,AÃ§Ã£o
+VVEO3,VVEO3,Outros,Outros,AÃ§Ã£o
+WDCN3,WDCN3,Outros,Outros,AÃ§Ã£o
+WEGE3,WEGE3,Outros,Outros,AÃ§Ã£o
+WEST3,WEST3,Outros,Outros,AÃ§Ã£o
+WHRL3,WHRL3,Outros,Outros,AÃ§Ã£o
+WHRL4,WHRL4,Outros,Outros,AÃ§Ã£o
+WIZC3,WIZC3,Outros,Outros,AÃ§Ã£o
+WLMM3,WLMM3,Outros,Outros,AÃ§Ã£o
+WLMM4,WLMM4,Outros,Outros,AÃ§Ã£o
+YDUQ3,YDUQ3,Outros,Outros,AÃ§Ã£o
+ZAMP3,ZAMP3,Outros,Outros,AÃ§Ã£o
