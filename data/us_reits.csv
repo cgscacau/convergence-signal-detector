@@ -1,0 +1,95 @@
+ticker,nome,tipo,categoria
+AMT,American Tower Corp.,Cell Towers,US REIT
+PLD,Prologis Inc.,Industrial,US REIT
+CCI,Crown Castle Inc.,Cell Towers,US REIT
+EQIX,Equinix Inc.,Data Centers,US REIT
+PSA,Public Storage,Self Storage,US REIT
+WELL,Welltower Inc.,Healthcare,US REIT
+DLR,Digital Realty Trust,Data Centers,US REIT
+O,Realty Income Corp.,Retail,US REIT
+SBAC,SBA Communications Corp.,Cell Towers,US REIT
+AVB,AvalonBay Communities,Residential,US REIT
+EQR,Equity Residential,Residential,US REIT
+SPG,Simon Property Group,Malls,US REIT
+VTR,Ventas Inc.,Healthcare,US REIT
+ARE,Alexandria Real Estate Equities,Life Science,US REIT
+INVH,Invitation Homes Inc.,Single Family,US REIT
+MAA,Mid-America Apartment Communities,Residential,US REIT
+EXR,Extra Space Storage,Self Storage,US REIT
+KIM,Kimco Realty Corp.,Retail,US REIT
+DOC,Healthpeak Properties,Healthcare,US REIT
+UDR,UDR Inc.,Residential,US REIT
+ESS,Essex Property Trust,Residential,US REIT
+REG,Regency Centers Corp.,Retail,US REIT
+BXP,Boston Properties Inc.,Office,US REIT
+HST,Host Hotels & Resorts,Hotels,US REIT
+CPT,Camden Property Trust,Residential,US REIT
+FRT,Federal Realty Investment Trust,Retail,US REIT
+VNO,Vornado Realty Trust,Office,US REIT
+CBRE,CBRE Group Inc.,Services,US REIT
+IRM,Iron Mountain Inc.,Storage,US REIT
+WY,Weyerhaeuser Co.,Timber,US REIT
+AMH,American Homes 4 Rent,Single Family,US REIT
+SLG,SL Green Realty Corp.,Office,US REIT
+KRG,Kite Realty Group Trust,Retail,US REIT
+CUBE,CubeSmart,Self Storage,US REIT
+PEAK,Healthpeak Properties Inc.,Healthcare,US REIT
+BRX,Brixmor Property Group,Retail,US REIT
+ELS,Equity LifeStyle Properties,Manufactured Homes,US REIT
+SUI,Sun Communities Inc.,Manufactured Homes,US REIT
+COLD,Americold Realty Trust,Cold Storage,US REIT
+STAG,STAG Industrial Inc.,Industrial,US REIT
+FR,First Industrial Realty Trust,Industrial,US REIT
+DRE,Duke Realty Corp.,Industrial,US REIT
+EGP,EastGroup Properties Inc.,Industrial,US REIT
+REXR,Rexford Industrial Realty,Industrial,US REIT
+TRNO,Terreno Realty Corp.,Industrial,US REIT
+LXP,Lexington Realty Trust,Industrial,US REIT
+NSA,National Storage Affiliates,Self Storage,US REIT
+LSI,Life Storage Inc.,Self Storage,US REIT
+GLPI,Gaming and Leisure Properties,Gaming,US REIT
+VICI,VICI Properties Inc.,Gaming,US REIT
+MGP,MGM Growth Properties,Gaming,US REIT
+RHP,Ryman Hospitality Properties,Hotels,US REIT
+PK,Park Hotels & Resorts,Hotels,US REIT
+RLJ,RLJ Lodging Trust,Hotels,US REIT
+SHO,Sunstone Hotel Investors,Hotels,US REIT
+INN,Summit Hotel Properties,Hotels,US REIT
+AHT,Ashford Hospitality Trust,Hotels,US REIT
+MAC,Macerich Co.,Malls,US REIT
+TCO,Taubman Centers Inc.,Malls,US REIT
+PEI,Pennsylvania REIT,Malls,US REIT
+SKT,Tanger Factory Outlet Centers,Outlets,US REIT
+ADC,Agree Realty Corp.,Retail,US REIT
+NNN,National Retail Properties,Retail,US REIT
+STOR,STORE Capital Corp.,Retail,US REIT
+EPRT,Essential Properties Realty Trust,Retail,US REIT
+SRC,Spirit Realty Capital,Retail,US REIT
+FCPT,Four Corners Property Trust,Retail,US REIT
+GTY,Getty Realty Corp.,Retail,US REIT
+ROIC,Retail Opportunity Investments,Retail,US REIT
+WPC,W.P. Carey Inc.,Diversified,US REIT
+GOOD,Gladstone Commercial Corp.,Office,US REIT
+HIW,Highwoods Properties Inc.,Office,US REIT
+CUZ,Cousins Properties Inc.,Office,US REIT
+DEI,Douglas Emmett Inc.,Office,US REIT
+JBGS,JBG SMITH Properties,Mixed Use,US REIT
+KRC,Kilroy Realty Corp.,Office,US REIT
+PGRE,Paramount Group Inc.,Office,US REIT
+PDM,Piedmont Office Realty Trust,Office,US REIT
+OFC,Corporate Office Properties Trust,Office,US REIT
+HPP,Hudson Pacific Properties,Office,US REIT
+BMR,Beazer Homes USA Inc.,Homebuilding,US REIT
+DHI,D.R. Horton Inc.,Homebuilding,US REIT
+LEN,Lennar Corp.,Homebuilding,US REIT
+PHM,PulteGroup Inc.,Homebuilding,US REIT
+TOL,Toll Brothers Inc.,Homebuilding,US REIT
+MTH,Meritage Homes Corp.,Homebuilding,US REIT
+KBH,KB Home,Homebuilding,US REIT
+MHO,M/I Homes Inc.,Homebuilding,US REIT
+TMHC,Taylor Morrison Home Corp.,Homebuilding,US REIT
+TPH,TRI Pointe Group Inc.,Homebuilding,US REIT
+NVR,NVR Inc.,Homebuilding,US REIT
+BZH,Beazer Homes USA Inc.,Homebuilding,US REIT
+CCS,Century Communities Inc.,Homebuilding,US REIT
+LGIH,LGI Homes Inc.,Homebuilding,US REIT
