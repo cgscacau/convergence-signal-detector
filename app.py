@@ -191,7 +191,202 @@ with st.sidebar:
 
 # ========== MAIN ==========
 
-if not selected_tickers:
+# Verificar se já existe análise no session state
+if 'analysis_done' in st.session_state and st.session_state['analysis_done'] and not analyze_button:
+    # CARREGAR RESULTADOS DO SESSION STATE
+    results = st.session_state.get('results', {})
+    atr_mult = st.session_state.get('atr_mult', 1.5)
+    target_mult = st.session_state.get('target_mult', 2.0)
+    
+    # Reinicializar objetos necessários
+    detector = ConvergenceDetector()
+    risk_mgr = RiskManager(atr_multiplier=atr_mult)
+    chart_maker = CacasChannelChart()
+    
+    # Pular para a seção de resultados
+    if len(results) > 0:
+        st.success(f"✅ **Análise anterior: {len(results)} ativos processados**")
+        
+        # ========== ANÁLISE ==========
+        st.markdown("---")
+        st.subheader("📊 RESULTADOS")
+        
+        # Convergências
+        conv_results = detector.scan_multiple_assets(results)
+        conv_results = detector.sort_by_priority(conv_results)
+        
+        # Tabela COMPLETA com TODOS os dados
+        st.dataframe(
+            conv_results,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "ticker": st.column_config.TextColumn("Ticker", width="small"),
+                "status": st.column_config.TextColumn("Status", width="medium"),
+                "descricao": st.column_config.TextColumn("Descrição", width="large"),
+                "semanal": st.column_config.NumberColumn("Semanal", format="%d"),
+                "diario": st.column_config.NumberColumn("Diário", format="%d"),
+                "convergente": st.column_config.CheckboxColumn("Convergente"),
+                "tipo": st.column_config.TextColumn("Tipo", width="small")
+            }
+        )
+        
+        # Stats
+        st.markdown("---")
+        st.subheader("📈 Resumo")
+        
+        buys = detector.get_buy_signals(conv_results)
+        sells = detector.get_sell_signals(conv_results)
+        waiting = detector.get_waiting_signals(conv_results)
+        
+        cols = st.columns(4)
+        cols[0].metric("🟢 Compra", len(buys))
+        cols[1].metric("🔴 Venda", len(sells))
+        cols[2].metric("🟡 Aguardando", len(waiting))
+        cols[3].metric("📊 Total", len(conv_results))
+        
+        # ========== VISUALIZAÇÃO OTIMIZADA (1 GRÁFICO POR VEZ) ==========
+        st.markdown("---")
+        st.subheader("📈 VISUALIZAÇÃO DE GRÁFICOS")
+        
+        # Filtrar apenas ativos com sinal de compra
+        if len(buys) > 0:
+            buy_tickers = buys['ticker'].tolist()
+            
+            st.info(f"💡 **{len(buy_tickers)} ativos com sinal de compra!** Selecione um abaixo para ver os gráficos detalhados.")
+            
+            # SELETOR DE ATIVO (dropdown)
+            selected_ticker_for_chart = st.selectbox(
+                "🎯 Selecione o ativo para visualizar:",
+                options=buy_tickers,
+                format_func=lambda x: f"{x} - {buys[buys['ticker']==x]['status'].values[0]}",
+                help="Escolha um ativo para ver os gráficos multi-timeframe",
+                key="ticker_selector"  # Key para manter seleção
+            )
+            
+            if selected_ticker_for_chart:
+                ticker = selected_ticker_for_chart
+                row = buys[buys['ticker'] == ticker].iloc[0]
+                
+                st.markdown("---")
+                st.markdown(f"### 📊 {ticker}")
+                st.write(f"**Status:** {row['status']}")
+                st.write(f"**{row['descricao']}**")
+                
+                daily_df = results[ticker]['daily']
+                weekly_df = results[ticker]['weekly']
+                latest = daily_df.iloc[-1]
+                
+                # CALCULAR STOP E ALVO
+                plan = risk_mgr.generate_trade_plan(
+                    daily_df,
+                    entry_type='long',
+                    target_multiplier=target_mult
+                )
+                
+                # MÉTRICAS
+                st.markdown("#### 💰 Informações de Trade")
+                col1, col2, col3, col4 = st.columns(4)
+                
+                with col1:
+                    st.metric("Preço Atual", f"R$ {latest['Close']:.2f}")
+                
+                with col2:
+                    if plan:
+                        st.metric("Stop Loss", f"R$ {plan['stop_loss']['price']:.2f}",
+                                delta=f"-{plan['stop_loss']['risk_percent']:.1f}%")
+                
+                with col3:
+                    if plan:
+                        st.metric("Alvo", f"R$ {plan['target']['price']:.2f}",
+                                delta=f"+{plan['target']['gain_percent']:.1f}%")
+                
+                with col4:
+                    if plan:
+                        st.metric("R/R Ratio", f"{plan['risk_reward']:.2f}x")
+                
+                st.markdown("---")
+                
+                # GRÁFICOS LADO A LADO (DIÁRIO + SEMANAL)
+                st.markdown("#### 📊 Gráficos Multi-Timeframe")
+                
+                col_daily, col_weekly = st.columns(2)
+                
+                with col_daily:
+                    st.markdown("**📅 Gráfico Diário**")
+                    # Gráfico DIÁRIO com STOP e ALVO
+                    fig_daily = chart_maker.create_single_chart(
+                        daily_df,
+                        title=f"{ticker} - DIÁRIO",
+                        show_stop=True if plan else False,
+                        stop_price=plan['stop_loss']['price'] if plan else None,
+                        show_target=True if plan else False,
+                        target_price=plan['target']['price'] if plan else None,
+                        height=600
+                    )
+                    st.plotly_chart(fig_daily, use_container_width=True)
+                
+                with col_weekly:
+                    st.markdown("**📅 Gráfico Semanal**")
+                    # Gráfico SEMANAL (sem stop/alvo)
+                    fig_weekly = chart_maker.create_single_chart(
+                        weekly_df,
+                        title=f"{ticker} - SEMANAL",
+                        height=600
+                    )
+                    st.plotly_chart(fig_weekly, use_container_width=True)
+                
+                # TABELA DE DADOS RECENTES
+                st.markdown("---")
+                st.markdown("#### 📋 Dados Recentes (Diário)")
+                
+                # Últimas 10 barras do diário
+                recent_data = daily_df[[
+                    'Close', 'linha_superior', 'linha_inferior', 
+                    'linha_media', 'linha_ema', 'sinal'
+                ]].tail(10).copy()
+                
+                recent_data['sinal_texto'] = recent_data['sinal'].map({
+                    1: '🟢 COMPRA',
+                    -1: '🔴 VENDA',
+                    0: '⚪ NEUTRO'
+                })
+                
+                st.dataframe(
+                    recent_data.round(2),
+                    use_container_width=True,
+                    column_config={
+                        "Close": "Preço",
+                        "linha_superior": "L. Superior",
+                        "linha_inferior": "L. Inferior",
+                        "linha_media": "L. Branca",
+                        "linha_ema": "L. Laranja",
+                        "sinal_texto": "Sinal"
+                    }
+                )
+        else:
+            st.info("ℹ️ Nenhum sinal de compra encontrado nos ativos analisados.")
+        
+        # Download
+        st.markdown("---")
+        st.subheader("💾 Exportar")
+        
+        csv = conv_results.to_csv(index=False).encode('utf-8')
+        st.download_button(
+            "📅 Baixar CSV",
+            csv,
+            f"cacas_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv",
+            "text/csv",
+            use_container_width=True
+        )
+        
+        # Botão para limpar análise
+        st.markdown("---")
+        if st.button("🔄 Nova Análise", use_container_width=True):
+            st.session_state.clear()
+            st.rerun()
+
+elif not selected_tickers:
     st.info("👈 **Selecione ativos na barra lateral**")
     
     # Stats - Organizado por mercado
@@ -237,6 +432,10 @@ elif analyze_button:
     results = {}
     failed = []
     
+    # SALVAR PARÂMETROS NO SESSION STATE
+    st.session_state['atr_mult'] = atr_mult
+    st.session_state['target_mult'] = target_mult
+    
     total = len(selected_tickers)
     
     for i, ticker in enumerate(selected_tickers):
@@ -278,6 +477,10 @@ elif analyze_button:
     fail = len(failed)
     
     if success > 0:
+        # SALVAR RESULTADOS NO SESSION STATE
+        st.session_state['results'] = results
+        st.session_state['analysis_done'] = True
+        
         st.success(f"✅ **{success}/{total} ativos processados com sucesso!**")
         
         if fail > 0:
