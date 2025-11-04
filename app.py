@@ -60,10 +60,19 @@ with st.sidebar:
     
     # CONTADOR DE ATIVOS NO TOPO
     counts = asset_loader.count_assets()
+    
+    # Calcular subtotais (fallback caso não existam)
+    if 'Brasil' not in counts:
+        counts['Brasil'] = counts.get('Ação BR', 0) + counts.get('FII', 0) + counts.get('ETF BR', 0) + counts.get('BDR', 0)
+    if 'EUA' not in counts:
+        counts['EUA'] = counts.get('Ação US', 0) + counts.get('ETF US', 0) + counts.get('REIT US', 0)
+    if 'Total' not in counts:
+        counts['Total'] = counts['Brasil'] + counts['EUA'] + counts.get('Crypto', 0)
+    
     st.info(f"""### 📊 BASE DE DADOS
     **🎯 {counts['Total']} ativos disponíveis**
     
-    🇧🇷 Brasil: {counts['Brasil']} | 🇺🇸 EUA: {counts['EUA']} | ₿ Crypto: {counts['Crypto']}
+    🇧🇷 Brasil: {counts['Brasil']} | 🇺🇸 EUA: {counts['EUA']} | ₿ Crypto: {counts.get('Crypto', 0)}
     """)
     
     st.markdown("---")
