@@ -25,15 +25,24 @@ class MarketDataLoader:
     def format_ticker_b3(ticker):
         """
         Formata ticker para padrão Yahoo Finance B3
+        APENAS adiciona .SA se for ticker brasileiro (sem sufixos ou hífens)
         
         Args:
-            ticker (str): Ticker no formato B3 (ex: PETR4)
+            ticker (str): Ticker (ex: PETR4, AAPL, BTC-USD)
         
         Returns:
-            str: Ticker formatado para Yahoo Finance (ex: PETR4.SA)
+            str: Ticker formatado para Yahoo Finance
         """
-        if not ticker.endswith('.SA'):
+        # Se já tem sufixo (.SA, -USD, etc), não adiciona nada
+        if '.' in ticker or '-' in ticker:
+            return ticker
+        
+        # Se é ticker brasileiro puro (4 letras + número), adiciona .SA
+        # Tickers americanos geralmente não seguem esse padrão
+        if len(ticker) >= 5 and ticker[-1].isdigit():
             return f"{ticker}.SA"
+        
+        # Tickers americanos puros (AAPL, MSFT, etc) - retorna sem modificar
         return ticker
     
     @st.cache_data(ttl=1800, show_spinner=False)
